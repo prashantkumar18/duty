@@ -1,548 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prashant Kumar | Digital Transformation, LIMS, MES, IT-OT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prashant Kumar | Digital Transformation Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0a0f1f;
-      --surface: #11182c;
-      --surface-2: #17223d;
-      --text: #f3f4f6;
-      --muted: #b8c0d4;
-      --border: rgba(255,255,255,0.08);
-      --accent: #8fb4ff;
-      --accent-2: #d9e7ff;
-      --gold: #f1c96b;
-      --max: 1220px;
+      --navy: #0a1628;
+      --gold: #c8a44a;
+      --gold-light: #e8c97a;
+      --gold-pale: #fdf6e8;
+      --cream: #f8f5ef;
+      --white: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-mid: #4a4a6a;
+      --text-muted: #8a8aaa;
+      --accent-teal: #0d7a6b;
+      --border: #e0dbd0;
     }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
-      background: linear-gradient(180deg, #08101d 0%, #0b1324 30%, #0e1629 100%);
-      line-height: 1.65;
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+ 
+    /* TOP BAR */
+    .topbar { background: var(--navy); color: rgba(255,255,255,0.65); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 16px; font-family: 'DM Mono', monospace; overflow: hidden; white-space: nowrap; }
+    .topbar-track { display: inline-block; animation: marquee 30s linear infinite; }
+    .topbar-track span { color: var(--gold); margin: 0 8px; }
+    @keyframes marquee { from { transform: translateX(50vw); } to { transform: translateX(-100%); } }
+    @media (min-width: 900px) {
+      .topbar { text-align: center; white-space: normal; overflow: visible; }
+      .topbar-track { animation: none; }
     }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .top-strip {
-      background: #05080f;
-      color: #fff;
-      font-size: 13px;
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      letter-spacing: 0.4px;
+ 
+    /* MASTHEAD */
+    .masthead { background: var(--white); border-bottom: 3px solid var(--navy); }
+    .masthead-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 24px 40px 0; gap: 16px; }
+    .masthead-left { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Mono', monospace; line-height: 1.6; }
+    .masthead-left strong { display: block; font-size: 12px; color: var(--accent-teal); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 2px; }
+    .masthead-center { text-align: center; }
+    .name-pre { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 4px; }
+    .masthead-center h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 62px); font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -0.02em; }
+    .tagline { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-top: 6px; }
+    .masthead-right { text-align: right; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; line-height: 1.65; }
+    .influencer-badge { display: inline-block; background: var(--gold); color: var(--navy); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; margin-bottom: 5px; }
+ 
+    /* NAV */
+    nav { background: var(--white); border-top: 1px solid var(--border); border-bottom: 2px solid var(--navy); margin-top: 14px; position: relative; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li a { display: flex; align-items: center; padding: 13px 20px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; font-weight: 600; transition: color 0.2s; position: relative; white-space: nowrap; min-height: 44px; }
+    nav ul li a:hover { color: var(--navy); }
+    nav ul li a.active { color: var(--navy); }
+    nav ul li a.active::after { content: ''; position: absolute; bottom: 0; left: 20px; right: 20px; height: 2px; background: var(--gold); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 12px 4px; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all 0.25s; border-radius: 1px; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+    /* PAGE WRAP */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 36px 40px; }
+ 
+    /* HERO */
+    .hero-grid { display: grid; grid-template-columns: 1fr 320px; border: 1.5px solid var(--navy); margin-bottom: 36px; background: var(--white); }
+    .hero-main { padding: 44px; border-right: 1.5px solid var(--navy); position: relative; }
+    .hero-kicker { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--navy); display: inline-block; padding: 4px 12px; margin-bottom: 18px; font-weight: 600; }
+    .hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 42px); font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 18px; }
+    .hero-headline em { font-style: italic; color: var(--accent-teal); }
+    .hero-deck { font-size: 14.5px; line-height: 1.8; color: var(--text-mid); margin-bottom: 28px; border-left: 3px solid var(--gold); padding-left: 16px; }
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding-top: 22px; border-top: 1px solid var(--border); }
+    .stat-item { padding-right: 12px; }
+    .stat-item + .stat-item { border-left: 1px solid var(--border); padding-left: 12px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--navy); line-height: 1; }
+    .stat-num span { color: var(--gold); }
+    .stat-label { font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+    .hero-sidebar { background: var(--navy); padding: 32px 24px; display: flex; flex-direction: column; gap: 22px; }
+    .sidebar-section-title { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; margin-bottom: 12px; }
+    .expertise-list { list-style: none; }
+    .expertise-list li { font-size: 13px; color: rgba(255,255,255,0.82); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 10px; }
+    .expertise-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    .sidebar-quote { background: rgba(255,255,255,0.05); border-left: 3px solid var(--gold); padding: 12px 14px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: rgba(255,255,255,0.88); line-height: 1.6; }
+    .cta-btn { background: var(--gold); color: var(--navy); text-decoration: none; text-align: center; padding: 13px 18px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; transition: background 0.2s; min-height: 48px; display: flex; align-items: center; justify-content: center; }
+    .cta-btn:hover { background: var(--gold-light); }
+ 
+    /* SECTION DIVIDER */
+    .section-divider { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--navy); }
+    .section-divider span { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--navy); font-weight: 700; white-space: nowrap; }
+ 
+    /* CARD GRID */
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1.5px solid var(--navy); margin-bottom: 36px; }
+    .card-item { padding: 26px 24px; background: var(--white); border-right: 1px solid var(--navy); position: relative; }
+    .card-item:last-child { border-right: none; }
+    .card-num { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 900; color: var(--cream); line-height: 1; position: absolute; top: 14px; right: 16px; }
+    .card-icon-tag { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); background: var(--accent-teal); display: inline-block; padding: 3px 10px; margin-bottom: 12px; font-weight: 600; }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+    .card-body { font-size: 13px; color: var(--text-mid); line-height: 1.75; }
+ 
+    /* TL BANNER */
+    .tl-banner { background: var(--navy); color: white; padding: 36px 44px; border: 1.5px solid var(--navy); margin-bottom: 36px; display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: center; }
+    .tl-banner-title { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+    .tl-banner-title em { color: var(--gold-light); font-style: italic; }
+    .tl-banner-sub { font-size: 13.5px; color: rgba(255,255,255,0.68); line-height: 1.75; }
+    .tl-metrics { display: flex; gap: 32px; flex-shrink: 0; }
+    .tl-metric-val { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 900; color: var(--gold); line-height: 1; }
+    .tl-metric-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 4px; line-height: 1.5; }
+ 
+    /* FEATURE ROW */
+    .feature-row { display: grid; grid-template-columns: 2fr 1fr; border: 1.5px solid var(--navy); margin-bottom: 36px; background: var(--white); }
+    .feature-main { padding: 34px 38px; border-right: 1.5px solid var(--navy); }
+    .feature-side { background: var(--gold-pale); padding: 34px 26px; }
+    .feature-kicker { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); background: var(--navy); display: inline-block; padding: 3px 10px; margin-bottom: 12px; font-weight: 700; }
+    .feature-title { font-family: 'Playfair Display', serif; font-size: clamp(18px, 2vw, 26px); font-weight: 700; color: var(--navy); margin-bottom: 14px; line-height: 1.25; }
+    .feature-body { font-size: 13.5px; color: var(--text-mid); line-height: 1.8; }
+    .timeline-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-teal); font-weight: 700; margin-bottom: 14px; }
+    .timeline { list-style: none; }
+    .timeline li { padding: 9px 0; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: flex-start; }
+    .timeline li:last-child { border-bottom: none; }
+    .tl-year { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--gold); font-weight: 700; min-width: 56px; padding-top: 2px; flex-shrink: 0; }
+    .tl-role { font-size: 12.5px; color: var(--text-dark); font-weight: 600; line-height: 1.3; }
+    .tl-company { font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
+ 
+    /* SECTORS */
+    .sectors-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1.5px solid var(--navy); margin-bottom: 36px; }
+    .sector-item { background: var(--white); padding: 22px 18px; border-right: 1px solid var(--navy); text-align: center; }
+    .sector-item:last-child { border-right: none; }
+    .sector-icon { width: 42px; height: 42px; background: var(--navy); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; }
+    .sector-icon svg { width: 20px; height: 20px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .sector-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .sector-desc { font-size: 11.5px; color: var(--text-muted); line-height: 1.5; }
+ 
+    /* CERTS */
+    .cert-row { background: var(--white); border: 1.5px solid var(--navy); padding: 24px 32px; margin-bottom: 36px; display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+    .cert-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; min-width: 90px; padding-top: 7px; flex-shrink: 0; }
+    .cert-pills { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+    .cert-pill { background: var(--navy); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 14px; border-radius: 2px; white-space: nowrap; min-height: 34px; display: flex; align-items: center; }
+ 
+    /* CONTACT STRIP */
+    .contact-strip { background: var(--navy); border: 1.5px solid var(--navy); padding: 22px 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 36px; }
+    .contact-strip-left { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--white); font-weight: 600; }
+    .contact-strip-left span { color: var(--gold); }
+    .contact-links { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .contact-link { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; padding: 10px 18px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; min-height: 44px; display: flex; align-items: center; white-space: nowrap; }
+    .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-link.primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .contact-link.primary:hover { background: var(--gold-light); }
+ 
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 18px 24px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Mono', monospace; border-top: 3px solid var(--gold); line-height: 2; }
+    footer strong { color: rgba(255,255,255,0.65); }
+ 
+    /* ══════════ TABLET ≤ 1024px ══════════ */
+    @media (max-width: 1024px) {
+      .page-wrap { padding: 28px 28px; }
+      .masthead-inner { padding: 20px 28px 0; }
+      .nav-inner { padding: 0 28px; }
+      nav ul li a { padding: 12px 14px; }
+ 
+      /* Masthead: hide right column */
+      .masthead-right { display: none; }
+      .masthead-inner { grid-template-columns: 1fr auto; }
+      .masthead-center { order: 1; }
+      .masthead-left { order: 2; text-align: right; }
+ 
+      /* Hero stacks */
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-main { border-right: none; border-bottom: 1.5px solid var(--navy); padding: 32px 28px; }
+      .hero-sidebar { flex-direction: row; flex-wrap: wrap; padding: 28px; gap: 20px; }
+      .hero-sidebar > div:first-child { flex: 1 1 220px; }
+      .hero-sidebar > .sidebar-quote { flex: 1 1 200px; align-self: flex-start; }
+      .hero-sidebar > .cta-btn { flex: 0 0 100%; }
+ 
+      /* Stats: 2x2 on tablet */
+      .stat-row { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .stat-item + .stat-item { border-left: none; padding-left: 0; }
+      .stat-item { border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; padding-bottom: 0; }
+ 
+      /* TL banner */
+      .tl-banner { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+      .tl-metrics { gap: 28px; }
+ 
+      /* Feature row */
+      .feature-row { grid-template-columns: 1fr; }
+      .feature-main { border-right: none; border-bottom: 1.5px solid var(--navy); padding: 28px; }
+      .feature-side { padding: 28px; }
+ 
+      /* Sectors: 2x2 */
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+      .sector-item:nth-child(2) { border-right: none; }
+      .sector-item:nth-child(3) { border-top: 1px solid var(--navy); }
+      .sector-item:nth-child(4) { border-right: none; border-top: 1px solid var(--navy); }
     }
-
-    .top-strip .inner,
-    .nav .inner,
-    .hero .inner,
-    .content,
-    .footer .inner {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-
-    .top-strip strong { margin-right: 10px; color: var(--gold); }
-    .top-strip span { color: #d6d9e2; }
-
-    .nav {
-      background: rgba(7, 11, 21, 0.88);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    .nav .inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px 16px;
-    }
-
-    .brand {
-      font-size: 46px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      line-height: 1;
-    }
-
-    .brand small {
-      display: block;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 600;
-      margin-top: 10px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .menu a:hover,
-    .section-link:hover,
-    .post-card h3:hover,
-    .mini-post h4:hover {
-      color: var(--accent);
-    }
-
-    .hero {
-      border-bottom: 1px solid var(--border);
-      background: radial-gradient(circle at top left, rgba(143,180,255,0.08), transparent 35%);
-    }
-
-    .hero .inner {
-      display: grid;
-      grid-template-columns: 1.55fr 0.95fr;
-      gap: 28px;
-      padding: 34px 16px;
-    }
-
-    .hero-main {
-      background: linear-gradient(135deg, rgba(18,28,52,0.95), rgba(10,16,31,0.95));
-      color: #fff;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 42px;
-      min-height: 430px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-    }
-
-    .kicker {
-      display: inline-block;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .hero-main h1 {
-      margin: 0 0 14px;
-      font-size: 58px;
-      line-height: 1.02;
-      letter-spacing: -0.8px;
-    }
-
-    .hero-main p {
-      margin: 0 0 18px;
-      max-width: 760px;
-      color: #dde6f7;
-      font-size: 18px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      background: #eef4ff;
-      color: #08101d;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.24);
-      color: #fff;
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 16px;
-    }
-
-    .side-card,
-    .post-card,
-    .widget {
-      background: linear-gradient(180deg, rgba(19,28,49,0.98), rgba(13,20,37,0.98));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
-    }
-
-    .side-card {
-      padding: 22px;
-    }
-
-    .side-card h3,
-    .widget h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-    }
-
-    .side-card p,
-    .widget p,
-    .widget li {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .content {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) 340px;
-      gap: 30px;
-      padding: 36px 16px 54px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .section-title h2 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    .section-link {
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .post-card {
-      overflow: hidden;
-    }
-
-    .post-thumb {
-      aspect-ratio: 16 / 9;
-      background: linear-gradient(135deg, #23365f, #16233f);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #edf3ff;
-      font-size: 15px;
-      font-weight: 700;
-      font-family: Arial, Helvetica, sans-serif;
-      letter-spacing: 0.6px;
-      text-align: center;
-      padding: 14px;
-    }
-
-    .post-body {
-      padding: 22px;
-    }
-
-    .meta {
-      color: var(--gold);
-      font-size: 12px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 800;
-    }
-
-    .post-card h3 {
-      margin: 0 0 10px;
-      font-size: 28px;
-      line-height: 1.2;
-    }
-
-    .post-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .sidebar {
-      display: grid;
-      gap: 20px;
-      align-content: start;
-    }
-
-    .widget {
-      padding: 22px;
-    }
-
-    .mini-post {
-      padding: 12px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .mini-post:first-of-type { border-top: 0; padding-top: 0; }
-    .mini-post h4 {
-      margin: 0 0 6px;
-      font-size: 16px;
-      line-height: 1.35;
-    }
-
-    .mini-post p {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .topics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      background: rgba(255,255,255,0.03);
-      font-family: Arial, Helvetica, sans-serif;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .footer {
-      background: #060a13;
-      color: #fff;
-      margin-top: 30px;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer .inner {
-      padding: 30px 16px 34px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      color: #d7deef;
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .footer p {
-      margin: 0;
-      color: #94a3b8;
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    @media (max-width: 980px) {
-      .hero .inner,
-      .content {
-        grid-template-columns: 1fr;
-      }
-
-      .posts-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
+ 
+    /* ══════════ MOBILE ≤ 640px ══════════ */
     @media (max-width: 640px) {
-      .brand { font-size: 34px; }
-      .hero-main { padding: 26px; min-height: auto; }
-      .hero-main h1 { font-size: 40px; }
-      .section-title h2 { font-size: 28px; }
-      .nav .inner { align-items: flex-start; }
+      .page-wrap { padding: 18px 16px; }
+ 
+      /* Masthead: stacked centered */
+      .masthead-inner { grid-template-columns: 1fr; text-align: center; padding: 20px 16px 0; gap: 8px; }
+      .masthead-left { order: 3; text-align: center; font-size: 10px; }
+      .masthead-center { order: 1; }
+      .masthead-center h1 { font-size: clamp(26px, 9vw, 40px); }
+      .tagline { font-size: 9px; letter-spacing: 0.1em; }
+ 
+      /* Hamburger active */
+      .nav-toggle { display: flex; }
+      .nav-inner { padding: 0 16px; }
+      nav ul {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--white);
+        border-bottom: 2px solid var(--navy);
+        z-index: 200;
+        display: none;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      }
+      nav ul.open { display: flex; }
+      nav ul li { border-bottom: 1px solid var(--border); }
+      nav ul li:last-child { border-bottom: none; }
+      nav ul li a { padding: 15px 20px; font-size: 13px; letter-spacing: 0.08em; min-height: 52px; }
+      nav ul li a.active::after { display: none; }
+      nav ul li a.active { background: var(--gold-pale); }
+ 
+      /* Hero */
+      .hero-main { padding: 22px 16px; }
+      .hero-headline { font-size: clamp(20px, 6vw, 28px); }
+      .hero-deck { font-size: 14px; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .stat-num { font-size: 22px; }
+      .stat-label { font-size: 9px; }
+      .stat-item + .stat-item { border-left: none; padding-left: 0; }
+      .hero-sidebar { padding: 22px 16px; flex-direction: column; gap: 18px; }
+ 
+      /* Cards: single col */
+      .card-grid { grid-template-columns: 1fr; }
+      .card-item { border-right: none; border-bottom: 1px solid var(--navy); padding: 22px 18px; }
+      .card-item:last-child { border-bottom: none; }
+      .card-num { font-size: 36px; }
+ 
+      /* TL banner */
+      .tl-banner { padding: 22px 16px; grid-template-columns: 1fr; gap: 20px; }
+      .tl-metrics { gap: 20px; }
+      .tl-metric-val { font-size: 28px; }
+ 
+      /* Feature */
+      .feature-main { padding: 22px 16px; }
+      .feature-side { padding: 22px 16px; }
+ 
+      /* Sectors: 2-col on mobile */
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+      .sector-item { padding: 18px 12px; }
+      .sector-name { font-size: 13px; }
+      .sector-desc { font-size: 11px; }
+ 
+      /* Certs */
+      .cert-row { padding: 18px 16px; gap: 12px; flex-direction: column; }
+      .cert-label { min-width: auto; padding-top: 0; }
+ 
+      /* Contact */
+      .contact-strip { padding: 20px 16px; flex-direction: column; align-items: flex-start; gap: 14px; }
+      .contact-strip-left { font-size: 16px; }
+      .contact-links { gap: 10px; width: 100%; }
+      .contact-link { font-size: 10px; padding: 10px 14px; flex: 1; justify-content: center; }
+ 
+      footer { font-size: 9px; padding: 16px; line-height: 2; }
+      .section-divider { margin-bottom: 18px; }
+      .section-divider span { font-size: 9px; }
+    }
+ 
+    /* Very small ≤ 380px */
+    @media (max-width: 380px) {
+      .sectors-grid { grid-template-columns: 1fr; }
+      .sector-item { border-right: none; border-bottom: 1px solid var(--navy); }
+      .sector-item:last-child { border-bottom: none; }
+      .tl-metrics { flex-direction: column; gap: 14px; }
     }
   </style>
 </head>
 <body>
-  <div class="top-strip">
-    <div class="inner">
-      <strong>FOCUS:</strong>
-      <span>Factory Digital Transformation • Business Development • LIMS • MES • Digital Twin • IT-OT Integration • Sustainability</span>
-    </div>
+ 
+  <div class="topbar">
+    <span class="topbar-track">
+      Singapore Permanent Resident
+      <span>◆</span>
+      Top 5 IT LinkedIn Influencer in Singapore
+      <span>◆</span>
+      21+ Years APAC Experience
+      <span>◆</span>
+      500K+ LinkedIn Views (12 months)
+      <span>◆</span>
+      Prashantkumar18@gmail.com &nbsp; +65 9391 4327
+      <span>◆</span>&nbsp;
+    </span>
   </div>
-
-  <header class="nav">
-    <div class="inner">
-      <div class="brand">
-        Prashant Kumar
-        <small>Dutyee | APAC Digital Transformation • Industrial Consulting • Thought Leadership</small>
+ 
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-left">
+        <strong>MBA · CSM · CISI</strong>
+        Digital Transformation<br>Industry 4.0 · APAC
       </div>
-      <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="videos.html">Videos</a>
-        <a href="articles.html">Articles</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="inner">
-      <div class="hero-main">
-        <span class="kicker">Cover Story</span>
+      <div class="masthead-center">
+        <p class="name-pre">The Official Site of</p>
         <h1>Prashant Kumar</h1>
-        <p>
-          APAC business development leader, factory digital transformation specialist, and industrial solutions consultant focused on turning complex technology into commercial outcomes across manufacturing, energy, chemicals, and enterprise transformation.
-        </p>
-        <p>
-          I work across LIMS, MES, Digital Twin, sustainability platforms, AI-led industrial use cases, and IT-OT integration, while also building market visibility through articles, videos, speaking, and high-value customer engagement.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="about.html">View Profile</a>
-          <a class="btn btn-secondary" href="contact.html">Contact Me</a>
-        </div>
+        <p class="tagline">Digital Transformation · IT-OT Integration · Industry 4.0</p>
       </div>
-
-      <div class="hero-side">
-        <div class="side-card">
-          <h3>At a Glance</h3>
-          <p>21+ years across APAC. Director of Business Development at Web Synergies and DX Consultant at Yokogawa, with a strong hunter profile, enterprise sales depth, and hands-on experience shaping large digital transformation programs.</p>
-        </div>
-        <div class="side-card">
-          <h3>Profile Highlights</h3>
-          <p>Singapore PR. Experience across Singapore, Indonesia, Malaysia, Thailand, Vietnam, Philippines, Cambodia, and Japan. Focused on manufacturing, BFSI, smart industry, sustainability, data platforms, and revenue-led solution strategy.</p>
-        </div>
+      <div class="masthead-right">
+        <div class="influencer-badge">SG Top 5 IT Influencer</div>
+        <div>Singapore, APAC</div>
+        <div style="margin-top:3px;">Prashantkumar18@gmail.com</div>
+        <div style="margin-top:3px;">+65 9391 4327</div>
       </div>
     </div>
-  </section>
-
-  <main class="content">
-    <section>
-      <div class="section-title">
-        <h2>Featured Stories</h2>
-        <a class="section-link" href="articles.html">View all insights</a>
+ 
+    <nav>
+      <div class="nav-inner">
+        <ul id="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-
-      <div class="posts-grid">
-        <article class="post-card">
-          <div class="post-thumb">Digital Twin & Factory Intelligence</div>
-          <div class="post-body">
-            <div class="meta">Signature Focus</div>
-            <h3><a href="articles.html">Helping factories move from disconnected data to business-led digital transformation</a></h3>
-            <p>My work sits at the intersection of sales, consulting, and transformation strategy, where digital twin, analytics, and industrial data become tools for measurable operational change.</p>
+    </nav>
+  </header>
+ 
+  <main class="page-wrap">
+ 
+    <section class="hero-grid">
+      <div class="hero-main">
+        <span class="hero-kicker">Feature Profile</span>
+        <h2 class="hero-headline">
+          Building the Future of <em>Smart Industry</em> Across APAC — One Deal at a Time
+        </h2>
+        <p class="hero-deck">
+          With 21+ years driving digital transformation across Banking, Smart Manufacturing, and Enterprise Systems in Singapore and ASEAN — Prashant Kumar bridges the gap between complex Industry 4.0 architecture and measurable business outcomes.
+        </p>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">21<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
           </div>
-        </article>
-
-        <article class="post-card">
-          <div class="post-thumb">LIMS & Laboratory Automation</div>
-          <div class="post-body">
-            <div class="meta">Platform Expertise</div>
-            <h3><a href="articles.html">LIMS, MES, sustainability, and IT-OT integration built around real operating needs</a></h3>
-            <p>From laboratory automation to plant visibility and ESG reporting, the strongest solutions are the ones operations teams can actually adopt and scale.</p>
+          <div class="stat-item">
+            <div class="stat-num">350<span>+</span></div>
+            <div class="stat-label">LinkedIn Articles</div>
           </div>
-        </article>
-
-        <article class="post-card">
-          <div class="post-thumb">MES & Execution Visibility</div>
-          <div class="post-body">
-            <div class="meta">Commercial Leadership</div>
-            <h3><a href="articles.html">Shaping pipelines, proposals, and enterprise deals across APAC industrial markets</a></h3>
-            <p>My background combines GTM planning, bid ownership, customer strategy, pricing discussions, and multi-country business development for transformation-led solutions.</p>
+          <div class="stat-item">
+            <div class="stat-num">300<span>+</span></div>
+            <div class="stat-label">Use Case Videos</div>
           </div>
-        </article>
-
-        <article class="post-card">
-          <div class="post-thumb">ESG, Energy & Compliance</div>
-          <div class="post-body">
-            <div class="meta">Thought Leadership</div>
-            <h3><a href="articles.html">Using content, articles, and video to create market trust before the first sales call</a></h3>
-            <p>My personal brand supports pipeline creation through practical industry writing, use-case videos, and sharp commentary on manufacturing and digital transformation.</p>
+          <div class="stat-item">
+            <div class="stat-num">$40<span>M</span></div>
+            <div class="stat-label">Max Single Deal</div>
           </div>
-        </article>
+        </div>
+      </div>
+      <div class="hero-sidebar">
+        <div>
+          <div class="sidebar-section-title">Core Expertise</div>
+          <ul class="expertise-list">
+            <li>Digital Twin Solutions</li>
+            <li>MES &amp; LIMS Implementation</li>
+            <li>IT-OT Integration</li>
+            <li>Core Banking Transformation</li>
+            <li>Energy Management (BMS/EMS)</li>
+            <li>Sustainability &amp; ESG Platforms</li>
+            <li>AI/ML &amp; Data Platforms</li>
+            <li>Wire Harness &amp; Smart Mfg</li>
+          </ul>
+        </div>
+        <div class="sidebar-quote">
+          "Recognised as a thought leader in Industry 4.0 — defining GTM for ASEAN digital solutions."
+        </div>
+        <a class="cta-btn" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank">
+          Connect on LinkedIn ↗
+        </a>
       </div>
     </section>
-
-    <aside class="sidebar">
-      <div class="widget">
-        <h3>Editor’s Note</h3>
-        <p>Prashant Kumar is an APAC business development and digital transformation leader with deep experience in Industry 4.0, smart manufacturing, enterprise sales, and customer-facing solution strategy.</p>
+ 
+    <div class="section-divider"><span>What I Do</span></div>
+ 
+    <section class="card-grid">
+      <div class="card-item">
+        <span class="card-num">01</span>
+        <span class="card-icon-tag">Business Development</span>
+        <h3 class="card-title">GTM Strategy &amp; Revenue Growth</h3>
+        <p class="card-body">Hunter-farmer profile with a proven record of opening new ASEAN markets, managing USD 100K–40M deal cycles, and closing large-scale IT and Industry 4.0 programs. Built multi-million dollar pipelines from ground zero.</p>
       </div>
-
-      <div class="widget">
-        <h3>Featured Topics</h3>
-        <div class="topics">
-          <span class="tag">Industry 4.0</span>
-          <span class="tag">LIMS</span>
-          <span class="tag">MES</span>
-          <span class="tag">Digital Twin</span>
-          <span class="tag">IT-OT</span>
-          <span class="tag">Factory AI</span>
-          <span class="tag">Sustainability</span>
-          <span class="tag">BFSI</span>
+      <div class="card-item">
+        <span class="card-num">02</span>
+        <span class="card-icon-tag">Digital Transformation</span>
+        <h3 class="card-title">Industry 4.0 &amp; Smart Manufacturing</h3>
+        <p class="card-body">Hands-on expertise across LIMS, MES, Digital Twin, data acquisition platforms, and AI/ML-driven analytics. Translates complex architectures into operational value for manufacturing, energy, and public sector clients.</p>
+      </div>
+      <div class="card-item">
+        <span class="card-num">03</span>
+        <span class="card-icon-tag">Thought Leadership</span>
+        <h3 class="card-title">Content, Influence &amp; Community</h3>
+        <p class="card-body">Singapore's Top 5 IT LinkedIn Influencer. 350+ published articles, 300+ use case videos, 500K+ views in the past year. Educating APAC professionals on the practical realities of digital transformation every day.</p>
+      </div>
+    </section>
+ 
+    <section class="tl-banner">
+      <div>
+        <div class="tl-banner-title">Thought Leadership That <em>Moves Markets</em></div>
+        <p class="tl-banner-sub">Prashant's daily content on Industry 4.0, digital strategy, and ASEAN business has built one of Singapore's most engaged professional audiences — generating qualified leads, opening doors, and shaping how enterprises think about transformation.</p>
+      </div>
+      <div class="tl-metrics">
+        <div>
+          <div class="tl-metric-val">500K</div>
+          <div class="tl-metric-label">LinkedIn Views<br>(12 Months)</div>
+        </div>
+        <div>
+          <div class="tl-metric-val">200M</div>
+          <div class="tl-metric-label">Leads Generated<br>at 5% Cost</div>
         </div>
       </div>
-
-      <div class="widget">
-        <h3>Quick Facts</h3>
-        <div class="mini-post">
-          <h4><a href="about.html">21+ years across sales, delivery, consulting, and transformation</a></h4>
-          <p>APAC leadership and market expansion</p>
-        </div>
-        <div class="mini-post">
-          <h4><a href="articles.html">3000+ posts, 200+ public articles, and strong LinkedIn reach</a></h4>
-          <p>Thought leadership and personal brand</p>
-        </div>
-        <div class="mini-post">
-          <h4><a href="videos.html">Video-led storytelling on factory digital transformation</a></h4>
-          <p>Use cases, trends, and practical insight</p>
-        </div>
+    </section>
+ 
+    <div class="section-divider"><span>Career Highlights</span></div>
+ 
+    <section class="feature-row">
+      <div class="feature-main">
+        <span class="feature-kicker">APAC Track Record</span>
+        <h3 class="feature-title">From Private Equity in London to Industry 4.0 in Singapore</h3>
+        <p class="feature-body">
+          A career spanning financial modelling for USD 1bn London Stock Exchange fundraises, building SaaS marketing automation from scratch in India, and leading digital transformation mandates across Singapore, Indonesia, Malaysia, Thailand, and the Philippines.
+          <br><br>
+          Currently driving Yokogawa's smart industry digital solutions across APAC as DX Consultant — while simultaneously leading business development at Web Synergies, building the ASEAN pipeline for cutting-edge manufacturing intelligence platforms.
+        </p>
       </div>
-
-      <div class="widget">
-        <h3>Connect</h3>
-        <p>Email: prashantkumar18@gmail.com</p>
-        <p style="margin-top:8px;">Mobile: +65 9391 4327</p>
-        <p style="margin-top:8px;">LinkedIn: linkedin.com/in/prashant-kumar-digital</p>
+      <div class="feature-side">
+        <div class="timeline-label">Career Timeline</div>
+        <ul class="timeline">
+          <li><span class="tl-year">2024–Now</span><div><div class="tl-role">DX Consultant</div><div class="tl-company">Yokogawa, Singapore</div></div></li>
+          <li><span class="tl-year">2023–Now</span><div><div class="tl-role">Director, Business Development</div><div class="tl-company">Web Synergies, Singapore</div></div></li>
+          <li><span class="tl-year">2022</span><div><div class="tl-role">Senior Account Executive</div><div class="tl-company">K2 Partnering Solutions</div></div></li>
+          <li><span class="tl-year">2019–22</span><div><div class="tl-role">Customer Success Director</div><div class="tl-company">SelfDrvn Enterprise, APAC</div></div></li>
+          <li><span class="tl-year">2015–19</span><div><div class="tl-role">Head of Technology</div><div class="tl-company">CBLD &amp; TalentGuard</div></div></li>
+          <li><span class="tl-year">2011–15</span><div><div class="tl-role">Business Head / Founder Director</div><div class="tl-company">ADVANTE 360, India</div></div></li>
+          <li><span class="tl-year">2007–11</span><div><div class="tl-role">Asset Manager</div><div class="tl-company">Trinity Capital, UK/India/USA</div></div></li>
+        </ul>
       </div>
-    </aside>
-  </main>
-
-  <footer class="footer">
-    <div class="inner">
-      <div class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="videos.html">Videos</a>
-        <a href="articles.html">Articles</a>
-        <a href="contact.html">Contact</a>
+    </section>
+ 
+    <div class="section-divider"><span>Industry Coverage</span></div>
+ 
+    <section class="sectors-grid">
+      <div class="sector-item">
+        <div class="sector-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="sector-name">Smart Manufacturing</div>
+        <div class="sector-desc">MES, Wire Harness, Digital Twin, Asset Health Monitoring</div>
       </div>
-      <p>© 2026 Dutyee. A magazine-style personal platform for Prashant Kumar covering digital transformation, smart industry, commercial strategy, and APAC market insight.</p>
+      <div class="sector-item">
+        <div class="sector-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="sector-name">Banking &amp; FSI</div>
+        <div class="sector-desc">Core Banking, Payments, AML, Digital Banking Transformation</div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="sector-name">Energy &amp; Sustainability</div>
+        <div class="sector-desc">EMS, BMS, Data Centers, ESG Platforms, Net Zero</div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+        <div class="sector-name">ASEAN Market Entry</div>
+        <div class="sector-desc">SG, Indonesia, Malaysia, Thailand, Philippines, Vietnam</div>
+      </div>
+    </section>
+ 
+    <section class="cert-row">
+      <div class="cert-label">Education &amp; Certs</div>
+      <div class="cert-pills">
+        <span class="cert-pill">MBA — ICFAI Business School</span>
+        <span class="cert-pill">PG Diploma — Columbia / MIT</span>
+        <span class="cert-pill">Certified ScrumMaster®</span>
+        <span class="cert-pill">CISI — Securities &amp; Investment</span>
+        <span class="cert-pill">Gainsight CS Advanced</span>
+        <span class="cert-pill">CEI (KAH)</span>
+      </div>
+    </section>
+ 
+    <div class="contact-strip">
+      <div class="contact-strip-left">Ready to <span>Transform</span> Your Business?</div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:Prashantkumar18@gmail.com">Email Me</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank">LinkedIn</a>
+        <a class="contact-link primary" href="contact.html">Get In Touch →</a>
+      </div>
     </div>
+ 
+  </main>
+ 
+  <footer>
+    <strong>© 2026 Prashant Kumar</strong> &nbsp;·&nbsp; Digital Transformation Leader &nbsp;·&nbsp; Singapore, APAC<br>
+    MBA · CSM · CISI &nbsp;·&nbsp; +65 9391 4327
   </footer>
+ 
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    // Close when a link is tapped
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    // Close on outside tap
+    document.addEventListener('click', e => {
+      if (!e.target.closest('nav')) {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+ 
 </body>
 </html>
