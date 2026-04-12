@@ -502,31 +502,45 @@
     <strong>© 2026 Prashant Kumar</strong> &nbsp;·&nbsp; Digital Transformation Leader &nbsp;·&nbsp; Singapore, APAC<br>
     MBA · CSM · CISI &nbsp;·&nbsp; +65 9391 4327
   </footer>
- 
-  <script>
-    const toggle = document.getElementById('nav-toggle');
-    const menu   = document.getElementById('nav-menu');
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', isOpen);
-      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    });
-    // Close when a link is tapped
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('nav-menu');
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('nav')) {
       menu.classList.remove('open');
       toggle.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
-    }));
-    // Close on outside tap
-    document.addEventListener('click', e => {
-      if (!e.target.closest('nav')) {
-        menu.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  </script>
+    }
+  });
+</script>
+
+<!-- ✅ WhatsApp Container -->
+<div id="whatsapp-container"></div>
+
+<script>
+fetch('whatsapp.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('whatsapp-container').innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
  
 </body>
 </html>
