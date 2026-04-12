@@ -279,6 +279,15 @@
     }
   </style>
 </head>
+  <div id="whatsapp-container"></div>
+
+<script>
+fetch('whatsapp.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('whatsapp-container').innerHTML = data;
+  });
+</script>
 <body>
  
   <div class="topbar">
