@@ -1,40 +1,1467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prashant Kumar | Digital Transformation Leader</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0a1628;
-      --gold: #c8a44a;
-      --gold-light: #e8c97a;
-      --gold-pale: #fdf6e8;
-      --cream: #f8f5ef;
-      --white: #ffffff;
-      --text-dark: #1a1a2e;
-      --text-mid: #4a4a6a;
-      --text-muted: #8a8aaa;
-      --accent-teal: #0d7a6b;
-      --border: #e0dbd0;
+
+    :root{
+      --ink:#08111f;
+      --ink-2:#10203a;
+      --ink-3:#183054;
+      --gold:#d0aa57;
+      --gold-light:#e7c676;
+      --paper:#f5efe4;
+      --paper-2:#efe4cf;
+      --white:#ffffff;
+      --text:#182033;
+      --text-mid:#55607a;
+      --text-soft:#7f899f;
+      --line:#d9cfbf;
+      --accent:#0c7a69;
+      --accent-2:#8fb4ff;
+      --max:1180px;
+      --shadow:0 14px 30px rgba(0,0,0,0.08);
     }
+
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
- 
-    /* TOP BAR */
-    .topbar { background: var(--navy); color: rgba(255,255,255,0.65); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 16px; font-family: 'DM Mono', monospace; overflow: hidden; white-space: nowrap; }
-    .topbar-track { display: inline-block; animation: marquee 30s linear infinite; }
-    .topbar-track span { color: var(--gold); margin: 0 8px; }
-    @keyframes marquee { from { transform: translateX(50vw); } to { transform: translateX(-100%); } }
-    @media (min-width: 900px) {
-      .topbar { text-align: center; white-space: normal; overflow: visible; }
-      .topbar-track { animation: none; }
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:linear-gradient(180deg,#f8f2e8 0%,#f4eee3 100%);
+      color:var(--text);
+      font-size:15px;
+      line-height:1.55;
+      overflow-x:hidden;
     }
- 
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; }
+
+    /* TOP STRIP */
+    .topbar{
+      background:linear-gradient(90deg,#050b14,#0b1628 55%,#050b14);
+      color:rgba(255,255,255,0.72);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      padding:7px 14px;
+    }
+
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .topbar-left span{ color:var(--gold-light); margin:0 6px; }
+    .edition-badge{
+      padding:5px 10px;
+      border:1px solid rgba(255,255,255,0.14);
+      color:var(--gold-light);
+      background:rgba(255,255,255,0.03);
+      font-size:9px;
+    }
+
     /* MASTHEAD */
-    .masthead { background: var(--white); border-bottom: 3px solid var(--navy); }
+    .masthead{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.94)),
+        linear-gradient(120deg, #f4ebdd, #fff);
+      border-bottom:3px solid var(--ink);
+    }
+
+    .masthead-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:18px;
+      align-items:end;
+      padding:16px 24px 10px;
+    }
+
+    .masthead-left,
+    .masthead-right{
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      line-height:1.5;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--text-soft);
+    }
+
+    .masthead-left strong{
+      display:block;
+      color:var(--accent);
+      font-size:11px;
+      margin-bottom:2px;
+    }
+
+    .masthead-center{ text-align:center; }
+    .name-pre{
+      font-family:'DM Mono',monospace;
+      font-size:9px;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+      color:var(--text-soft);
+      margin-bottom:4px;
+    }
+
+    .masthead-center h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(34px,6vw,72px);
+      line-height:.95;
+      color:var(--ink);
+      letter-spacing:-.03em;
+    }
+
+    .tagline{
+      margin-top:6px;
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .lang-box{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:8px;
+      margin-top:8px;
+      flex-wrap:wrap;
+    }
+
+    .lang-box label{
+      font-size:9px;
+      color:var(--text-soft);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-family:'DM Mono',monospace;
+    }
+
+    .lang-select{
+      background:var(--white);
+      border:1px solid var(--line);
+      color:var(--ink);
+      padding:7px 10px;
+      font-size:11px;
+      min-height:36px;
+      font-family:'DM Sans',sans-serif;
+    }
+
+    /* NAV */
+    nav{
+      background:var(--white);
+      border-top:1px solid var(--line);
+      border-bottom:2px solid var(--ink);
+      position:relative;
+    }
+
+    .nav-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 24px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:0;
+    }
+
+    nav ul li a{
+      display:flex;
+      align-items:center;
+      min-height:46px;
+      padding:12px 16px;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--text-mid);
+      position:relative;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active{ color:var(--ink); }
+
+    nav ul li a.active::after{
+      content:"";
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:0;
+      height:2px;
+      background:var(--gold);
+    }
+
+    .nav-toggle{
+      display:none;
+      border:none;
+      background:none;
+      min-width:44px;
+      min-height:44px;
+      cursor:pointer;
+      flex-direction:column;
+      justify-content:center;
+      gap:4px;
+    }
+
+    .nav-toggle span{
+      width:24px;
+      height:2px;
+      background:var(--ink);
+      display:block;
+    }
+
+    /* PAGE */
+    .page-wrap{ padding:22px 24px 28px; }
+
+    .section-divider{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 14px;
+    }
+
+    .section-divider::before,
+    .section-divider::after{
+      content:"";
+      height:1px;
+      flex:1;
+      background:var(--ink);
+    }
+
+    .section-divider span{
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--ink);
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    /* HERO */
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.35fr .85fr;
+      margin-bottom:22px;
+      border:1.5px solid var(--ink);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-main{
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+        linear-gradient(180deg, #091426 0%, #10213b 100%);
+      color:var(--white);
+      padding:26px 24px 22px;
+      border-right:1.5px solid rgba(255,255,255,0.10);
+      position:relative;
+    }
+
+    .hero-kicker{
+      display:inline-block;
+      background:var(--gold);
+      color:var(--ink);
+      font-size:9px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      padding:4px 10px;
+      margin-bottom:14px;
+    }
+
+    .hero-headline{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(28px,4vw,52px);
+      line-height:1.02;
+      margin-bottom:12px;
+      letter-spacing:-.02em;
+      max-width:780px;
+    }
+
+    .hero-headline em{ color:var(--gold-light); font-style:italic; }
+
+    .hero-deck{
+      max-width:760px;
+      color:rgba(255,255,255,0.78);
+      font-size:14px;
+      line-height:1.7;
+      padding-left:14px;
+      border-left:3px solid var(--gold);
+      margin-bottom:18px;
+    }
+
+    .hero-split{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+      margin-bottom:16px;
+    }
+
+    .hero-note{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:14px;
+    }
+
+    .hero-note h3{
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-family:'DM Mono',monospace;
+      color:var(--gold-light);
+      margin-bottom:8px;
+    }
+
+    .hero-note p{
+      font-size:13px;
+      color:rgba(255,255,255,0.82);
+      line-height:1.6;
+    }
+
+    .stat-row{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:0;
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding-top:14px;
+    }
+
+    .stat-item{ padding-right:10px; }
+    .stat-item + .stat-item{
+      border-left:1px solid rgba(255,255,255,0.12);
+      padding-left:10px;
+    }
+
+    .stat-num{
+      font-family:'Playfair Display',serif;
+      font-size:28px;
+      line-height:1;
+      color:var(--white);
+      font-weight:900;
+    }
+
+    .stat-num span{ color:var(--gold-light); }
+
+    .stat-label{
+      margin-top:4px;
+      font-size:9px;
+      line-height:1.4;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.60);
+    }
+
+    .hero-sidebar{
+      background:linear-gradient(180deg, #f5ecdc 0%, #ead9bb 100%);
+      color:var(--text);
+      padding:22px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .sidebar-section-title{
+      font-size:9px;
+      font-family:'DM Mono',monospace;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--ink);
+      border-bottom:1px solid rgba(8,17,31,0.14);
+      padding-bottom:8px;
+      font-weight:700;
+    }
+
+    .expertise-list{ list-style:none; display:grid; gap:0; }
+    .expertise-list li{
+      padding:8px 0;
+      font-size:13px;
+      border-bottom:1px solid rgba(8,17,31,0.10);
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      color:var(--text);
+    }
+
+    .expertise-list li::before{
+      content:"■";
+      color:var(--gold);
+      font-size:9px;
+      margin-top:4px;
+    }
+
+    .sidebar-quote{
+      background:rgba(8,17,31,0.06);
+      border-left:3px solid var(--accent);
+      padding:12px 12px;
+      font-family:'Playfair Display',serif;
+      font-style:italic;
+      color:var(--ink);
+      line-height:1.55;
+      font-size:13px;
+    }
+
+    .cta-btn{
+      min-height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      background:var(--ink);
+      color:var(--gold-light);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .cta-btn:hover{ background:var(--ink-3); }
+
+    /* CARD GRID */
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border:1.5px solid var(--ink);
+      margin-bottom:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .card-item{
+      position:relative;
+      padding:22px 18px 18px;
+      border-right:1px solid var(--ink);
+      min-height:220px;
+    }
+
+    .card-item:nth-child(1){ background:var(--white); }
+    .card-item:nth-child(2){ background:linear-gradient(180deg,#f3ead9,#ece0c8); }
+    .card-item:nth-child(3){ background:linear-gradient(180deg,#0e1b31,#132947); color:var(--white); }
+
+    .card-item:last-child{ border-right:none; }
+
+    .card-num{
+      position:absolute;
+      top:10px;
+      right:12px;
+      font-family:'Playfair Display',serif;
+      font-size:40px;
+      line-height:1;
+      font-weight:900;
+      opacity:.12;
+    }
+
+    .card-item:nth-child(3) .card-num{ color:#fff; opacity:.10; }
+    .card-item:not(:nth-child(3)) .card-num{ color:var(--ink); }
+
+    .card-icon-tag{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:3px 9px;
+      font-size:9px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      background:var(--accent);
+      color:#fff;
+    }
+
+    .card-title{
+      font-family:'Playfair Display',serif;
+      font-size:19px;
+      line-height:1.22;
+      margin-bottom:8px;
+    }
+
+    .card-body{
+      font-size:13px;
+      line-height:1.65;
+      color:inherit;
+      opacity:.88;
+    }
+
+    /* BANNER */
+    .tl-banner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
+      background:
+        linear-gradient(135deg, rgba(208,170,87,0.10), rgba(208,170,87,0)),
+        linear-gradient(180deg, #060d18 0%, #0d1a2f 100%);
+      color:#fff;
+      padding:24px 24px;
+      border:1.5px solid var(--ink);
+      margin-bottom:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .tl-banner-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(22px,3vw,34px);
+      line-height:1.12;
+      margin-bottom:8px;
+    }
+
+    .tl-banner-title em{ color:var(--gold-light); font-style:italic; }
+
+    .tl-banner-sub{
+      font-size:13px;
+      line-height:1.7;
+      color:rgba(255,255,255,.74);
+      max-width:760px;
+    }
+
+    .tl-metrics{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .tl-metric-val{
+      font-family:'Playfair Display',serif;
+      font-size:34px;
+      line-height:1;
+      color:var(--gold-light);
+      font-weight:900;
+    }
+
+    .tl-metric-label{
+      margin-top:4px;
+      font-size:10px;
+      line-height:1.4;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      color:rgba(255,255,255,.55);
+    }
+
+    /* FEATURE ROW */
+    .feature-row{
+      display:grid;
+      grid-template-columns:1.6fr .9fr;
+      border:1.5px solid var(--ink);
+      margin-bottom:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .feature-main{
+      background:var(--white);
+      padding:22px 22px 18px;
+      border-right:1.5px solid var(--ink);
+    }
+
+    .feature-side{
+      background:linear-gradient(180deg,#f0dfc1 0%, #e7d1ab 100%);
+      padding:20px 18px;
+    }
+
+    .feature-kicker{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:3px 9px;
+      background:var(--ink);
+      color:var(--gold-light);
+      font-size:9px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    .feature-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(22px,2.6vw,30px);
+      line-height:1.15;
+      margin-bottom:10px;
+      color:var(--ink);
+    }
+
+    .feature-body{
+      font-size:13px;
+      line-height:1.7;
+      color:var(--text-mid);
+    }
+
+    .timeline-label{
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      color:var(--ink);
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .timeline{ list-style:none; display:grid; gap:0; }
+    .timeline li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:10px 0;
+      border-bottom:1px solid rgba(8,17,31,0.10);
+    }
+
+    .timeline li:last-child{ border-bottom:none; }
+
+    .tl-year{
+      min-width:56px;
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      letter-spacing:.06em;
+      color:var(--accent);
+      font-weight:700;
+      padding-top:2px;
+    }
+
+    .tl-role{
+      font-size:12px;
+      line-height:1.35;
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    .tl-company{
+      font-size:11px;
+      color:var(--text-soft);
+      margin-top:2px;
+    }
+
+    /* SECTORS */
+    .sectors-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border:1.5px solid var(--ink);
+      margin-bottom:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .sector-item{
+      padding:18px 14px 16px;
+      border-right:1px solid var(--ink);
+      text-align:center;
+    }
+
+    .sector-item:nth-child(1),
+    .sector-item:nth-child(4){ background:var(--white); }
+
+    .sector-item:nth-child(2),
+    .sector-item:nth-child(3){ background:var(--paper-2); }
+
+    .sector-item:last-child{ border-right:none; }
+
+    .sector-icon{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:var(--ink);
+      color:var(--gold-light);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 10px;
+      font-family:'Playfair Display',serif;
+      font-size:16px;
+      font-weight:700;
+    }
+
+    .sector-name{
+      font-family:'Playfair Display',serif;
+      font-size:15px;
+      line-height:1.2;
+      margin-bottom:4px;
+      color:var(--ink);
+    }
+
+    .sector-desc{
+      font-size:11px;
+      line-height:1.5;
+      color:var(--text-mid);
+    }
+
+    /* CREDENTIALS */
+    .cert-row{
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      flex-wrap:wrap;
+      background:linear-gradient(180deg,#0b1729,#12213a);
+      border:1.5px solid var(--ink);
+      padding:18px 18px;
+      margin-bottom:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .cert-label{
+      min-width:110px;
+      color:rgba(255,255,255,0.55);
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      padding-top:7px;
+    }
+
+    .cert-pills{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      flex:1;
+    }
+
+    .cert-pill{
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      padding:7px 12px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      color:var(--gold-light);
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.04em;
+    }
+
+    /* CONTACT */
+    .contact-strip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      background:linear-gradient(90deg,#08111f,#0f213c 60%,#08111f);
+      border:1.5px solid var(--ink);
+      padding:18px 18px;
+      margin-bottom:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-strip-left{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      line-height:1.2;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .contact-strip-left span{ color:var(--gold-light); }
+
+    .contact-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .contact-link{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,0.18);
+      color:rgba(255,255,255,0.75);
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-weight:700;
+    }
+
+    .contact-link.primary{
+      background:var(--gold);
+      color:var(--ink);
+      border-color:var(--gold);
+    }
+
+    /* FOOTER */
+    footer{
+      background:var(--ink);
+      color:rgba(255,255,255,0.44);
+      border-top:3px solid var(--gold);
+      text-align:center;
+      padding:16px 18px;
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      line-height:1.9;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    footer strong{ color:rgba(255,255,255,0.72); }
+
+    /* TABLET */
+    @media (max-width:1024px){
+      .masthead-inner{
+        grid-template-columns:1fr auto;
+        align-items:center;
+      }
+
+      .masthead-right{ display:none; }
+      .masthead-left{ text-align:right; }
+
+      .hero-grid,
+      .feature-row,
+      .tl-banner{
+        grid-template-columns:1fr;
+      }
+
+      .hero-main,
+      .feature-main{
+        border-right:none;
+        border-bottom:1.5px solid var(--ink);
+      }
+
+      .card-grid{ grid-template-columns:1fr 1fr; }
+      .card-item:nth-child(2){ border-right:none; }
+      .card-item:nth-child(3){
+        grid-column:1 / -1;
+        border-top:1px solid var(--ink);
+      }
+
+      .sectors-grid{ grid-template-columns:1fr 1fr; }
+      .sector-item:nth-child(2){ border-right:none; }
+      .sector-item:nth-child(3),
+      .sector-item:nth-child(4){ border-top:1px solid var(--ink); }
+      .sector-item:nth-child(4){ border-right:none; }
+
+      .stat-row{ grid-template-columns:repeat(2,1fr); gap:10px; }
+      .stat-item + .stat-item{ border-left:none; padding-left:0; }
+      .stat-item{
+        border-bottom:1px solid rgba(255,255,255,0.10);
+        padding-bottom:10px;
+      }
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4){ border-bottom:none; }
+    }
+
+    /* MOBILE */
+    @media (max-width:640px){
+      .masthead-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:14px 16px 10px;
+        gap:8px;
+      }
+
+      .masthead-left{
+        order:3;
+        text-align:center;
+      }
+
+      .masthead-center{ order:1; }
+      .masthead-center h1{ font-size:clamp(30px,12vw,46px); }
+      .tagline{ font-size:9px; letter-spacing:.10em; }
+
+      .lang-box{ justify-content:center; }
+
+      .nav-toggle{ display:flex; }
+
+      .nav-inner{ padding:0 16px; }
+
+      nav ul{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:var(--white);
+        border-bottom:2px solid var(--ink);
+        flex-direction:column;
+        display:none;
+        z-index:10;
+      }
+
+      nav ul.open{ display:flex; }
+      nav ul li{ border-bottom:1px solid var(--line); }
+      nav ul li:last-child{ border-bottom:none; }
+      nav ul li a{
+        min-height:50px;
+        padding:14px 18px;
+        font-size:12px;
+      }
+
+      nav ul li a.active::after{ display:none; }
+      nav ul li a.active{ background:var(--paper); }
+
+      .page-wrap{ padding:16px; }
+
+      .hero-main,
+      .hero-sidebar,
+      .feature-main,
+      .feature-side,
+      .tl-banner{
+        padding:18px 16px;
+      }
+
+      .hero-split{ grid-template-columns:1fr; gap:10px; }
+      .hero-headline{ font-size:clamp(24px,8vw,36px); }
+      .hero-deck{ font-size:13px; }
+
+      .card-grid{ grid-template-columns:1fr; }
+      .card-item{
+        border-right:none !important;
+        border-bottom:1px solid var(--ink);
+        min-height:auto;
+      }
+      .card-item:last-child{ border-bottom:none; }
+
+      .sectors-grid{ grid-template-columns:1fr 1fr; }
+      .contact-strip{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .contact-links{ width:100%; }
+      .contact-link{ flex:1 1 calc(50% - 10px); }
+
+      .tl-metrics{
+        width:100%;
+        justify-content:space-between;
+      }
+    }
+
+    @media (max-width:380px){
+      .sectors-grid{ grid-template-columns:1fr; }
+      .sector-item{
+        border-right:none !important;
+        border-bottom:1px solid var(--ink);
+      }
+      .sector-item:last-child{ border-bottom:none; }
+      .contact-link{ flex:1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        Singapore <span>◆</span> APAC <span>◆</span> Digital Transformation <span>◆</span> IT + IT-OT <span>◆</span> Industry 4.0
+      </div>
+      <div class="edition-badge" id="editionLabel">Global Edition</div>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-left">
+        <strong>MBA · CSM · CISI</strong>
+        Business Growth<br>Industry 4.0 · APAC
+      </div>
+
+      <div class="masthead-center">
+        <p class="name-pre" data-i18n="namePre">The Official Site of</p>
+        <h1>Prashant Kumar</h1>
+        <p class="tagline" data-i18n="tagline">Digital Transformation · IT · IT-OT Integration · Industry 4.0</p>
+      </div>
+
+      <div class="masthead-right">
+        <div>Singapore, APAC</div>
+        <div style="margin-top:3px;">prashantkumar18@gmail.com</div>
+        <div style="margin-top:3px;">+65 9391 4327</div>
+        <div class="lang-box">
+          <label for="langSwitch">Language</label>
+          <select id="langSwitch" class="lang-select">
+            <option value="en">English</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+            <option value="th">Thai</option>
+            <option value="vi">Vietnamese</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
+            <option value="es">Spanish</option>
+            <option value="ar">Arabic</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-inner">
+        <ul id="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-wrap wrap">
+
+    <section class="hero-grid">
+      <div class="hero-main">
+        <span class="hero-kicker" data-i18n="heroKicker">Cover Story</span>
+
+        <h2 class="hero-headline" data-i18n="heroHeadline">
+          Building digital growth across <em>IT, IT-OT, and smart industry</em>.
+        </h2>
+
+        <p class="hero-deck" data-i18n="heroDeck">
+          Prashant Kumar works at the intersection of business development, enterprise technology, plant systems, and digital transformation across APAC.
+        </p>
+
+        <div class="hero-split">
+          <div class="hero-note">
+            <h3 data-i18n="note1Title">At a Glance</h3>
+            <p data-i18n="note1Body">
+              Not only IT-OT. This profile also covers core IT, digital strategy, commercial growth, and enterprise transformation.
+            </p>
+          </div>
+
+          <div class="hero-note">
+            <h3 data-i18n="note2Title">Focus Area</h3>
+            <p data-i18n="note2Body">
+              Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, sustainability, and connected business systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">21<span>+</span></div>
+            <div class="stat-label" data-i18n="stat1">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">APAC</div>
+            <div class="stat-label" data-i18n="stat2">Regional Coverage</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">IT<span>+</span>OT</div>
+            <div class="stat-label" data-i18n="stat3">Transformation Lens</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">LIMS</div>
+            <div class="stat-label" data-i18n="stat4">MES · Twin · Data</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-sidebar">
+        <div>
+          <div class="sidebar-section-title" data-i18n="expertiseTitle">Core Expertise</div>
+          <ul class="expertise-list">
+            <li data-i18n="exp1">Digital Transformation Strategy</li>
+            <li data-i18n="exp2">IT and Enterprise Platforms</li>
+            <li data-i18n="exp3">IT-OT Integration</li>
+            <li data-i18n="exp4">LIMS and MES</li>
+            <li data-i18n="exp5">Digital Twin Solutions</li>
+            <li data-i18n="exp6">Sustainability and ESG</li>
+            <li data-i18n="exp7">AI, Data, and Automation</li>
+            <li data-i18n="exp8">Business Development Across APAC</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-quote" data-i18n="quote">
+          Digital transformation only works when business goals, IT systems, and operations move together.
+        </div>
+
+        <a class="cta-btn" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank" rel="noreferrer" data-i18n="ctaLinkedIn">
+          Connect on LinkedIn ↗
+        </a>
+      </aside>
+    </section>
+
+    <div class="section-divider"><span data-i18n="divider1">What I Do</span></div>
+
+    <section class="card-grid">
+      <article class="card-item">
+        <span class="card-num">01</span>
+        <span class="card-icon-tag" data-i18n="cardTag1">Business</span>
+        <h3 class="card-title" data-i18n="cardTitle1">Growth, GTM, and revenue development</h3>
+        <p class="card-body" data-i18n="cardBody1">
+          Building opportunities, opening accounts, and shaping solution-led growth across enterprise and industrial markets.
+        </p>
+      </article>
+
+      <article class="card-item">
+        <span class="card-num">02</span>
+        <span class="card-icon-tag" data-i18n="cardTag2">Transformation</span>
+        <h3 class="card-title" data-i18n="cardTitle2">IT, IT-OT, and digital execution</h3>
+        <p class="card-body" data-i18n="cardBody2">
+          Turning digital strategy into workable platforms covering data, processes, plant visibility, and connected systems.
+        </p>
+      </article>
+
+      <article class="card-item">
+        <span class="card-num">03</span>
+        <span class="card-icon-tag" data-i18n="cardTag3">Influence</span>
+        <h3 class="card-title" data-i18n="cardTitle3">Thought leadership with commercial value</h3>
+        <p class="card-body" data-i18n="cardBody3">
+          Content, positioning, and industry communication that supports credibility, trust, and business conversations.
+        </p>
+      </article>
+    </section>
+
+    <section class="tl-banner">
+      <div>
+        <div class="tl-banner-title" data-i18n="bannerTitle">
+          Digital manufacturing intelligence <em>should lead the story</em>
+        </div>
+        <p class="tl-banner-sub" data-i18n="bannerBody">
+          This is where plant data, enterprise systems, operational visibility, and decision-making come together to create real execution value.
+        </p>
+      </div>
+
+      <div class="tl-metrics">
+        <div>
+          <div class="tl-metric-val">IT</div>
+          <div class="tl-metric-label" data-i18n="metric1">Enterprise Systems</div>
+        </div>
+        <div>
+          <div class="tl-metric-val">OT</div>
+          <div class="tl-metric-label" data-i18n="metric2">Plant and Process Data</div>
+        </div>
+        <div>
+          <div class="tl-metric-val">DX</div>
+          <div class="tl-metric-label" data-i18n="metric3">Transformation Execution</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><span data-i18n="divider2">Career Highlights</span></div>
+
+    <section class="feature-row">
+      <div class="feature-main">
+        <span class="feature-kicker" data-i18n="featureKicker">Feature</span>
+        <h3 class="feature-title" data-i18n="featureTitle">
+          A profile built across business, enterprise IT, and industrial transformation.
+        </h3>
+        <p class="feature-body" data-i18n="featureBody">
+          The value is not only technical positioning. It is the ability to connect customer need, commercial direction, solution design, and execution in one narrative.
+        </p>
+      </div>
+
+      <aside class="feature-side">
+        <div class="timeline-label" data-i18n="timelineTitle">Editorial Timeline</div>
+        <ul class="timeline">
+          <li>
+            <div class="tl-year">APAC</div>
+            <div>
+              <div class="tl-role" data-i18n="time1Role">Regional business development</div>
+              <div class="tl-company" data-i18n="time1Comp">Enterprise, manufacturing, and transformation focus</div>
+            </div>
+          </li>
+          <li>
+            <div class="tl-year">IT</div>
+            <div>
+              <div class="tl-role" data-i18n="time2Role">Enterprise technology positioning</div>
+              <div class="tl-company" data-i18n="time2Comp">Applications, integrations, platforms, and digital workflows</div>
+            </div>
+          </li>
+          <li>
+            <div class="tl-year">OT</div>
+            <div>
+              <div class="tl-role" data-i18n="time3Role">Industry 4.0 and operations systems</div>
+              <div class="tl-company" data-i18n="time3Comp">LIMS, MES, Digital Twin, visibility, and plant data</div>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="section-divider"><span data-i18n="divider3">Key Sectors</span></div>
+
+    <section class="sectors-grid">
+      <div class="sector-item">
+        <div class="sector-icon">I</div>
+        <div class="sector-name" data-i18n="sector1">Industrial</div>
+        <div class="sector-desc" data-i18n="sector1Desc">Smart manufacturing, quality, process, and operations visibility.</div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon">E</div>
+        <div class="sector-name" data-i18n="sector2">Enterprise IT</div>
+        <div class="sector-desc" data-i18n="sector2Desc">Applications, data, digital workflows, and business system integration.</div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon">S</div>
+        <div class="sector-name" data-i18n="sector3">Sustainability</div>
+        <div class="sector-desc" data-i18n="sector3Desc">ESG platforms, reporting, energy visibility, and responsible operations.</div>
+      </div>
+      <div class="sector-item">
+        <div class="sector-icon">A</div>
+        <div class="sector-name" data-i18n="sector4">APAC Growth</div>
+        <div class="sector-desc" data-i18n="sector4Desc">Market development, partnerships, solution shaping, and account expansion.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"><span data-i18n="divider4">Credentials</span></div>
+
+    <section class="cert-row">
+      <div class="cert-label" data-i18n="credLabel">Highlights</div>
+      <div class="cert-pills">
+        <div class="cert-pill">MBA</div>
+        <div class="cert-pill">CSM</div>
+        <div class="cert-pill">CISI</div>
+        <div class="cert-pill" data-i18n="pill1">Digital Transformation</div>
+        <div class="cert-pill" data-i18n="pill2">IT + IT-OT</div>
+        <div class="cert-pill" data-i18n="pill3">LIMS / MES / Twin</div>
+        <div class="cert-pill" data-i18n="pill4">APAC Business Development</div>
+      </div>
+    </section>
+
+    <section class="contact-strip">
+      <div class="contact-strip-left" data-i18n="contactLine">
+        Let’s build the next <span>digital growth story</span>.
+      </div>
+
+      <div class="contact-links">
+        <a class="contact-link primary" href="mailto:prashantkumar18@gmail.com">Email</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="contact-link" href="videos.html">Videos</a>
+        <a class="contact-link" href="articles.html">Articles</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Prashant Kumar</strong> · Digital Transformation · IT · IT-OT Integration · Industry 4.0 · APAC
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const expanded = navMenu.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
+
+    const translations = {
+      en: {
+        edition: "Global Edition",
+        namePre: "The Official Site of",
+        tagline: "Digital Transformation · IT · IT-OT Integration · Industry 4.0",
+        heroKicker: "Cover Story",
+        heroHeadline: "Building digital growth across <em>IT, IT-OT, and smart industry</em>.",
+        heroDeck: "Prashant Kumar works at the intersection of business development, enterprise technology, plant systems, and digital transformation across APAC.",
+        note1Title: "At a Glance",
+        note1Body: "Not only IT-OT. This profile also covers core IT, digital strategy, commercial growth, and enterprise transformation.",
+        note2Title: "Focus Area",
+        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, sustainability, and connected business systems.",
+        stat1: "Years Experience",
+        stat2: "Regional Coverage",
+        stat3: "Transformation Lens",
+        stat4: "MES · Twin · Data",
+        expertiseTitle: "Core Expertise",
+        exp1: "Digital Transformation Strategy",
+        exp2: "IT and Enterprise Platforms",
+        exp3: "IT-OT Integration",
+        exp4: "LIMS and MES",
+        exp5: "Digital Twin Solutions",
+        exp6: "Sustainability and ESG",
+        exp7: "AI, Data, and Automation",
+        exp8: "Business Development Across APAC",
+        quote: "Digital transformation only works when business goals, IT systems, and operations move together.",
+        ctaLinkedIn: "Connect on LinkedIn ↗",
+        divider1: "What I Do",
+        cardTag1: "Business",
+        cardTitle1: "Growth, GTM, and revenue development",
+        cardBody1: "Building opportunities, opening accounts, and shaping solution-led growth across enterprise and industrial markets.",
+        cardTag2: "Transformation",
+        cardTitle2: "IT, IT-OT, and digital execution",
+        cardBody2: "Turning digital strategy into workable platforms covering data, processes, plant visibility, and connected systems.",
+        cardTag3: "Influence",
+        cardTitle3: "Thought leadership with commercial value",
+        cardBody3: "Content, positioning, and industry communication that supports credibility, trust, and business conversations.",
+        bannerTitle: "Digital manufacturing intelligence <em>should lead the story</em>",
+        bannerBody: "This is where plant data, enterprise systems, operational visibility, and decision-making come together to create real execution value.",
+        metric1: "Enterprise Systems",
+        metric2: "Plant and Process Data",
+        metric3: "Transformation Execution",
+        divider2: "Career Highlights",
+        featureKicker: "Feature",
+        featureTitle: "A profile built across business, enterprise IT, and industrial transformation.",
+        featureBody: "The value is not only technical positioning. It is the ability to connect customer need, commercial direction, solution design, and execution in one narrative.",
+        timelineTitle: "Editorial Timeline",
+        time1Role: "Regional business development",
+        time1Comp: "Enterprise, manufacturing, and transformation focus",
+        time2Role: "Enterprise technology positioning",
+        time2Comp: "Applications, integrations, platforms, and digital workflows",
+        time3Role: "Industry 4.0 and operations systems",
+        time3Comp: "LIMS, MES, Digital Twin, visibility, and plant data",
+        divider3: "Key Sectors",
+        sector1: "Industrial",
+        sector1Desc: "Smart manufacturing, quality, process, and operations visibility.",
+        sector2: "Enterprise IT",
+        sector2Desc: "Applications, data, digital workflows, and business system integration.",
+        sector3: "Sustainability",
+        sector3Desc: "ESG platforms, reporting, energy visibility, and responsible operations.",
+        sector4: "APAC Growth",
+        sector4Desc: "Market development, partnerships, solution shaping, and account expansion.",
+        divider4: "Credentials",
+        credLabel: "Highlights",
+        pill1: "Digital Transformation",
+        pill2: "IT + IT-OT",
+        pill3: "LIMS / MES / Twin",
+        pill4: "APAC Business Development",
+        contactLine: "Let’s build the next <span>digital growth story</span>."
+      },
+
+      ja: {
+        edition: "日本版",
+        namePre: "公式サイト",
+        tagline: "デジタルトランスフォーメーション · IT · IT-OT統合 · インダストリー4.0",
+        heroKicker: "特集",
+        heroHeadline: " <em>IT、IT-OT、スマート産業</em> を横断してデジタル成長をつくる。",
+        heroDeck: "プラシャント・クマールは、APAC全域で事業開発、企業IT、現場システム、デジタル変革をつなぎます."
+      },
+
+      ko: {
+        edition: "한국판",
+        namePre: "공식 사이트",
+        tagline: "디지털 전환 · IT · IT-OT 통합 · 인더스트리 4.0",
+        heroKicker: "커버 스토리",
+        heroHeadline: "<em>IT, IT-OT, 스마트 산업</em> 전반의 디지털 성장을 구축합니다.",
+        heroDeck: "Prashant Kumar는 APAC 전역에서 사업개발, 엔터프라이즈 기술, 현장 시스템, 디지털 전환을 연결합니다."
+      },
+
+      zh: {
+        edition: "中国版",
+        namePre: "官方网站",
+        tagline: "数字化转型 · IT · IT-OT集成 · 工业4.0",
+        heroKicker: "封面故事",
+        heroHeadline: "在<em>IT、IT-OT与智能工业</em>之间构建数字增长。",
+        heroDeck: "Prashant Kumar 聚焦亚太地区的业务拓展、企业技术、工厂系统与数字化转型。"
+      },
+
+      th: {
+        edition: "ฉบับประเทศไทย",
+        namePre: "เว็บไซต์อย่างเป็นทางการ",
+        tagline: "Digital Transformation · IT · IT-OT Integration · Industry 4.0",
+        heroKicker: "เรื่องเด่น",
+        heroHeadline: "ขับเคลื่อนการเติบโตดิจิทัลในด้าน <em>IT, IT-OT และอุตสาหกรรมอัจฉริยะ</em>",
+        heroDeck: "Prashant Kumar เชื่อมโยงการพัฒนาธุรกิจ เทคโนโลยีองค์กร ระบบโรงงาน และการเปลี่ยนผ่านดิจิทัลทั่ว APAC"
+      },
+
+      vi: {
+        edition: "Bản Việt Nam",
+        namePre: "Trang Chính Thức",
+        tagline: "Chuyển đổi số · IT · Tích hợp IT-OT · Công nghiệp 4.0",
+        heroKicker: "Trang bìa",
+        heroHeadline: "Xây dựng tăng trưởng số trên nền <em>IT, IT-OT và công nghiệp thông minh</em>.",
+        heroDeck: "Prashant Kumar kết nối phát triển kinh doanh, công nghệ doanh nghiệp, hệ thống nhà máy và chuyển đổi số trên toàn APAC."
+      },
+
+      fr: {
+        edition: "Édition France",
+        namePre: "Site Officiel",
+        tagline: "Transformation Digitale · IT · Intégration IT-OT · Industrie 4.0",
+        heroKicker: "À la une",
+        heroHeadline: "Construire la croissance numérique entre <em>IT, IT-OT et industrie intelligente</em>.",
+        heroDeck: "Prashant Kumar relie le développement commercial, la technologie d’entreprise, les systèmes d’usine et la transformation digitale à travers l’APAC."
+      },
+
+      de: {
+        edition: "Deutschland Ausgabe",
+        namePre: "Offizielle Website",
+        tagline: "Digitale Transformation · IT · IT-OT Integration · Industrie 4.0",
+        heroKicker: "Titelgeschichte",
+        heroHeadline: "Digitales Wachstum über <em>IT, IT-OT und intelligente Industrie</em> hinweg aufbauen.",
+        heroDeck: "Prashant Kumar verbindet Geschäftsentwicklung, Enterprise-Technologie, Werksysteme und digitale Transformation in ganz APAC."
+      },
+
+      it: {
+        edition: "Edizione Italia",
+        namePre: "Sito Ufficiale",
+        tagline: "Trasformazione Digitale · IT · Integrazione IT-OT · Industria 4.0",
+        heroKicker: "Storia di copertina",
+        heroHeadline: "Costruire crescita digitale tra <em>IT, IT-OT e industria intelligente</em>.",
+        heroDeck: "Prashant Kumar collega sviluppo business, tecnologia enterprise, sistemi di impianto e trasformazione digitale in tutta APAC."
+      },
+
+      es: {
+        edition: "Edición España",
+        namePre: "Sitio Oficial",
+        tagline: "Transformación Digital · IT · Integración IT-OT · Industria 4.0",
+        heroKicker: "Portada",
+        heroHeadline: "Construyendo crecimiento digital entre <em>IT, IT-OT e industria inteligente</em>.",
+        heroDeck: "Prashant Kumar conecta desarrollo de negocio, tecnología empresarial, sistemas de planta y transformación digital en toda APAC."
+      },
+
+      ar: {
+        edition: "النسخة العربية",
+        namePre: "الموقع الرسمي",
+        tagline: "التحول الرقمي · تقنية المعلومات · تكامل IT-OT · الصناعة 4.0",
+        heroKicker: "قصة الغلاف",
+        heroHeadline: "بناء النمو الرقمي عبر <em>تقنية المعلومات و IT-OT والصناعة الذكية</em>.",
+        heroDeck: "يربط براشانت كومار بين تطوير الأعمال وتقنيات المؤسسات وأنظمة المصانع والتحول الرقمي عبر منطقة آسيا والمحيط الهادئ."
+      }
+    };
+
+    function applyLanguage(lang) {
+      const selected = translations[lang] || translations.en;
+      const merged = { ...translations.en, ...selected };
+
+      document.documentElement.lang = lang;
+      if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+      } else {
+        document.documentElement.dir = 'ltr';
+      }
+
+      document.getElementById('editionLabel').textContent = merged.edition;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (merged[key]) el.innerHTML = merged[key];
+      });
+
+      const select = document.getElementById('langSwitch');
+      if (select.value !== lang) select.value = lang;
+    }
+
+    function detectLanguage() {
+      const browserLang = (navigator.language || 'en').toLowerCase();
+      if (browserLang.startsWith('ja')) return 'ja';
+      if (browserLang.startsWith('ko')) return 'ko';
+      if (browserLang.startsWith('zh')) return 'zh';
+      if (browserLang.startsWith('th')) return 'th';
+      if (browserLang.startsWith('vi')) return 'vi';
+      if (browserLang.startsWith('fr')) return 'fr';
+      if (browserLang.startsWith('de')) return 'de';
+      if (browserLang.startsWith('it')) return 'it';
+      if (browserLang.startsWith('es')) return 'es';
+      if (browserLang.startsWith('ar')) return 'ar';
+      return 'en';
+    }
+
+    const langSwitch = document.getElementById('langSwitch');
+    langSwitch.addEventListener('change', (e) => applyLanguage(e.target.value));
+
+    applyLanguage(detectLanguage());
+  </script>
+</body>
+</html>    .masthead { background: var(--white); border-bottom: 3px solid var(--navy); }
     .masthead-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 24px 40px 0; gap: 16px; }
     .masthead-left { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Mono', monospace; line-height: 1.6; }
     .masthead-left strong { display: block; font-size: 12px; color: var(--accent-teal); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 2px; }
