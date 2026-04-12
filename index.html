@@ -1,57 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prashant Kumar | Digital Transformation Leader</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Prashant Kumar | Digital Transformation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     :root{
-      --ink:#08111f;
-      --ink-2:#10203a;
-      --ink-3:#183054;
-      --gold:#d0aa57;
-      --gold-light:#e7c676;
-      --paper:#f5efe4;
-      --paper-2:#efe4cf;
+      --navy:#081526;
+      --navy-2:#0d223b;
+      --navy-3:#132d4d;
+      --gold:#c9a35f;
+      --gold-2:#e2c27f;
+      --paper:#f4efe6;
+      --paper-2:#efe6d6;
       --white:#ffffff;
-      --text:#182033;
-      --text-mid:#55607a;
-      --text-soft:#7f899f;
-      --line:#d9cfbf;
-      --accent:#0c7a69;
-      --max:1180px;
-      --shadow:0 14px 30px rgba(0,0,0,0.08);
+      --ink:#101826;
+      --muted:#667085;
+      --line:#d7cbb7;
+      --shadow:0 16px 40px rgba(8,21,38,.12);
+      --max:1340px;
+      --radius:18px;
+      --sticky-height:72px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
-      font-family:'DM Sans',sans-serif;
-      background:linear-gradient(180deg,#f8f2e8 0%,#f4eee3 100%);
-      color:var(--text);
-      font-size:15px;
+      font-family:"Inter",sans-serif;
+      background:linear-gradient(180deg,#f7f2ea 0%, #f1ebdf 100%);
+      color:var(--ink);
       line-height:1.55;
       overflow-x:hidden;
-    }
-
-    body.rtl {
-      direction: rtl;
-      text-align: right;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
     }
 
     img{
@@ -59,2598 +51,1398 @@
       display:block;
     }
 
-    .wrap{
-      max-width:var(--max);
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
       margin:0 auto;
     }
 
-    .topbar{
-      background:linear-gradient(90deg,#050b14,#0b1628 55%,#050b14);
-      color:rgba(255,255,255,0.72);
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      font-family:'DM Mono',monospace;
-      font-size:10px;
-      letter-spacing:.10em;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.18em;
       text-transform:uppercase;
-      padding:7px 14px;
+      color:var(--gold);
     }
 
-    .topbar-inner{
-      max-width:var(--max);
-      margin:0 auto;
+    .eyebrow::before{
+      content:"";
+      width:32px;
+      height:2px;
+      background:var(--gold);
+      display:block;
+    }
+
+    .section-rule{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin:0 0 18px;
+    }
+
+    .section-rule::before,
+    .section-rule::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:rgba(8,21,38,.22);
+    }
+
+    .section-rule span{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      color:var(--navy);
+      white-space:nowrap;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    /* Top strip */
+    .top-strip{
+      background:linear-gradient(90deg,#04101d,#0a1d33 50%,#04101d);
+      color:rgba(255,255,255,.78);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .top-strip .container{
+      min-height:38px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:10px;
+      gap:18px;
+      flex-wrap:wrap;
+      padding:8px 0;
+    }
+
+    .top-strip-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
       flex-wrap:wrap;
     }
 
-    .edition-badge{
+    .dot{
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:var(--gold);
+      display:inline-block;
+    }
+
+    .edition{
+      color:var(--gold-2);
+      border:1px solid rgba(201,163,95,.34);
       padding:5px 10px;
-      border:1px solid rgba(255,255,255,0.14);
-      color:var(--gold-light);
-      background:rgba(255,255,255,0.03);
-      font-size:9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      font-weight:700;
+    }
+
+    /* Sticky header */
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(248,243,235,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(8,21,38,.10);
+      transition:box-shadow .25s ease, background .25s ease;
+    }
+
+    .site-header.scrolled{
+      box-shadow:0 10px 30px rgba(8,21,38,.08);
+      background:rgba(248,243,235,.97);
     }
 
     .masthead{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.94)),
-        linear-gradient(120deg, #f4ebdd, #fff);
-      border-bottom:3px solid var(--ink);
-    }
-
-    .masthead-inner{
-      max-width:var(--max);
-      margin:0 auto;
+      min-height:var(--sticky-height);
       display:grid;
       grid-template-columns:1fr auto 1fr;
+      align-items:center;
       gap:18px;
-      align-items:end;
-      padding:16px 24px 10px;
+      padding:14px 0;
     }
 
     .masthead-left,
     .masthead-right{
-      font-family:'DM Mono',monospace;
-      font-size:10px;
-      line-height:1.5;
-      letter-spacing:.08em;
+      font-size:11px;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      color:var(--text-soft);
+      color:var(--muted);
+      font-weight:700;
+      line-height:1.6;
     }
 
     .masthead-left strong{
       display:block;
-      color:var(--accent);
-      font-size:11px;
-      margin-bottom:2px;
+      color:#0f8b75;
+      font-weight:800;
     }
 
-    .masthead-center{
+    .brand{
       text-align:center;
     }
 
-    .name-pre{
-      font-family:'DM Mono',monospace;
-      font-size:9px;
-      letter-spacing:.25em;
-      text-transform:uppercase;
-      color:var(--text-soft);
-      margin-bottom:4px;
-    }
-
-    .masthead-center h1{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(34px,6vw,72px);
-      line-height:.95;
-      color:var(--ink);
-      letter-spacing:-.03em;
-    }
-
-    .tagline{
-      margin-top:6px;
+    .brand-kicker{
       font-size:10px;
-      letter-spacing:.18em;
+      letter-spacing:.26em;
       text-transform:uppercase;
-      color:var(--gold);
+      color:#8d95a4;
+      margin-bottom:2px;
       font-weight:700;
     }
 
-    .lang-box{
-      display:flex;
-      justify-content:flex-end;
-      align-items:center;
-      gap:8px;
-      margin-top:8px;
-      flex-wrap:wrap;
+    .brand-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(42px, 5vw, 82px);
+      line-height:.93;
+      letter-spacing:-.04em;
+      color:var(--navy);
+      font-weight:900;
     }
 
-    .lang-box label{
-      font-size:9px;
-      color:var(--text-soft);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-family:'DM Mono',monospace;
-    }
-
-    .lang-select{
-      background:var(--white);
-      border:1px solid var(--line);
-      color:var(--ink);
-      padding:7px 10px;
+    .brand-sub{
+      margin-top:6px;
       font-size:11px;
-      min-height:36px;
-      font-family:'DM Sans',sans-serif;
-      min-width:120px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:var(--gold);
     }
 
-    nav{
-      background:var(--white);
-      border-top:1px solid var(--line);
-      border-bottom:2px solid var(--ink);
-      position:relative;
+    .masthead-right{
+      text-align:right;
     }
 
-    .nav-inner{
-      max-width:var(--max);
-      margin:0 auto;
+    .header-nav{
+      border-top:1px solid rgba(8,21,38,.08);
+    }
+
+    .nav-row{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:0 24px;
+      gap:16px;
+      min-height:52px;
     }
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:0;
-    }
-
-    nav ul li a{
+    .nav-links{
       display:flex;
       align-items:center;
-      min-height:46px;
-      padding:12px 16px;
-      font-size:11px;
+      gap:2px;
+      list-style:none;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      min-height:44px;
+      display:flex;
+      align-items:center;
+      padding:0 16px;
+      font-size:12px;
+      font-weight:800;
       letter-spacing:.14em;
       text-transform:uppercase;
-      font-weight:700;
-      color:var(--text-mid);
+      color:#536072;
       position:relative;
+      border-radius:999px;
+      transition:background .2s ease, color .2s ease;
     }
 
-    nav ul li a:hover,
-    nav ul li a.active{
-      color:var(--ink);
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--navy);
+      background:rgba(8,21,38,.05);
     }
 
-    nav ul li a.active::after{
+    .nav-links a.active::after{
       content:"";
       position:absolute;
       left:16px;
       right:16px;
-      bottom:0;
+      bottom:6px;
       height:2px;
       background:var(--gold);
     }
 
-    .nav-toggle{
-      display:none;
-      border:none;
-      background:none;
-      min-width:44px;
-      min-height:44px;
-      cursor:pointer;
-      flex-direction:column;
-      justify-content:center;
-      gap:4px;
-    }
-
-    .nav-toggle span{
-      width:24px;
-      height:2px;
-      background:var(--ink);
-      display:block;
-    }
-
-    .page-wrap{
-      padding:22px 24px 28px;
-    }
-
-    .section-divider{
+    .header-actions{
       display:flex;
       align-items:center;
       gap:10px;
-      margin:0 0 14px;
     }
 
-    .section-divider::before,
-    .section-divider::after{
-      content:"";
-      height:1px;
-      flex:1;
-      background:var(--ink);
-    }
-
-    .section-divider span{
-      font-family:'DM Mono',monospace;
-      font-size:10px;
-      letter-spacing:.22em;
+    .mini-btn{
+      border:1px solid rgba(8,21,38,.12);
+      background:#fff;
+      color:var(--navy);
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      color:var(--ink);
-      font-weight:700;
-      white-space:nowrap;
+      cursor:pointer;
+      transition:transform .2s ease, background .2s ease;
+    }
+
+    .mini-btn:hover{
+      background:var(--paper);
+      transform:translateY(-1px);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:44px;
+      height:44px;
+      border:none;
+      background:#fff;
+      border-radius:50%;
+      border:1px solid rgba(8,21,38,.12);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .menu-toggle span{
+      width:18px;
+      height:2px;
+      background:var(--navy);
+      display:block;
+      border-radius:1px;
+    }
+
+    /* Hero */
+    .hero{
+      padding:28px 0 18px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.35fr .85fr;
-      margin-bottom:22px;
-      border:1.5px solid var(--ink);
-      box-shadow:var(--shadow);
+      grid-template-columns:1.45fr .85fr;
+      gap:18px;
+    }
+
+    .hero-cover{
+      background:linear-gradient(180deg, rgba(8,21,38,.10), rgba(8,21,38,.62)),
+      url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      min-height:640px;
+      border-radius:28px;
       overflow:hidden;
-    }
-
-    .hero-main{
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
-        linear-gradient(180deg, #091426 0%, #10213b 100%);
-      color:var(--white);
-      padding:26px 24px 22px;
-      border-right:1.5px solid rgba(255,255,255,0.10);
       position:relative;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:flex-end;
     }
 
-    .hero-kicker{
-      display:inline-block;
-      background:var(--gold);
-      color:var(--ink);
-      font-size:9px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
+    .hero-overlay{
+      width:100%;
+      padding:34px 34px 30px;
+      color:#fff;
+      background:linear-gradient(180deg, rgba(8,21,38,0) 0%, rgba(8,21,38,.28) 20%, rgba(8,21,38,.78) 100%);
+    }
+
+    .cover-badge{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(201,163,95,.16);
+      border:1px solid rgba(201,163,95,.34);
+      color:var(--gold-2);
+      font-size:11px;
       font-weight:800;
-      padding:4px 10px;
-      margin-bottom:14px;
-    }
-
-    .hero-headline{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(28px,4vw,52px);
-      line-height:1.02;
-      margin-bottom:12px;
-      letter-spacing:-.02em;
-      max-width:780px;
-    }
-
-    .hero-headline em{
-      color:var(--gold-light);
-      font-style:italic;
-    }
-
-    .hero-deck{
-      max-width:760px;
-      color:rgba(255,255,255,0.78);
-      font-size:14px;
-      line-height:1.7;
-      padding-left:14px;
-      border-left:3px solid var(--gold);
-      margin-bottom:18px;
-    }
-
-    body.rtl .hero-deck{
-      padding-left:0;
-      padding-right:14px;
-      border-left:none;
-      border-right:3px solid var(--gold);
-    }
-
-    .hero-split{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:16px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
       margin-bottom:16px;
     }
 
-    .hero-note{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
-      padding:14px;
-    }
-
-    .hero-note h3{
-      font-size:10px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      font-family:'DM Mono',monospace;
-      color:var(--gold-light);
-      margin-bottom:8px;
-    }
-
-    .hero-note p{
-      font-size:13px;
-      color:rgba(255,255,255,0.82);
-      line-height:1.6;
-    }
-
-    .stat-row{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:0;
-      border-top:1px solid rgba(255,255,255,0.12);
-      padding-top:14px;
-    }
-
-    .stat-item{
-      padding-right:10px;
-    }
-
-    .stat-item + .stat-item{
-      border-left:1px solid rgba(255,255,255,0.12);
-      padding-left:10px;
-    }
-
-    body.rtl .stat-item{
-      padding-right:0;
-      padding-left:10px;
-    }
-
-    body.rtl .stat-item + .stat-item{
-      border-left:none;
-      border-right:1px solid rgba(255,255,255,0.12);
-      padding-left:0;
-      padding-right:10px;
-    }
-
-    .stat-num{
-      font-family:'Playfair Display',serif;
-      font-size:28px;
-      line-height:1;
-      color:var(--white);
+    .hero-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(40px, 5vw, 74px);
+      line-height:.96;
+      letter-spacing:-.04em;
       font-weight:900;
+      max-width:860px;
+      margin-bottom:16px;
     }
 
-    .stat-num span{
-      color:var(--gold-light);
+    .hero-title em{
+      color:var(--gold-2);
+      font-style:italic;
+      font-weight:800;
     }
 
-    .stat-label{
-      margin-top:4px;
-      font-size:9px;
-      line-height:1.4;
-      letter-spacing:.09em;
+    .hero-deck{
+      max-width:720px;
+      font-size:17px;
+      line-height:1.72;
+      color:rgba(255,255,255,.84);
+      padding-left:16px;
+      border-left:3px solid var(--gold);
+      margin-bottom:22px;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px 28px;
+      font-size:12px;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      color:rgba(255,255,255,0.60);
+      color:rgba(255,255,255,.78);
+      font-weight:800;
     }
 
     .hero-sidebar{
-      background:linear-gradient(180deg, #f5ecdc 0%, #ead9bb 100%);
-      color:var(--text);
-      padding:22px 20px;
-      display:flex;
-      flex-direction:column;
-      gap:16px;
+      display:grid;
+      gap:18px;
     }
 
-    .sidebar-section-title{
-      font-size:9px;
-      font-family:'DM Mono',monospace;
+    .sidebar-card{
+      background:linear-gradient(180deg,#f8f2e8,#efe1c6);
+      border:1px solid rgba(8,21,38,.12);
+      border-radius:24px;
+      padding:22px 22px;
+      box-shadow:var(--shadow);
+    }
+
+    .sidebar-title{
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.18em;
       text-transform:uppercase;
-      letter-spacing:.22em;
-      color:var(--ink);
-      border-bottom:1px solid rgba(8,17,31,0.14);
-      padding-bottom:8px;
-      font-weight:700;
+      color:var(--navy);
+      margin-bottom:14px;
     }
 
     .expertise-list{
       list-style:none;
-      display:grid;
-      gap:0;
     }
 
     .expertise-list li{
-      padding:8px 0;
-      font-size:13px;
-      border-bottom:1px solid rgba(8,17,31,0.10);
       display:flex;
       align-items:flex-start;
-      gap:8px;
-      color:var(--text);
+      gap:10px;
+      padding:10px 0;
+      border-bottom:1px solid rgba(8,21,38,.10);
+      font-size:14px;
+      color:#1e293b;
+      font-weight:600;
+    }
+
+    .expertise-list li:last-child{
+      border-bottom:none;
+      padding-bottom:0;
     }
 
     .expertise-list li::before{
       content:"■";
       color:var(--gold);
       font-size:9px;
-      margin-top:4px;
+      margin-top:6px;
+      flex:none;
     }
 
-    .sidebar-quote{
-      background:rgba(8,17,31,0.06);
-      border-left:3px solid var(--accent);
-      padding:12px;
-      font-family:'Playfair Display',serif;
-      font-style:italic;
-      color:var(--ink);
-      line-height:1.55;
-      font-size:13px;
-    }
-
-    body.rtl .sidebar-quote{
-      border-left:none;
-      border-right:3px solid var(--accent);
-    }
-
-    .cta-btn{
-      min-height:44px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 14px;
-      background:var(--ink);
-      color:var(--gold-light);
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-weight:700;
-      transition:.2s ease;
-    }
-
-    .cta-btn:hover{
-      background:var(--ink-3);
-    }
-
-    .card-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      border:1.5px solid var(--ink);
-      margin-bottom:22px;
+    .quote-card{
+      background:linear-gradient(180deg,#0d2139,#112b48);
+      color:#fff;
+      border-radius:24px;
+      padding:24px 22px;
+      box-shadow:var(--shadow);
+      position:relative;
       overflow:hidden;
+    }
+
+    .quote-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -30px -30px auto;
+      width:180px;
+      height:180px;
+      background:radial-gradient(circle, rgba(201,163,95,.22), transparent 70%);
+    }
+
+    .quote-card p{
+      font-family:"Playfair Display",serif;
+      font-size:28px;
+      line-height:1.18;
+      letter-spacing:-.02em;
+      margin-bottom:18px;
+      color:#f8f6f2;
+    }
+
+    .quote-line{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.64);
+    }
+
+    .stats-card{
+      background:#fff;
+      border:1px solid rgba(8,21,38,.10);
+      border-radius:24px;
+      padding:20px;
       box-shadow:var(--shadow);
     }
 
-    .card-item{
-      position:relative;
-      padding:22px 18px 18px;
-      border-right:1px solid var(--ink);
-      min-height:220px;
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
     }
 
-    .card-item:nth-child(1){
-      background:var(--white);
+    .stat{
+      background:linear-gradient(180deg,#f8f3ea,#f3ebdd);
+      border:1px solid rgba(8,21,38,.08);
+      border-radius:18px;
+      padding:18px 16px;
     }
 
-    .card-item:nth-child(2){
-      background:linear-gradient(180deg,#f3ead9,#ece0c8);
-    }
-
-    .card-item:nth-child(3){
-      background:linear-gradient(180deg,#0e1b31,#132947);
-      color:var(--white);
-    }
-
-    .card-item:last-child{
-      border-right:none;
-    }
-
-    .card-num{
-      position:absolute;
-      top:10px;
-      right:12px;
-      font-family:'Playfair Display',serif;
+    .stat-value{
+      font-family:"Playfair Display",serif;
       font-size:40px;
       line-height:1;
       font-weight:900;
-      opacity:.12;
+      color:var(--navy);
+      margin-bottom:6px;
     }
 
-    body.rtl .card-num{
-      right:auto;
-      left:12px;
-    }
-
-    .card-item:nth-child(3) .card-num{
-      color:#fff;
-      opacity:.10;
-    }
-
-    .card-item:not(:nth-child(3)) .card-num{
-      color:var(--ink);
-    }
-
-    .card-icon-tag{
-      display:inline-block;
-      margin-bottom:10px;
-      padding:3px 9px;
-      font-size:9px;
-      font-weight:700;
+    .stat-label{
+      font-size:11px;
+      line-height:1.45;
+      letter-spacing:.12em;
       text-transform:uppercase;
-      letter-spacing:.13em;
-      background:var(--accent);
-      color:#fff;
+      color:#697386;
+      font-weight:800;
     }
 
-    .card-title{
-      font-family:'Playfair Display',serif;
-      font-size:19px;
-      line-height:1.22;
-      margin-bottom:8px;
+    /* Editor picks */
+    .editor-picks{
+      padding:8px 0 14px;
     }
 
-    .card-body{
-      font-size:13px;
-      line-height:1.65;
-      color:inherit;
-      opacity:.88;
-    }
-
-    .tl-banner{
+    .picks-grid{
       display:grid;
-      grid-template-columns:1fr auto;
-      gap:24px;
-      align-items:center;
-      background:
-        linear-gradient(135deg, rgba(208,170,87,0.10), rgba(208,170,87,0)),
-        linear-gradient(180deg, #060d18 0%, #0d1a2f 100%);
-      color:#fff;
-      padding:24px;
-      border:1.5px solid var(--ink);
-      margin-bottom:22px;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:18px;
+    }
+
+    .pick-feature{
+      background:#fff;
+      border:1px solid rgba(8,21,38,.10);
+      border-radius:24px;
+      overflow:hidden;
       box-shadow:var(--shadow);
-    }
-
-    .tl-banner-title{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(22px,3vw,34px);
-      line-height:1.12;
-      margin-bottom:8px;
-    }
-
-    .tl-banner-title em{
-      color:var(--gold-light);
-      font-style:italic;
-    }
-
-    .tl-banner-sub{
-      font-size:13px;
-      line-height:1.7;
-      color:rgba(255,255,255,.74);
-      max-width:760px;
-    }
-
-    .tl-metrics{
-      display:flex;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    .tl-metric-val{
-      font-family:'Playfair Display',serif;
-      font-size:34px;
-      line-height:1;
-      color:var(--gold-light);
-      font-weight:900;
-    }
-
-    .tl-metric-label{
-      margin-top:4px;
-      font-size:10px;
-      line-height:1.4;
-      text-transform:uppercase;
-      letter-spacing:.10em;
-      color:rgba(255,255,255,.55);
-    }
-
-    .feature-row{
       display:grid;
-      grid-template-columns:1.6fr .9fr;
-      border:1.5px solid var(--ink);
-      margin-bottom:22px;
+      grid-template-columns:1fr 1.05fr;
+      min-height:300px;
+    }
+
+    .pick-feature-image{
+      background:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+      min-height:100%;
+    }
+
+    .pick-feature-body{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .pick-tag{
+      display:inline-flex;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:10px;
+    }
+
+    .pick-title{
+      font-family:"Playfair Display",serif;
+      font-size:34px;
+      line-height:1.02;
+      letter-spacing:-.03em;
+      color:var(--navy);
+      margin-bottom:12px;
+    }
+
+    .pick-copy{
+      color:#4b5565;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .mini-story{
+      background:#fff;
+      border:1px solid rgba(8,21,38,.10);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+
+    .mini-story:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 38px rgba(8,21,38,.14);
+    }
+
+    .mini-image{
+      height:180px;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .mini-body{
+      padding:20px;
+    }
+
+    .mini-title{
+      font-family:"Playfair Display",serif;
+      font-size:24px;
+      line-height:1.1;
+      letter-spacing:-.02em;
+      color:var(--navy);
+      margin-bottom:10px;
+    }
+
+    .mini-copy{
+      font-size:14px;
+      line-height:1.7;
+      color:#566173;
+    }
+
+    /* Featured article grid */
+    .featured{
+      padding:18px 0 24px;
+    }
+
+    .feature-layout{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .feature-main{
+      background:#fff;
+      border:1px solid rgba(8,21,38,.10);
+      border-radius:28px;
       overflow:hidden;
       box-shadow:var(--shadow);
     }
 
-    .feature-main{
-      background:var(--white);
-      padding:22px 22px 18px;
-      border-right:1.5px solid var(--ink);
+    .feature-main-image{
+      height:340px;
+      background:
+        linear-gradient(180deg, rgba(8,21,38,.06), rgba(8,21,38,.34)),
+        url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    }
+
+    .feature-main-body{
+      padding:26px;
+    }
+
+    .feature-main h3{
+      font-family:"Playfair Display",serif;
+      font-size:42px;
+      line-height:1;
+      letter-spacing:-.03em;
+      color:var(--navy);
+      margin-bottom:14px;
+    }
+
+    .feature-main p{
+      font-size:16px;
+      color:#526071;
+      line-height:1.75;
+      margin-bottom:18px;
+      max-width:90%;
+    }
+
+    .read-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      background:var(--navy);
+      color:#fff;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      transition:transform .2s ease, background .2s ease;
+    }
+
+    .read-btn:hover{
+      background:var(--navy-3);
+      transform:translateY(-1px);
     }
 
     .feature-side{
-      background:linear-gradient(180deg,#f0dfc1 0%, #e7d1ab 100%);
-      padding:20px 18px;
+      display:grid;
+      gap:18px;
     }
 
-    .feature-kicker{
-      display:inline-block;
-      margin-bottom:10px;
-      padding:3px 9px;
-      background:var(--ink);
-      color:var(--gold-light);
-      font-size:9px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-weight:800;
+    .story-list{
+      background:linear-gradient(180deg,#112846,#0d2038);
+      border-radius:28px;
+      padding:22px;
+      color:#fff;
+      box-shadow:var(--shadow);
     }
 
-    .feature-title{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(22px,2.6vw,30px);
-      line-height:1.15;
-      margin-bottom:10px;
-      color:var(--ink);
-    }
-
-    .feature-body{
-      font-size:13px;
-      line-height:1.7;
-      color:var(--text-mid);
-    }
-
-    .timeline-label{
-      font-family:'DM Mono',monospace;
-      font-size:10px;
+    .story-list-title{
+      font-size:11px;
+      font-weight:900;
       letter-spacing:.20em;
       text-transform:uppercase;
-      color:var(--ink);
-      font-weight:700;
-      margin-bottom:10px;
+      color:var(--gold-2);
+      margin-bottom:14px;
     }
 
-    .timeline{
-      list-style:none;
-      display:grid;
-      gap:0;
+    .story-list article{
+      padding:16px 0;
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
 
-    .timeline li{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      padding:10px 0;
-      border-bottom:1px solid rgba(8,17,31,0.10);
-    }
-
-    .timeline li:last-child{
+    .story-list article:last-child{
       border-bottom:none;
+      padding-bottom:0;
     }
 
-    .tl-year{
-      min-width:56px;
-      font-family:'DM Mono',monospace;
-      font-size:10px;
-      letter-spacing:.06em;
-      color:var(--accent);
-      font-weight:700;
-      padding-top:2px;
+    .story-list h4{
+      font-family:"Playfair Display",serif;
+      font-size:26px;
+      line-height:1.06;
+      letter-spacing:-.02em;
+      margin-bottom:8px;
+      color:#fff;
     }
 
-    .tl-role{
+    .story-list p{
+      font-size:14px;
+      line-height:1.7;
+      color:rgba(255,255,255,.72);
+    }
+
+    .insight-box{
+      background:linear-gradient(180deg,#f7efdf,#eedbb4);
+      border:1px solid rgba(8,21,38,.10);
+      border-radius:28px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .insight-box p{
+      font-family:"Playfair Display",serif;
+      font-size:30px;
+      line-height:1.08;
+      letter-spacing:-.02em;
+      color:var(--navy);
+      margin-bottom:12px;
+    }
+
+    .insight-box small{
       font-size:12px;
-      line-height:1.35;
-      color:var(--ink);
+      line-height:1.6;
+      color:#6a7384;
       font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    .tl-company{
-      font-size:11px;
-      color:var(--text-soft);
-      margin-top:2px;
+    /* Sectors */
+    .sectors{
+      padding:6px 0 30px;
     }
 
     .sectors-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      border:1.5px solid var(--ink);
-      margin-bottom:22px;
-      overflow:hidden;
+      gap:18px;
+    }
+
+    .sector{
+      background:#fff;
+      border:1px solid rgba(8,21,38,.10);
+      border-radius:24px;
+      padding:22px 18px;
       box-shadow:var(--shadow);
-    }
-
-    .sector-item{
-      padding:18px 14px 16px;
-      border-right:1px solid var(--ink);
       text-align:center;
+      transition:transform .25s ease, box-shadow .25s ease;
     }
 
-    .sector-item:nth-child(1),
-    .sector-item:nth-child(4){
-      background:var(--white);
-    }
-
-    .sector-item:nth-child(2),
-    .sector-item:nth-child(3){
-      background:var(--paper-2);
-    }
-
-    .sector-item:last-child{
-      border-right:none;
+    .sector:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 38px rgba(8,21,38,.14);
     }
 
     .sector-icon{
-      width:40px;
-      height:40px;
+      width:56px;
+      height:56px;
       border-radius:50%;
-      background:var(--ink);
-      color:var(--gold-light);
       display:flex;
       align-items:center;
       justify-content:center;
-      margin:0 auto 10px;
-      font-family:'Playfair Display',serif;
-      font-size:16px;
-      font-weight:700;
+      margin:0 auto 14px;
+      background:var(--navy);
+      color:var(--gold-2);
+      font-family:"Playfair Display",serif;
+      font-size:22px;
+      font-weight:800;
     }
 
-    .sector-name{
-      font-family:'Playfair Display',serif;
-      font-size:15px;
-      line-height:1.2;
-      margin-bottom:4px;
-      color:var(--ink);
+    .sector h4{
+      font-family:"Playfair Display",serif;
+      font-size:25px;
+      line-height:1.06;
+      color:var(--navy);
+      margin-bottom:10px;
     }
 
-    .sector-desc{
-      font-size:11px;
-      line-height:1.5;
-      color:var(--text-mid);
+    .sector p{
+      font-size:14px;
+      line-height:1.7;
+      color:#586577;
     }
 
-    .cert-row{
-      display:flex;
-      align-items:flex-start;
-      gap:16px;
-      flex-wrap:wrap;
-      background:linear-gradient(180deg,#0b1729,#12213a);
-      border:1.5px solid var(--ink);
-      padding:18px;
-      margin-bottom:22px;
+    /* CTA strip */
+    .cta-strip{
+      padding:0 0 38px;
+    }
+
+    .cta-panel{
+      background:
+        linear-gradient(90deg, rgba(8,21,38,.96), rgba(15,38,66,.94)),
+        url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      border-radius:30px;
+      padding:30px 28px;
       box-shadow:var(--shadow);
-    }
-
-    .cert-label{
-      min-width:110px;
-      color:rgba(255,255,255,0.55);
-      font-family:'DM Mono',monospace;
-      font-size:10px;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      padding-top:7px;
-    }
-
-    .cert-pills{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      flex:1;
-    }
-
-    .cert-pill{
-      min-height:34px;
-      display:flex;
-      align-items:center;
-      padding:7px 12px;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
-      color:var(--gold-light);
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.04em;
-    }
-
-    .contact-strip{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:22px;
       flex-wrap:wrap;
-      background:linear-gradient(90deg,#08111f,#0f213c 60%,#08111f);
-      border:1.5px solid var(--ink);
-      padding:18px;
-      margin-bottom:22px;
-      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
 
-    .contact-strip-left{
-      font-family:'Playfair Display',serif;
-      font-size:22px;
-      line-height:1.2;
+    .cta-panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(8,21,38,.88), rgba(8,21,38,.46));
+      pointer-events:none;
+    }
+
+    .cta-panel > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .cta-copy h3{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(34px, 4vw, 52px);
+      line-height:1;
       color:#fff;
-      font-weight:700;
+      letter-spacing:-.03em;
+      margin-bottom:10px;
     }
 
-    .contact-strip-left span{
-      color:var(--gold-light);
+    .cta-copy h3 span{
+      color:var(--gold-2);
+      font-style:italic;
     }
 
-    .contact-links{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+    .cta-copy p{
+      max-width:760px;
+      color:rgba(255,255,255,.80);
+      font-size:16px;
+      line-height:1.75;
     }
 
-    .contact-link{
-      min-height:42px;
+    .cta-actions{
       display:flex;
       align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .cta-btn{
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
       justify-content:center;
-      padding:10px 14px;
-      border:1px solid rgba(255,255,255,0.18);
-      color:rgba(255,255,255,0.75);
-      font-size:10px;
-      text-transform:uppercase;
-      letter-spacing:.10em;
-      font-weight:700;
+      transition:transform .2s ease, background .2s ease, color .2s ease;
     }
 
-    .contact-link.primary{
+    .cta-btn.primary{
       background:var(--gold);
-      color:var(--ink);
-      border-color:var(--gold);
+      color:var(--navy);
     }
 
+    .cta-btn.secondary{
+      border:1px solid rgba(255,255,255,.20);
+      color:#fff;
+      background:rgba(255,255,255,.05);
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    /* Footer */
     footer{
-      background:var(--ink);
-      color:rgba(255,255,255,0.44);
-      border-top:3px solid var(--gold);
+      background:linear-gradient(180deg,#071321,#091a2d);
+      color:rgba(255,255,255,.58);
+      border-top:2px solid rgba(201,163,95,.42);
+      padding:20px 0 26px;
       text-align:center;
-      padding:16px 18px;
-      font-family:'DM Mono',monospace;
-      font-size:10px;
-      line-height:1.9;
-      letter-spacing:.10em;
+    }
+
+    .footer-title{
+      color:#fff;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:8px;
+    }
+
+    .footer-line{
+      font-size:11px;
+      line-height:1.8;
+      letter-spacing:.16em;
       text-transform:uppercase;
     }
 
-    footer strong{
-      color:rgba(255,255,255,0.72);
-    }
-
-    @media (max-width:1024px){
-      .masthead-inner{
-        grid-template-columns:1fr auto;
-        align-items:center;
-      }
-
-      .masthead-right{
-        display:none;
-      }
-
-      .masthead-left{
-        text-align:right;
-      }
-
+    /* Responsive */
+    @media (max-width: 1180px){
       .hero-grid,
-      .feature-row,
-      .tl-banner{
+      .feature-layout,
+      .picks-grid{
         grid-template-columns:1fr;
       }
 
-      .hero-main,
-      .feature-main{
-        border-right:none;
-        border-bottom:1.5px solid var(--ink);
+      .pick-feature{
+        grid-template-columns:1fr;
       }
 
-      .card-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .card-item:nth-child(2){
-        border-right:none;
-      }
-
-      .card-item:nth-child(3){
-        grid-column:1 / -1;
-        border-top:1px solid var(--ink);
+      .pick-feature-image{
+        min-height:260px;
       }
 
       .sectors-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .sector-item:nth-child(2){
-        border-right:none;
-      }
-
-      .sector-item:nth-child(3),
-      .sector-item:nth-child(4){
-        border-top:1px solid var(--ink);
-      }
-
-      .sector-item:nth-child(4){
-        border-right:none;
-      }
-
-      .stat-row{
         grid-template-columns:repeat(2,1fr);
-        gap:10px;
-      }
-
-      .stat-item + .stat-item{
-        border-left:none;
-        padding-left:0;
-      }
-
-      body.rtl .stat-item + .stat-item{
-        border-right:none;
-        padding-right:0;
-      }
-
-      .stat-item{
-        border-bottom:1px solid rgba(255,255,255,0.10);
-        padding-bottom:10px;
-      }
-
-      .stat-item:nth-child(3),
-      .stat-item:nth-child(4){
-        border-bottom:none;
       }
     }
 
-    @media (max-width:640px){
-      .masthead-inner{
+    @media (max-width: 900px){
+      .masthead{
         grid-template-columns:1fr;
         text-align:center;
-        padding:14px 16px 10px;
-        gap:8px;
       }
 
+      .masthead-right,
       .masthead-left{
-        order:3;
         text-align:center;
       }
 
-      .masthead-center{
-        order:1;
+      .nav-row{
+        align-items:flex-start;
+        padding:8px 0 12px;
       }
 
-      .masthead-center h1{
-        font-size:clamp(30px,12vw,46px);
+      .menu-toggle{
+        display:flex;
       }
 
-      .tagline{
-        font-size:9px;
-        letter-spacing:.10em;
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        background:#fff;
+        border:1px solid rgba(8,21,38,.08);
+        border-radius:18px;
+        padding:10px;
+        margin-top:8px;
       }
 
-      .lang-box{
+      .nav-links.open{
+        display:flex;
+      }
+
+      .nav-shell{
+        width:100%;
+      }
+
+      .nav-links a{
+        width:100%;
+      }
+
+      .header-actions .mini-btn{
+        display:none;
+      }
+    }
+
+    @media (max-width: 640px){
+      :root{
+        --sticky-height:64px;
+      }
+
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .top-strip .container{
         justify-content:center;
       }
 
-      .nav-toggle{
-        display:flex;
+      .brand-title{
+        font-size:clamp(30px, 13vw, 50px);
       }
 
-      .nav-inner{
-        padding:0 16px;
+      .hero-cover{
+        min-height:540px;
+        border-radius:22px;
       }
 
-      nav ul{
-        position:absolute;
-        top:100%;
-        left:0;
-        right:0;
-        background:var(--white);
-        border-bottom:2px solid var(--ink);
-        flex-direction:column;
-        display:none;
-        z-index:10;
+      .hero-overlay{
+        padding:24px 20px 22px;
       }
 
-      nav ul.open{
-        display:flex;
-      }
-
-      nav ul li{
-        border-bottom:1px solid var(--line);
-      }
-
-      nav ul li:last-child{
-        border-bottom:none;
-      }
-
-      nav ul li a{
-        min-height:50px;
-        padding:14px 18px;
-        font-size:12px;
-      }
-
-      nav ul li a.active::after{
-        display:none;
-      }
-
-      nav ul li a.active{
-        background:var(--paper);
-      }
-
-      .page-wrap{
-        padding:16px;
-      }
-
-      .hero-main,
-      .hero-sidebar,
-      .feature-main,
-      .feature-side,
-      .tl-banner{
-        padding:18px 16px;
-      }
-
-      .hero-split{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .hero-headline{
-        font-size:clamp(24px,8vw,36px);
+      .hero-title{
+        font-size:clamp(30px, 10vw, 46px);
       }
 
       .hero-deck{
-        font-size:13px;
+        font-size:15px;
       }
 
-      .card-grid{
-        grid-template-columns:1fr;
+      .sidebar-card,
+      .stats-card,
+      .story-list,
+      .insight-box,
+      .feature-main-body{
+        padding:18px;
       }
 
-      .card-item{
-        border-right:none !important;
-        border-bottom:1px solid var(--ink);
-        min-height:auto;
-      }
-
-      .card-item:last-child{
-        border-bottom:none;
-      }
-
-      .sectors-grid{
+      .stats-grid{
         grid-template-columns:1fr 1fr;
       }
 
-      .contact-strip{
-        flex-direction:column;
-        align-items:flex-start;
+      .feature-main h3{
+        font-size:32px;
       }
 
-      .contact-links{
-        width:100%;
+      .pick-title{
+        font-size:28px;
       }
 
-      .contact-link{
-        flex:1 1 calc(50% - 10px);
+      .story-list h4{
+        font-size:22px;
       }
 
-      .tl-metrics{
-        width:100%;
-        justify-content:space-between;
-      }
-    }
-
-    @media (max-width:380px){
       .sectors-grid{
         grid-template-columns:1fr;
       }
 
-      .sector-item{
-        border-right:none !important;
-        border-bottom:1px solid var(--ink);
+      .cta-panel{
+        padding:22px 18px;
       }
 
-      .sector-item:last-child{
-        border-bottom:none;
+      .cta-copy h3{
+        font-size:34px;
       }
 
-      .contact-link{
-        flex:1 1 100%;
+      .cta-actions{
+        width:100%;
+      }
+
+      .cta-btn{
+        width:100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div id="topbarText">Singapore • APAC • Digital Transformation • IT + IT-OT • Industry 4.0</div>
-      <div class="edition-badge" id="editionLabel">Global Edition</div>
+  <div class="top-strip">
+    <div class="container">
+      <div class="top-strip-left">
+        <span>Singapore</span>
+        <span class="dot"></span>
+        <span>APAC</span>
+        <span class="dot"></span>
+        <span>Digital Transformation</span>
+        <span class="dot"></span>
+        <span>IT + IT-OT</span>
+        <span class="dot"></span>
+        <span>Industry 4.0</span>
+      </div>
+      <div class="edition">Global Edition</div>
     </div>
   </div>
 
-  <header class="masthead">
-    <div class="masthead-inner">
-      <div class="masthead-left">
-        <strong id="leftStrong">MBA · CSM · CISI</strong>
-        <div id="leftLine1">Business Growth</div>
-        <div id="leftLine2">Industry 4.0 · APAC</div>
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="masthead">
+        <div class="masthead-left">
+          <strong>MBA · CSM · CISI</strong>
+          Business Growth<br>
+          Industry 4.0 · APAC
+        </div>
+
+        <div class="brand">
+          <div class="brand-kicker">The Official Site of</div>
+          <div class="brand-title">Prashant Kumar</div>
+          <div class="brand-sub">Digital Transformation · IT · IT-OT Integration · Industry 4.0</div>
+        </div>
+
+        <div class="masthead-right">
+          Singapore, APAC<br>
+          prashantkumar18@gmail.com<br>
+          +65 9391 4327
+        </div>
       </div>
 
-      <div class="masthead-center">
-        <p class="name-pre" id="namePre">The Official Site of</p>
-        <h1>Prashant Kumar</h1>
-        <p class="tagline" id="tagline">Digital Transformation · IT · IT-OT Integration · Industry 4.0</p>
-      </div>
+      <div class="header-nav">
+        <div class="nav-row">
+          <div class="nav-shell">
+            <ul class="nav-links" id="navLinks">
+              <li><a class="active" href="#home">Home</a></li>
+              <li><a href="#editorial">Editorial</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#sectors">Sectors</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
 
-      <div class="masthead-right">
-        <div id="rightLocation">Singapore, APAC</div>
-        <div style="margin-top:3px;">prashantkumar18@gmail.com</div>
-        <div style="margin-top:3px;">+65 9391 4327</div>
-        <div class="lang-box">
-          <label for="langSwitch" id="langLabel">Language</label>
-          <select id="langSwitch" class="lang-select">
-            <option value="en">English</option>
-            <option value="ja">Japanese</option>
-            <option value="ko">Korean</option>
-            <option value="zh">Chinese</option>
-            <option value="th">Thai</option>
-            <option value="vi">Vietnamese</option>
-            <option value="fr">French</option>
-            <option value="de">German</option>
-            <option value="it">Italian</option>
-            <option value="es">Spanish</option>
-            <option value="ar">Arabic</option>
-          </select>
+          <div class="header-actions">
+            <a class="mini-btn" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-
-    <nav>
-      <div class="nav-inner">
-        <ul id="nav-menu">
-          <li><a href="index.html" class="active" id="navHome">Home</a></li>
-          <li><a href="about.html" id="navAbout">About</a></li>
-          <li><a href="videos.html" id="navVideos">Videos</a></li>
-          <li><a href="articles.html" id="navArticles">Articles</a></li>
-          <li><a href="contact.html" id="navContact">Contact</a></li>
-        </ul>
-
-        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
   </header>
 
-  <main class="page-wrap wrap">
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <article class="hero-cover reveal">
+            <div class="hero-overlay">
+              <div class="cover-badge">Cover Story</div>
+              <h1 class="hero-title">
+                Building the next chapter of <em>digital manufacturing, enterprise IT, and transformation execution</em> across APAC.
+              </h1>
+              <p class="hero-deck">
+                Prashant Kumar operates where business growth, plant systems, digital platforms, IT, and Industry 4.0 meet. The story is not just technology. It is commercial direction, execution clarity, and transformation that moves.
+              </p>
+              <div class="hero-meta">
+                <span>21+ Years APAC Experience</span>
+                <span>IT + IT-OT</span>
+                <span>LIMS · MES · Digital Twin</span>
+                <span>Smart Manufacturing Growth</span>
+              </div>
+            </div>
+          </article>
 
-    <section class="hero-grid">
-      <div class="hero-main">
-        <span class="hero-kicker" id="heroKicker">Cover Story</span>
+          <aside class="hero-sidebar">
+            <div class="sidebar-card reveal">
+              <div class="sidebar-title">Core Expertise</div>
+              <ul class="expertise-list">
+                <li>Digital Transformation Strategy</li>
+                <li>Enterprise IT and Platform Positioning</li>
+                <li>IT-OT Integration and Plant Visibility</li>
+                <li>LIMS, MES, and Operations Systems</li>
+                <li>Digital Twin and Connected Data</li>
+                <li>Sustainability, ESG, and Energy Intelligence</li>
+                <li>Commercial Growth Across APAC</li>
+              </ul>
+            </div>
 
-        <h2 class="hero-headline" id="heroHeadline">
-          Building digital growth across <em>IT, IT-OT, and smart industry</em>.
-        </h2>
+            <div class="quote-card reveal">
+              <p>
+                Transformation only works when business ambition, enterprise systems, and plant execution move as one.
+              </p>
+              <div class="quote-line">Editorial Position</div>
+            </div>
 
-        <p class="hero-deck" id="heroDeck">
-          Prashant Kumar works at the intersection of business development, enterprise technology, plant systems, and digital transformation across APAC.
-        </p>
+            <div class="stats-card reveal">
+              <div class="sidebar-title">At a Glance</div>
+              <div class="stats-grid">
+                <div class="stat">
+                  <div class="stat-value">21+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">APAC</div>
+                  <div class="stat-label">Regional Coverage</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">IT+OT</div>
+                  <div class="stat-label">Transformation Lens</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">LIMS</div>
+                  <div class="stat-label">MES · Twin · Data</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero-split">
-          <div class="hero-note">
-            <h3 id="note1Title">At a Glance</h3>
-            <p id="note1Body">
-              Not only IT-OT. This profile also covers core IT, digital strategy, commercial growth, and enterprise transformation.
+    <section class="editor-picks" id="editorial">
+      <div class="container">
+        <div class="section-rule reveal"><span>Editor’s Picks</span></div>
+
+        <div class="picks-grid">
+          <article class="pick-feature reveal">
+            <div class="pick-feature-image"></div>
+            <div class="pick-feature-body">
+              <div>
+                <div class="pick-tag">Editorial Feature</div>
+                <h2 class="pick-title">Digital manufacturing intelligence should lead the conversation.</h2>
+                <p class="pick-copy">
+                  The strongest industrial story today is not automation alone. It is the convergence of plant data, enterprise workflows, operational visibility, and decision-making in one execution layer.
+                </p>
+              </div>
+              <a class="read-btn" href="#features">Read Feature</a>
+            </div>
+          </article>
+
+          <article class="mini-story reveal">
+            <div class="mini-image" style="background-image:url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="mini-body">
+              <div class="pick-tag">Business</div>
+              <h3 class="mini-title">Commercial growth with a sharper enterprise technology narrative.</h3>
+              <p class="mini-copy">
+                Winning transformation programs needs more than a proposal. It needs clear positioning that connects value, architecture, execution, and business timing.
+              </p>
+            </div>
+          </article>
+
+          <article class="mini-story reveal">
+            <div class="mini-image" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="mini-body">
+              <div class="pick-tag">Industry 4.0</div>
+              <h3 class="mini-title">Where IT, OT, data, and visibility start creating real operational value.</h3>
+              <p class="mini-copy">
+                The difference is not in collecting data. The difference is in turning it into action for quality, productivity, traceability, and control.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="features">
+      <div class="container">
+        <div class="section-rule reveal"><span>Featured Articles</span></div>
+
+        <div class="feature-layout">
+          <article class="feature-main reveal">
+            <div class="feature-main-image"></div>
+            <div class="feature-main-body">
+              <div class="pick-tag">Lead Analysis</div>
+              <h3>Why the future story is not just IT-OT. It is enterprise IT, industrial data, and transformation execution together.</h3>
+              <p>
+                The market often separates enterprise technology from plant transformation. In reality, strong digital outcomes come when both sides work as one system: commercial workflows, plant systems, operations visibility, reporting, quality, and decision architecture.
+              </p>
+              <a class="read-btn" href="#contact">Connect for Discussion</a>
+            </div>
+          </article>
+
+          <div class="feature-side">
+            <div class="story-list reveal">
+              <div class="story-list-title">More Features</div>
+
+              <article>
+                <div class="pick-tag">LIMS / MES</div>
+                <h4>Turning lab and manufacturing systems into business advantage.</h4>
+                <p>
+                  Execution matters most when data, sample workflows, testing cycles, approvals, and plant operations are no longer disconnected.
+                </p>
+              </article>
+
+              <article>
+                <div class="pick-tag">Sustainability</div>
+                <h4>ESG and energy visibility should not sit in separate reporting silos.</h4>
+                <p>
+                  Connected sustainability platforms create stronger reporting, better decisions, and a more usable enterprise view.
+                </p>
+              </article>
+
+              <article>
+                <div class="pick-tag">Digital Twin</div>
+                <h4>Digital Twin only becomes meaningful when it improves execution.</h4>
+                <p>
+                  The real question is not whether a twin exists. The question is whether it helps teams act faster and smarter.
+                </p>
+              </article>
+            </div>
+
+            <div class="insight-box reveal">
+              <p>Plant data, enterprise systems, and commercial direction belong in the same narrative.</p>
+              <small>Modern Transformation View</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectors" id="sectors">
+      <div class="container">
+        <div class="section-rule reveal"><span>Key Sectors</span></div>
+
+        <div class="sectors-grid">
+          <article class="sector reveal">
+            <div class="sector-icon">I</div>
+            <h4>Industrial</h4>
+            <p>
+              Smart manufacturing, process visibility, traceability, quality, and execution improvement across plant environments.
+            </p>
+          </article>
+
+          <article class="sector reveal">
+            <div class="sector-icon">E</div>
+            <h4>Enterprise IT</h4>
+            <p>
+              Applications, data platforms, digital workflows, integrations, and business systems that support transformation at scale.
+            </p>
+          </article>
+
+          <article class="sector reveal">
+            <div class="sector-icon">S</div>
+            <h4>Sustainability</h4>
+            <p>
+              ESG platforms, reporting visibility, energy management, and practical sustainability systems tied to operations.
+            </p>
+          </article>
+
+          <article class="sector reveal">
+            <div class="sector-icon">A</div>
+            <h4>APAC Growth</h4>
+            <p>
+              Regional business development, account expansion, solution shaping, partner alignment, and multi-country growth strategy.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip" id="contact">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="cta-copy">
+            <h3>Let’s build the next <span>digital growth story</span>.</h3>
+            <p>
+              From enterprise IT and industrial transformation to smart manufacturing, sustainability, and platform-led growth, the conversation starts with the right narrative and the right execution path.
             </p>
           </div>
 
-          <div class="hero-note">
-            <h3 id="note2Title">Focus Area</h3>
-            <p id="note2Body">
-              Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, sustainability, and connected business systems.
-            </p>
-          </div>
-        </div>
-
-        <div class="stat-row">
-          <div class="stat-item">
-            <div class="stat-num" id="statNum1">21+</div>
-            <div class="stat-label" id="stat1">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num" id="statNum2">APAC</div>
-            <div class="stat-label" id="stat2">Regional Coverage</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num" id="statNum3">IT+OT</div>
-            <div class="stat-label" id="stat3">Transformation Lens</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num" id="statNum4">LIMS</div>
-            <div class="stat-label" id="stat4">MES · Twin · Data</div>
+          <div class="cta-actions">
+            <a class="cta-btn primary" href="mailto:prashantkumar18@gmail.com">Email</a>
+            <a class="cta-btn secondary" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="cta-btn secondary" href="#features">Features</a>
           </div>
         </div>
       </div>
-
-      <aside class="hero-sidebar">
-        <div>
-          <div class="sidebar-section-title" id="expertiseTitle">Core Expertise</div>
-          <ul class="expertise-list">
-            <li id="exp1">Digital Transformation Strategy</li>
-            <li id="exp2">IT and Enterprise Platforms</li>
-            <li id="exp3">IT-OT Integration</li>
-            <li id="exp4">LIMS and MES</li>
-            <li id="exp5">Digital Twin Solutions</li>
-            <li id="exp6">Sustainability and ESG</li>
-            <li id="exp7">AI, Data, and Automation</li>
-            <li id="exp8">Business Development Across APAC</li>
-          </ul>
-        </div>
-
-        <div class="sidebar-quote" id="quote">
-          Digital transformation only works when business goals, IT systems, and operations move together.
-        </div>
-
-        <a class="cta-btn" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank" rel="noreferrer" id="ctaLinkedIn">
-          Connect on LinkedIn ↗
-        </a>
-      </aside>
     </section>
-
-    <div class="section-divider"><span id="divider1">What I Do</span></div>
-
-    <section class="card-grid">
-      <article class="card-item">
-        <span class="card-num">01</span>
-        <span class="card-icon-tag" id="cardTag1">Business</span>
-        <h3 class="card-title" id="cardTitle1">Growth, GTM, and revenue development</h3>
-        <p class="card-body" id="cardBody1">
-          Building opportunities, opening accounts, and shaping solution-led growth across enterprise and industrial markets.
-        </p>
-      </article>
-
-      <article class="card-item">
-        <span class="card-num">02</span>
-        <span class="card-icon-tag" id="cardTag2">Transformation</span>
-        <h3 class="card-title" id="cardTitle2">IT, IT-OT, and digital execution</h3>
-        <p class="card-body" id="cardBody2">
-          Turning digital strategy into workable platforms covering data, processes, plant visibility, and connected systems.
-        </p>
-      </article>
-
-      <article class="card-item">
-        <span class="card-num">03</span>
-        <span class="card-icon-tag" id="cardTag3">Influence</span>
-        <h3 class="card-title" id="cardTitle3">Thought leadership with commercial value</h3>
-        <p class="card-body" id="cardBody3">
-          Content, positioning, and industry communication that supports credibility, trust, and business conversations.
-        </p>
-      </article>
-    </section>
-
-    <section class="tl-banner">
-      <div>
-        <h3 class="tl-banner-title" id="bannerTitle">
-          Digital manufacturing intelligence <em>should lead the story</em>
-        </h3>
-        <p class="tl-banner-sub" id="bannerBody">
-          This is where plant data, enterprise systems, operational visibility, and decision-making come together to create real execution value.
-        </p>
-      </div>
-
-      <div class="tl-metrics">
-        <div>
-          <div class="tl-metric-val" id="metricVal1">IT</div>
-          <div class="tl-metric-label" id="metric1">Enterprise Systems</div>
-        </div>
-        <div>
-          <div class="tl-metric-val" id="metricVal2">OT</div>
-          <div class="tl-metric-label" id="metric2">Plant and Process Data</div>
-        </div>
-        <div>
-          <div class="tl-metric-val" id="metricVal3">DX</div>
-          <div class="tl-metric-label" id="metric3">Transformation Execution</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"><span id="divider2">Career Highlights</span></div>
-
-    <section class="feature-row">
-      <div class="feature-main">
-        <span class="feature-kicker" id="featureKicker">Feature</span>
-        <h3 class="feature-title" id="featureTitle">
-          A profile built across business, enterprise IT, and industrial transformation.
-        </h3>
-        <p class="feature-body" id="featureBody">
-          The value is not only technical positioning. It is the ability to connect customer need, commercial direction, solution design, and execution in one narrative.
-        </p>
-      </div>
-
-      <div class="feature-side">
-        <div class="timeline-label" id="timelineTitle">Editorial Timeline</div>
-        <ul class="timeline">
-          <li>
-            <div class="tl-year" id="timeYear1">APAC</div>
-            <div>
-              <div class="tl-role" id="time1Role">Regional business development</div>
-              <div class="tl-company" id="time1Comp">Enterprise, manufacturing, and transformation focus</div>
-            </div>
-          </li>
-          <li>
-            <div class="tl-year" id="timeYear2">IT</div>
-            <div>
-              <div class="tl-role" id="time2Role">Enterprise technology positioning</div>
-              <div class="tl-company" id="time2Comp">Applications, integrations, platforms, and digital workflows</div>
-            </div>
-          </li>
-          <li>
-            <div class="tl-year" id="timeYear3">OT</div>
-            <div>
-              <div class="tl-role" id="time3Role">Industry 4.0 and operations systems</div>
-              <div class="tl-company" id="time3Comp">LIMS, MES, Digital Twin, visibility, and plant data</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="section-divider"><span id="divider3">Key Sectors</span></div>
-
-    <section class="sectors-grid">
-      <div class="sector-item">
-        <div class="sector-icon" id="sectorIcon1">I</div>
-        <div class="sector-name" id="sector1">Industrial</div>
-        <div class="sector-desc" id="sector1Desc">Smart manufacturing, quality, process, and operations visibility.</div>
-      </div>
-
-      <div class="sector-item">
-        <div class="sector-icon" id="sectorIcon2">E</div>
-        <div class="sector-name" id="sector2">Enterprise IT</div>
-        <div class="sector-desc" id="sector2Desc">Applications, data, digital workflows, and business system integration.</div>
-      </div>
-
-      <div class="sector-item">
-        <div class="sector-icon" id="sectorIcon3">S</div>
-        <div class="sector-name" id="sector3">Sustainability</div>
-        <div class="sector-desc" id="sector3Desc">ESG platforms, reporting, energy visibility, and responsible operations.</div>
-      </div>
-
-      <div class="sector-item">
-        <div class="sector-icon" id="sectorIcon4">A</div>
-        <div class="sector-name" id="sector4">APAC Growth</div>
-        <div class="sector-desc" id="sector4Desc">Market development, partnerships, solution shaping, and account expansion.</div>
-      </div>
-    </section>
-
-    <div class="section-divider"><span id="divider4">Credentials</span></div>
-
-    <section class="cert-row">
-      <div class="cert-label" id="credLabel">Highlights</div>
-      <div class="cert-pills">
-        <span class="cert-pill" id="pillMBA">MBA</span>
-        <span class="cert-pill" id="pillCSM">CSM</span>
-        <span class="cert-pill" id="pillCISI">CISI</span>
-        <span class="cert-pill" id="pill1">Digital Transformation</span>
-        <span class="cert-pill" id="pill2">IT + IT-OT</span>
-        <span class="cert-pill" id="pill3">LIMS / MES / Twin</span>
-        <span class="cert-pill" id="pill4">APAC Business Development</span>
-      </div>
-    </section>
-
-    <section class="contact-strip">
-      <div class="contact-strip-left" id="contactLine">
-        Let’s build the next <span>digital growth story</span>.
-      </div>
-
-      <div class="contact-links">
-        <a class="contact-link primary" href="mailto:prashantkumar18@gmail.com" id="contactEmail">Email</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/prashant-kumar-digital/" target="_blank" rel="noreferrer" id="contactLinkedIn">LinkedIn</a>
-        <a class="contact-link" href="videos.html" id="contactVideos">Videos</a>
-        <a class="contact-link" href="articles.html" id="contactArticles">Articles</a>
-      </div>
-    </section>
-
   </main>
 
-  <footer id="footerText">
-    <strong>Prashant Kumar</strong> · Digital Transformation · IT · IT-OT Integration · Industry 4.0 · APAC
+  <footer>
+    <div class="container">
+      <div class="footer-title">Prashant Kumar</div>
+      <div class="footer-line">Digital Transformation · IT · IT-OT Integration · Industry 4.0 · APAC</div>
+    </div>
   </footer>
 
   <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const langSwitch = document.getElementById('langSwitch');
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-        const expanded = navMenu.classList.contains('open');
-        navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        navToggle.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const expanded = navLinks.classList.contains('open');
+        menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       });
 
-      navMenu.querySelectorAll('a').forEach(link => {
+      navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          navMenu.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.setAttribute('aria-label', 'Open menu');
+          navLinks.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
         });
       });
+    }
 
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('nav')) {
-          navMenu.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.setAttribute('aria-label', 'Open menu');
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    }
-
-    const translations = {
-      en: {
-        editionLabel: "Global Edition",
-        topbarText: "Singapore • APAC • Digital Transformation • IT + IT-OT • Industry 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "Business Growth",
-        leftLine2: "Industry 4.0 · APAC",
-        namePre: "The Official Site of",
-        tagline: "Digital Transformation · IT · IT-OT Integration · Industry 4.0",
-        rightLocation: "Singapore, APAC",
-        langLabel: "Language",
-        navHome: "Home",
-        navAbout: "About",
-        navVideos: "Videos",
-        navArticles: "Articles",
-        navContact: "Contact",
-        heroKicker: "Cover Story",
-        heroHeadline: "Building digital growth across <em>IT, IT-OT, and smart industry</em>.",
-        heroDeck: "Prashant Kumar works at the intersection of business development, enterprise technology, plant systems, and digital transformation across APAC.",
-        note1Title: "At a Glance",
-        note1Body: "Not only IT-OT. This profile also covers core IT, digital strategy, commercial growth, and enterprise transformation.",
-        note2Title: "Focus Area",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, sustainability, and connected business systems.",
-        statNum1: "21+",
-        stat1: "Years Experience",
-        statNum2: "APAC",
-        stat2: "Regional Coverage",
-        statNum3: "IT+OT",
-        stat3: "Transformation Lens",
-        statNum4: "LIMS",
-        stat4: "MES · Twin · Data",
-        expertiseTitle: "Core Expertise",
-        exp1: "Digital Transformation Strategy",
-        exp2: "IT and Enterprise Platforms",
-        exp3: "IT-OT Integration",
-        exp4: "LIMS and MES",
-        exp5: "Digital Twin Solutions",
-        exp6: "Sustainability and ESG",
-        exp7: "AI, Data, and Automation",
-        exp8: "Business Development Across APAC",
-        quote: "Digital transformation only works when business goals, IT systems, and operations move together.",
-        ctaLinkedIn: "Connect on LinkedIn ↗",
-        divider1: "What I Do",
-        cardTag1: "Business",
-        cardTitle1: "Growth, GTM, and revenue development",
-        cardBody1: "Building opportunities, opening accounts, and shaping solution-led growth across enterprise and industrial markets.",
-        cardTag2: "Transformation",
-        cardTitle2: "IT, IT-OT, and digital execution",
-        cardBody2: "Turning digital strategy into workable platforms covering data, processes, plant visibility, and connected systems.",
-        cardTag3: "Influence",
-        cardTitle3: "Thought leadership with commercial value",
-        cardBody3: "Content, positioning, and industry communication that supports credibility, trust, and business conversations.",
-        bannerTitle: "Digital manufacturing intelligence <em>should lead the story</em>",
-        bannerBody: "This is where plant data, enterprise systems, operational visibility, and decision-making come together to create real execution value.",
-        metricVal1: "IT",
-        metric1: "Enterprise Systems",
-        metricVal2: "OT",
-        metric2: "Plant and Process Data",
-        metricVal3: "DX",
-        metric3: "Transformation Execution",
-        divider2: "Career Highlights",
-        featureKicker: "Feature",
-        featureTitle: "A profile built across business, enterprise IT, and industrial transformation.",
-        featureBody: "The value is not only technical positioning. It is the ability to connect customer need, commercial direction, solution design, and execution in one narrative.",
-        timelineTitle: "Editorial Timeline",
-        timeYear1: "APAC",
-        time1Role: "Regional business development",
-        time1Comp: "Enterprise, manufacturing, and transformation focus",
-        timeYear2: "IT",
-        time2Role: "Enterprise technology positioning",
-        time2Comp: "Applications, integrations, platforms, and digital workflows",
-        timeYear3: "OT",
-        time3Role: "Industry 4.0 and operations systems",
-        time3Comp: "LIMS, MES, Digital Twin, visibility, and plant data",
-        divider3: "Key Sectors",
-        sectorIcon1: "I",
-        sector1: "Industrial",
-        sector1Desc: "Smart manufacturing, quality, process, and operations visibility.",
-        sectorIcon2: "E",
-        sector2: "Enterprise IT",
-        sector2Desc: "Applications, data, digital workflows, and business system integration.",
-        sectorIcon3: "S",
-        sector3: "Sustainability",
-        sector3Desc: "ESG platforms, reporting, energy visibility, and responsible operations.",
-        sectorIcon4: "A",
-        sector4: "APAC Growth",
-        sector4Desc: "Market development, partnerships, solution shaping, and account expansion.",
-        divider4: "Credentials",
-        credLabel: "Highlights",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "Digital Transformation",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "APAC Business Development",
-        contactLine: "Let’s build the next <span>digital growth story</span>.",
-        contactEmail: "Email",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "Videos",
-        contactArticles: "Articles",
-        footerText: "<strong>Prashant Kumar</strong> · Digital Transformation · IT · IT-OT Integration · Industry 4.0 · APAC"
-      },
-
-      ja: {
-        editionLabel: "日本版",
-        topbarText: "シンガポール • APAC • デジタルトランスフォーメーション • IT + IT-OT • インダストリー4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "ビジネス成長",
-        leftLine2: "インダストリー4.0 · APAC",
-        namePre: "公式サイト",
-        tagline: "デジタルトランスフォーメーション · IT · IT-OT統合 · インダストリー4.0",
-        rightLocation: "シンガポール, APAC",
-        langLabel: "言語",
-        navHome: "ホーム",
-        navAbout: "概要",
-        navVideos: "動画",
-        navArticles: "記事",
-        navContact: "連絡先",
-        heroKicker: "特集",
-        heroHeadline: "<em>IT、IT-OT、スマート産業</em>を横断してデジタル成長をつくる。",
-        heroDeck: "Prashant Kumarは、APAC全域で事業開発、企業IT、現場システム、デジタル変革をつなぎます。",
-        note1Title: "概要",
-        note1Body: "IT-OTだけではありません。このプロフィールは、コアIT、デジタル戦略、商業成長、企業変革もカバーします。",
-        note2Title: "重点領域",
-        note2Body: "デジタル製造インテリジェンス、LIMS、MES、デジタルツイン、サステナビリティ、接続型ビジネスシステム。",
-        statNum1: "21+",
-        stat1: "経験年数",
-        statNum2: "APAC",
-        stat2: "地域カバレッジ",
-        statNum3: "IT+OT",
-        stat3: "変革視点",
-        statNum4: "LIMS",
-        stat4: "MES · ツイン · データ",
-        expertiseTitle: "主要専門領域",
-        exp1: "デジタル変革戦略",
-        exp2: "ITとエンタープライズ基盤",
-        exp3: "IT-OT統合",
-        exp4: "LIMSとMES",
-        exp5: "デジタルツインソリューション",
-        exp6: "サステナビリティとESG",
-        exp7: "AI、データ、自動化",
-        exp8: "APAC全域の事業開発",
-        quote: "デジタル変革は、ビジネス目標、ITシステム、現場運用が一体で動く時に初めて機能します。",
-        ctaLinkedIn: "LinkedInでつながる ↗",
-        divider1: "主な取り組み",
-        cardTag1: "事業",
-        cardTitle1: "成長、GTM、売上開発",
-        cardBody1: "新規案件の創出、アカウント開拓、提案型成長を企業市場と産業市場で推進します。",
-        cardTag2: "変革",
-        cardTitle2: "IT、IT-OT、デジタル実行",
-        cardBody2: "デジタル戦略を、データ、業務、現場可視化、接続システムに落とし込みます。",
-        cardTag3: "発信",
-        cardTitle3: "商業価値につながる思想発信",
-        cardBody3: "信頼、信用、商談形成につながるコンテンツとポジショニングをつくります。",
-        bannerTitle: "デジタル製造インテリジェンスが <em>主役であるべきです</em>",
-        bannerBody: "現場データ、企業システム、運用可視化、意思決定がここでつながり、実行価値を生みます。",
-        metricVal1: "IT",
-        metric1: "企業システム",
-        metricVal2: "OT",
-        metric2: "現場・プロセスデータ",
-        metricVal3: "DX",
-        metric3: "変革実行",
-        divider2: "キャリアハイライト",
-        featureKicker: "特集",
-        featureTitle: "事業、企業IT、産業変革を横断して築いたプロフィール。",
-        featureBody: "価値は技術訴求だけではありません。顧客課題、商業戦略、ソリューション設計、実行を一つの物語にできます。",
-        timelineTitle: "キャリアの流れ",
-        timeYear1: "APAC",
-        time1Role: "地域事業開発",
-        time1Comp: "企業、製造、変革領域に注力",
-        timeYear2: "IT",
-        time2Role: "企業ITポジショニング",
-        time2Comp: "アプリ、統合、基盤、デジタル業務",
-        timeYear3: "OT",
-        time3Role: "インダストリー4.0と運用システム",
-        time3Comp: "LIMS、MES、デジタルツイン、可視化、現場データ",
-        divider3: "主要分野",
-        sectorIcon1: "工",
-        sector1: "産業",
-        sector1Desc: "スマート製造、品質、プロセス、運用可視化。",
-        sectorIcon2: "企",
-        sector2: "エンタープライズIT",
-        sector2Desc: "アプリ、データ、デジタル業務、基幹連携。",
-        sectorIcon3: "持",
-        sector3: "サステナビリティ",
-        sector3Desc: "ESG基盤、報告、エネルギー可視化、責任ある運用。",
-        sectorIcon4: "A",
-        sector4: "APAC成長",
-        sector4Desc: "市場開拓、提携、提案設計、アカウント拡大。",
-        divider4: "資格と強み",
-        credLabel: "ハイライト",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "デジタル変革",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / ツイン",
-        pill4: "APAC事業開発",
-        contactLine: "次の<span>デジタル成長ストーリー</span>を一緒につくりましょう。",
-        contactEmail: "メール",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "動画",
-        contactArticles: "記事",
-        footerText: "<strong>Prashant Kumar</strong> · デジタルトランスフォーメーション · IT · IT-OT統合 · インダストリー4.0 · APAC"
-      },
-
-      ko: {
-        editionLabel: "한국판",
-        topbarText: "싱가포르 • APAC • 디지털 전환 • IT + IT-OT • 인더스트리 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "비즈니스 성장",
-        leftLine2: "인더스트리 4.0 · APAC",
-        namePre: "공식 사이트",
-        tagline: "디지털 전환 · IT · IT-OT 통합 · 인더스트리 4.0",
-        rightLocation: "싱가포르, APAC",
-        langLabel: "언어",
-        navHome: "홈",
-        navAbout: "소개",
-        navVideos: "영상",
-        navArticles: "아티클",
-        navContact: "문의",
-        heroKicker: "커버 스토리",
-        heroHeadline: "<em>IT, IT-OT, 스마트 산업</em> 전반의 디지털 성장을 구축합니다.",
-        heroDeck: "Prashant Kumar는 APAC 전역에서 사업개발, 엔터프라이즈 기술, 현장 시스템, 디지털 전환을 연결합니다.",
-        note1Title: "한눈에 보기",
-        note1Body: "IT-OT만이 아닙니다. 이 프로필은 핵심 IT, 디지털 전략, 상업 성장, 엔터프라이즈 전환도 포함합니다.",
-        note2Title: "집중 분야",
-        note2Body: "디지털 제조 인텔리전스, LIMS, MES, 디지털 트윈, 지속가능성, 연결된 비즈니스 시스템.",
-        statNum1: "21+",
-        stat1: "경력 연수",
-        statNum2: "APAC",
-        stat2: "지역 범위",
-        statNum3: "IT+OT",
-        stat3: "전환 관점",
-        statNum4: "LIMS",
-        stat4: "MES · 트윈 · 데이터",
-        expertiseTitle: "핵심 전문 분야",
-        exp1: "디지털 전환 전략",
-        exp2: "IT 및 엔터프라이즈 플랫폼",
-        exp3: "IT-OT 통합",
-        exp4: "LIMS 및 MES",
-        exp5: "디지털 트윈 솔루션",
-        exp6: "지속가능성 및 ESG",
-        exp7: "AI, 데이터, 자동화",
-        exp8: "APAC 전역 사업개발",
-        quote: "디지털 전환은 비즈니스 목표, IT 시스템, 운영이 함께 움직일 때만 제대로 작동합니다.",
-        ctaLinkedIn: "LinkedIn에서 연결 ↗",
-        divider1: "내가 하는 일",
-        cardTag1: "비즈니스",
-        cardTitle1: "성장, GTM, 매출 개발",
-        cardBody1: "기회 발굴, 신규 계정 개척, 솔루션 중심 성장을 엔터프라이즈 및 산업 시장에서 추진합니다.",
-        cardTag2: "전환",
-        cardTitle2: "IT, IT-OT, 디지털 실행",
-        cardBody2: "디지털 전략을 데이터, 프로세스, 현장 가시성, 연결 시스템으로 실현합니다.",
-        cardTag3: "영향력",
-        cardTitle3: "상업적 가치를 만드는 사고 리더십",
-        cardBody3: "신뢰와 비즈니스 대화를 이끄는 콘텐츠와 포지셔닝을 만듭니다.",
-        bannerTitle: "디지털 제조 인텔리전스가 <em>이야기의 중심이 되어야 합니다</em>",
-        bannerBody: "현장 데이터, 엔터프라이즈 시스템, 운영 가시성, 의사결정이 여기서 연결되어 실행 가치를 만듭니다.",
-        metricVal1: "IT",
-        metric1: "엔터프라이즈 시스템",
-        metricVal2: "OT",
-        metric2: "현장 및 공정 데이터",
-        metricVal3: "DX",
-        metric3: "전환 실행",
-        divider2: "커리어 하이라이트",
-        featureKicker: "특집",
-        featureTitle: "비즈니스, 엔터프라이즈 IT, 산업 전환 전반에 걸쳐 구축된 프로필.",
-        featureBody: "가치는 기술 포지셔닝에만 있지 않습니다. 고객 니즈, 상업 방향, 솔루션 설계, 실행을 하나의 흐름으로 연결합니다.",
-        timelineTitle: "커리어 타임라인",
-        timeYear1: "APAC",
-        time1Role: "지역 사업개발",
-        time1Comp: "엔터프라이즈, 제조, 전환 중심",
-        timeYear2: "IT",
-        time2Role: "엔터프라이즈 기술 포지셔닝",
-        time2Comp: "애플리케이션, 통합, 플랫폼, 디지털 워크플로",
-        timeYear3: "OT",
-        time3Role: "인더스트리 4.0 및 운영 시스템",
-        time3Comp: "LIMS, MES, 디지털 트윈, 가시성, 현장 데이터",
-        divider3: "주요 분야",
-        sectorIcon1: "산",
-        sector1: "산업",
-        sector1Desc: "스마트 제조, 품질, 공정, 운영 가시성.",
-        sectorIcon2: "기",
-        sector2: "엔터프라이즈 IT",
-        sector2Desc: "애플리케이션, 데이터, 디지털 워크플로, 비즈니스 시스템 통합.",
-        sectorIcon3: "지",
-        sector3: "지속가능성",
-        sector3Desc: "ESG 플랫폼, 보고, 에너지 가시성, 책임 있는 운영.",
-        sectorIcon4: "A",
-        sector4: "APAC 성장",
-        sector4Desc: "시장 개발, 파트너십, 솔루션 구상, 계정 확장.",
-        divider4: "자격 및 강점",
-        credLabel: "하이라이트",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "디지털 전환",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / 트윈",
-        pill4: "APAC 사업개발",
-        contactLine: "다음 <span>디지털 성장 스토리</span>를 함께 만듭시다.",
-        contactEmail: "이메일",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "영상",
-        contactArticles: "아티클",
-        footerText: "<strong>Prashant Kumar</strong> · 디지털 전환 · IT · IT-OT 통합 · 인더스트리 4.0 · APAC"
-      },
-
-      zh: {
-        editionLabel: "中文版",
-        topbarText: "新加坡 • APAC • 数字化转型 • IT + IT-OT • 工业4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "业务增长",
-        leftLine2: "工业4.0 · APAC",
-        namePre: "官方网站",
-        tagline: "数字化转型 · IT · IT-OT集成 · 工业4.0",
-        rightLocation: "新加坡，APAC",
-        langLabel: "语言",
-        navHome: "首页",
-        navAbout: "关于",
-        navVideos: "视频",
-        navArticles: "文章",
-        navContact: "联系",
-        heroKicker: "封面故事",
-        heroHeadline: "在<em>IT、IT-OT与智能工业</em>之间构建数字增长。",
-        heroDeck: "Prashant Kumar专注于亚太地区的业务拓展、企业技术、工厂系统与数字化转型。",
-        note1Title: "一览",
-        note1Body: "不仅仅是IT-OT。本页面同样涵盖核心IT、数字战略、商业增长与企业转型。",
-        note2Title: "重点领域",
-        note2Body: "数字制造智能、LIMS、MES、数字孪生、可持续发展以及互联业务系统。",
-        statNum1: "21+",
-        stat1: "年经验",
-        statNum2: "APAC",
-        stat2: "区域覆盖",
-        statNum3: "IT+OT",
-        stat3: "转型视角",
-        statNum4: "LIMS",
-        stat4: "MES · 孪生 · 数据",
-        expertiseTitle: "核心专长",
-        exp1: "数字化转型战略",
-        exp2: "IT与企业平台",
-        exp3: "IT-OT集成",
-        exp4: "LIMS与MES",
-        exp5: "数字孪生解决方案",
-        exp6: "可持续发展与ESG",
-        exp7: "AI、数据与自动化",
-        exp8: "APAC业务拓展",
-        quote: "只有当业务目标、IT系统和运营协同推进时，数字化转型才真正有效。",
-        ctaLinkedIn: "在 LinkedIn 上联系 ↗",
-        divider1: "我做什么",
-        cardTag1: "业务",
-        cardTitle1: "增长、GTM与收入发展",
-        cardBody1: "在企业与工业市场中开拓机会、发展客户，并推动以解决方案为导向的增长。",
-        cardTag2: "转型",
-        cardTitle2: "IT、IT-OT与数字执行",
-        cardBody2: "把数字战略落地为数据、流程、工厂可视化和互联系统。",
-        cardTag3: "影响力",
-        cardTitle3: "具备商业价值的思想领导力",
-        cardBody3: "通过内容、定位与行业沟通建立可信度、信任与商业对话。",
-        bannerTitle: "数字制造智能 <em>应该成为核心主线</em>",
-        bannerBody: "工厂数据、企业系统、运营可视化与决策在这里融合，形成真正的执行价值。",
-        metricVal1: "IT",
-        metric1: "企业系统",
-        metricVal2: "OT",
-        metric2: "工厂与流程数据",
-        metricVal3: "DX",
-        metric3: "转型执行",
-        divider2: "职业亮点",
-        featureKicker: "专题",
-        featureTitle: "横跨业务、企业IT与工业转型而建立的职业画像。",
-        featureBody: "价值不只在技术表达，更在于把客户需求、商业方向、方案设计与执行连接成一个完整故事。",
-        timelineTitle: "职业时间线",
-        timeYear1: "APAC",
-        time1Role: "区域业务拓展",
-        time1Comp: "聚焦企业、制造与转型",
-        timeYear2: "IT",
-        time2Role: "企业技术定位",
-        time2Comp: "应用、集成、平台与数字工作流",
-        timeYear3: "OT",
-        time3Role: "工业4.0与运营系统",
-        time3Comp: "LIMS、MES、数字孪生、可视化与工厂数据",
-        divider3: "关键领域",
-        sectorIcon1: "工",
-        sector1: "工业",
-        sector1Desc: "智能制造、质量、流程与运营可视化。",
-        sectorIcon2: "企",
-        sector2: "企业IT",
-        sector2Desc: "应用、数据、数字工作流与业务系统集成。",
-        sectorIcon3: "可",
-        sector3: "可持续发展",
-        sector3Desc: "ESG平台、报告、能源可视化与责任运营。",
-        sectorIcon4: "A",
-        sector4: "APAC增长",
-        sector4Desc: "市场拓展、合作伙伴、方案塑造与客户扩展。",
-        divider4: "资历与优势",
-        credLabel: "亮点",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "数字化转型",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / 孪生",
-        pill4: "APAC业务拓展",
-        contactLine: "一起打造下一段<span>数字增长故事</span>。",
-        contactEmail: "邮箱",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "视频",
-        contactArticles: "文章",
-        footerText: "<strong>Prashant Kumar</strong> · 数字化转型 · IT · IT-OT集成 · 工业4.0 · APAC"
-      },
-
-      th: {
-        editionLabel: "ฉบับประเทศไทย",
-        topbarText: "สิงคโปร์ • APAC • การเปลี่ยนผ่านดิจิทัล • IT + IT-OT • อุตสาหกรรม 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "การเติบโตทางธุรกิจ",
-        leftLine2: "อุตสาหกรรม 4.0 · APAC",
-        namePre: "เว็บไซต์อย่างเป็นทางการ",
-        tagline: "การเปลี่ยนผ่านดิจิทัล · IT · การบูรณาการ IT-OT · อุตสาหกรรม 4.0",
-        rightLocation: "สิงคโปร์, APAC",
-        langLabel: "ภาษา",
-        navHome: "หน้าแรก",
-        navAbout: "เกี่ยวกับ",
-        navVideos: "วิดีโอ",
-        navArticles: "บทความ",
-        navContact: "ติดต่อ",
-        heroKicker: "เรื่องเด่น",
-        heroHeadline: "ขับเคลื่อนการเติบโตดิจิทัลผ่าน <em>IT, IT-OT และอุตสาหกรรมอัจฉริยะ</em>",
-        heroDeck: "Prashant Kumar ทำงานที่จุดเชื่อมระหว่างการพัฒนาธุรกิจ เทคโนโลยีองค์กร ระบบโรงงาน และการเปลี่ยนผ่านดิจิทัลทั่ว APAC",
-        note1Title: "ภาพรวม",
-        note1Body: "ไม่ใช่แค่ IT-OT เท่านั้น โปรไฟล์นี้ยังครอบคลุม IT หลัก กลยุทธ์ดิจิทัล การเติบโตเชิงพาณิชย์ และการเปลี่ยนแปลงองค์กร",
-        note2Title: "จุดเน้น",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, ความยั่งยืน และระบบธุรกิจที่เชื่อมต่อกัน",
-        statNum1: "21+",
-        stat1: "ปีประสบการณ์",
-        statNum2: "APAC",
-        stat2: "การครอบคลุมภูมิภาค",
-        statNum3: "IT+OT",
-        stat3: "มุมมองการเปลี่ยนผ่าน",
-        statNum4: "LIMS",
-        stat4: "MES · Twin · Data",
-        expertiseTitle: "ความเชี่ยวชาญหลัก",
-        exp1: "กลยุทธ์การเปลี่ยนผ่านดิจิทัล",
-        exp2: "IT และแพลตฟอร์มองค์กร",
-        exp3: "การบูรณาการ IT-OT",
-        exp4: "LIMS และ MES",
-        exp5: "โซลูชัน Digital Twin",
-        exp6: "ความยั่งยืนและ ESG",
-        exp7: "AI ข้อมูล และระบบอัตโนมัติ",
-        exp8: "การพัฒนาธุรกิจทั่ว APAC",
-        quote: "การเปลี่ยนผ่านดิจิทัลจะได้ผลก็ต่อเมื่อเป้าหมายธุรกิจ ระบบ IT และการปฏิบัติงานเดินไปด้วยกัน",
-        ctaLinkedIn: "เชื่อมต่อบน LinkedIn ↗",
-        divider1: "สิ่งที่ฉันทำ",
-        cardTag1: "ธุรกิจ",
-        cardTitle1: "การเติบโต GTM และการพัฒนารายได้",
-        cardBody1: "สร้างโอกาส เปิดบัญชีลูกค้าใหม่ และขับเคลื่อนการเติบโตด้วยโซลูชันในตลาดองค์กรและอุตสาหกรรม",
-        cardTag2: "การเปลี่ยนผ่าน",
-        cardTitle2: "IT, IT-OT และการลงมือทำดิจิทัล",
-        cardBody2: "เปลี่ยนกลยุทธ์ดิจิทัลให้เป็นแพลตฟอร์มที่ใช้งานได้จริง ครอบคลุมข้อมูล กระบวนการ การมองเห็นโรงงาน และระบบเชื่อมต่อ",
-        cardTag3: "อิทธิพล",
-        cardTitle3: "ภาวะผู้นำทางความคิดที่มีคุณค่าทางธุรกิจ",
-        cardBody3: "คอนเทนต์ การวางตำแหน่ง และการสื่อสารในอุตสาหกรรมที่ช่วยสร้างความน่าเชื่อถือและบทสนทนาทางธุรกิจ",
-        bannerTitle: "Digital manufacturing intelligence <em>ควรเป็นแกนหลักของเรื่องราว</em>",
-        bannerBody: "นี่คือจุดที่ข้อมูลโรงงาน ระบบองค์กร การมองเห็นการปฏิบัติงาน และการตัดสินใจมารวมกันเพื่อสร้างคุณค่าจริง",
-        metricVal1: "IT",
-        metric1: "ระบบองค์กร",
-        metricVal2: "OT",
-        metric2: "ข้อมูลโรงงานและกระบวนการ",
-        metricVal3: "DX",
-        metric3: "การขับเคลื่อนการเปลี่ยนผ่าน",
-        divider2: "ไฮไลต์อาชีพ",
-        featureKicker: "ฟีเจอร์",
-        featureTitle: "โปรไฟล์ที่สร้างขึ้นจากธุรกิจ IT องค์กร และการเปลี่ยนผ่านภาคอุตสาหกรรม",
-        featureBody: "คุณค่าไม่ได้มีแค่ด้านเทคนิค แต่คือความสามารถในการเชื่อมความต้องการลูกค้า ทิศทางเชิงพาณิชย์ การออกแบบโซลูชัน และการลงมือทำ",
-        timelineTitle: "เส้นทางอาชีพ",
-        timeYear1: "APAC",
-        time1Role: "การพัฒนาธุรกิจระดับภูมิภาค",
-        time1Comp: "เน้นองค์กร การผลิต และการเปลี่ยนผ่าน",
-        timeYear2: "IT",
-        time2Role: "การวางตำแหน่งเทคโนโลยีองค์กร",
-        time2Comp: "แอปพลิเคชัน การเชื่อมต่อ แพลตฟอร์ม และเวิร์กโฟลดิจิทัล",
-        timeYear3: "OT",
-        time3Role: "Industry 4.0 และระบบปฏิบัติการ",
-        time3Comp: "LIMS, MES, Digital Twin, การมองเห็น และข้อมูลโรงงาน",
-        divider3: "ภาคส่วนหลัก",
-        sectorIcon1: "I",
-        sector1: "อุตสาหกรรม",
-        sector1Desc: "การผลิตอัจฉริยะ คุณภาพ กระบวนการ และการมองเห็นการปฏิบัติงาน",
-        sectorIcon2: "E",
-        sector2: "Enterprise IT",
-        sector2Desc: "แอปพลิเคชัน ข้อมูล เวิร์กโฟลดิจิทัล และการเชื่อมระบบธุรกิจ",
-        sectorIcon3: "S",
-        sector3: "ความยั่งยืน",
-        sector3Desc: "แพลตฟอร์ม ESG การรายงาน การมองเห็นพลังงาน และการดำเนินงานอย่างรับผิดชอบ",
-        sectorIcon4: "A",
-        sector4: "การเติบโตใน APAC",
-        sector4Desc: "การพัฒนาตลาด พันธมิตร การกำหนดโซลูชัน และการขยายบัญชีลูกค้า",
-        divider4: "คุณวุฒิ",
-        credLabel: "ไฮไลต์",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "การเปลี่ยนผ่านดิจิทัล",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "การพัฒนาธุรกิจ APAC",
-        contactLine: "มาสร้าง<span>เรื่องราวการเติบโตดิจิทัล</span>ครั้งต่อไปกัน",
-        contactEmail: "อีเมล",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "วิดีโอ",
-        contactArticles: "บทความ",
-        footerText: "<strong>Prashant Kumar</strong> · การเปลี่ยนผ่านดิจิทัล · IT · การบูรณาการ IT-OT · อุตสาหกรรม 4.0 · APAC"
-      },
-
-      vi: {
-        editionLabel: "Phiên bản Việt Nam",
-        topbarText: "Singapore • APAC • Chuyển đổi số • IT + IT-OT • Công nghiệp 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "Tăng trưởng kinh doanh",
-        leftLine2: "Công nghiệp 4.0 · APAC",
-        namePre: "Trang chính thức",
-        tagline: "Chuyển đổi số · IT · Tích hợp IT-OT · Công nghiệp 4.0",
-        rightLocation: "Singapore, APAC",
-        langLabel: "Ngôn ngữ",
-        navHome: "Trang chủ",
-        navAbout: "Giới thiệu",
-        navVideos: "Video",
-        navArticles: "Bài viết",
-        navContact: "Liên hệ",
-        heroKicker: "Câu chuyện nổi bật",
-        heroHeadline: "Xây dựng tăng trưởng số trên <em>IT, IT-OT và công nghiệp thông minh</em>.",
-        heroDeck: "Prashant Kumar làm việc ở giao điểm giữa phát triển kinh doanh, công nghệ doanh nghiệp, hệ thống nhà máy và chuyển đổi số trên toàn APAC.",
-        note1Title: "Tổng quan",
-        note1Body: "Không chỉ là IT-OT. Hồ sơ này còn bao gồm IT cốt lõi, chiến lược số, tăng trưởng thương mại và chuyển đổi doanh nghiệp.",
-        note2Title: "Trọng tâm",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, phát triển bền vững và các hệ thống kinh doanh kết nối.",
-        statNum1: "21+",
-        stat1: "Năm kinh nghiệm",
-        statNum2: "APAC",
-        stat2: "Phạm vi khu vực",
-        statNum3: "IT+OT",
-        stat3: "Góc nhìn chuyển đổi",
-        statNum4: "LIMS",
-        stat4: "MES · Twin · Data",
-        expertiseTitle: "Năng lực cốt lõi",
-        exp1: "Chiến lược chuyển đổi số",
-        exp2: "IT và nền tảng doanh nghiệp",
-        exp3: "Tích hợp IT-OT",
-        exp4: "LIMS và MES",
-        exp5: "Giải pháp Digital Twin",
-        exp6: "Bền vững và ESG",
-        exp7: "AI, dữ liệu và tự động hóa",
-        exp8: "Phát triển kinh doanh toàn APAC",
-        quote: "Chuyển đổi số chỉ hiệu quả khi mục tiêu kinh doanh, hệ thống IT và vận hành cùng tiến về một hướng.",
-        ctaLinkedIn: "Kết nối trên LinkedIn ↗",
-        divider1: "Tôi làm gì",
-        cardTag1: "Kinh doanh",
-        cardTitle1: "Tăng trưởng, GTM và phát triển doanh thu",
-        cardBody1: "Tạo cơ hội, mở tài khoản mới và thúc đẩy tăng trưởng dựa trên giải pháp trong thị trường doanh nghiệp và công nghiệp.",
-        cardTag2: "Chuyển đổi",
-        cardTitle2: "IT, IT-OT và triển khai số",
-        cardBody2: "Biến chiến lược số thành nền tảng thực thi bao gồm dữ liệu, quy trình, khả năng nhìn thấy nhà máy và hệ thống kết nối.",
-        cardTag3: "Ảnh hưởng",
-        cardTitle3: "Tư duy dẫn dắt có giá trị thương mại",
-        cardBody3: "Nội dung, định vị và truyền thông ngành giúp tạo uy tín, niềm tin và cuộc trò chuyện kinh doanh.",
-        bannerTitle: "Digital manufacturing intelligence <em>nên là trọng tâm câu chuyện</em>",
-        bannerBody: "Đây là nơi dữ liệu nhà máy, hệ thống doanh nghiệp, khả năng nhìn thấy vận hành và ra quyết định hội tụ để tạo ra giá trị thực thi thực sự.",
-        metricVal1: "IT",
-        metric1: "Hệ thống doanh nghiệp",
-        metricVal2: "OT",
-        metric2: "Dữ liệu nhà máy và quy trình",
-        metricVal3: "DX",
-        metric3: "Triển khai chuyển đổi",
-        divider2: "Điểm nổi bật sự nghiệp",
-        featureKicker: "Nổi bật",
-        featureTitle: "Hồ sơ được xây dựng trên kinh doanh, IT doanh nghiệp và chuyển đổi công nghiệp.",
-        featureBody: "Giá trị không chỉ nằm ở định vị kỹ thuật. Đó là khả năng kết nối nhu cầu khách hàng, định hướng thương mại, thiết kế giải pháp và triển khai.",
-        timelineTitle: "Dòng thời gian",
-        timeYear1: "APAC",
-        time1Role: "Phát triển kinh doanh khu vực",
-        time1Comp: "Tập trung vào doanh nghiệp, sản xuất và chuyển đổi",
-        timeYear2: "IT",
-        time2Role: "Định vị công nghệ doanh nghiệp",
-        time2Comp: "Ứng dụng, tích hợp, nền tảng và quy trình số",
-        timeYear3: "OT",
-        time3Role: "Industry 4.0 và hệ thống vận hành",
-        time3Comp: "LIMS, MES, Digital Twin, khả năng nhìn thấy và dữ liệu nhà máy",
-        divider3: "Lĩnh vực chính",
-        sectorIcon1: "I",
-        sector1: "Công nghiệp",
-        sector1Desc: "Sản xuất thông minh, chất lượng, quy trình và khả năng nhìn thấy vận hành.",
-        sectorIcon2: "E",
-        sector2: "IT doanh nghiệp",
-        sector2Desc: "Ứng dụng, dữ liệu, quy trình số và tích hợp hệ thống kinh doanh.",
-        sectorIcon3: "S",
-        sector3: "Bền vững",
-        sector3Desc: "Nền tảng ESG, báo cáo, khả năng nhìn thấy năng lượng và vận hành có trách nhiệm.",
-        sectorIcon4: "A",
-        sector4: "Tăng trưởng APAC",
-        sector4Desc: "Phát triển thị trường, đối tác, định hình giải pháp và mở rộng tài khoản.",
-        divider4: "Chứng chỉ",
-        credLabel: "Điểm nổi bật",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "Chuyển đổi số",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "Phát triển kinh doanh APAC",
-        contactLine: "Hãy cùng xây dựng <span>câu chuyện tăng trưởng số</span> tiếp theo.",
-        contactEmail: "Email",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "Video",
-        contactArticles: "Bài viết",
-        footerText: "<strong>Prashant Kumar</strong> · Chuyển đổi số · IT · Tích hợp IT-OT · Công nghiệp 4.0 · APAC"
-      },
-
-      fr: {
-        editionLabel: "Édition Française",
-        topbarText: "Singapour • APAC • Transformation numérique • IT + IT-OT • Industrie 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "Croissance business",
-        leftLine2: "Industrie 4.0 · APAC",
-        namePre: "Le site officiel de",
-        tagline: "Transformation numérique · IT · Intégration IT-OT · Industrie 4.0",
-        rightLocation: "Singapour, APAC",
-        langLabel: "Langue",
-        navHome: "Accueil",
-        navAbout: "À propos",
-        navVideos: "Vidéos",
-        navArticles: "Articles",
-        navContact: "Contact",
-        heroKicker: "À la une",
-        heroHeadline: "Construire la croissance numérique à travers <em>l’IT, l’IT-OT et l’industrie intelligente</em>.",
-        heroDeck: "Prashant Kumar travaille à l’intersection du développement commercial, de la technologie d’entreprise, des systèmes d’usine et de la transformation numérique en APAC.",
-        note1Title: "En bref",
-        note1Body: "Pas seulement l’IT-OT. Ce profil couvre aussi l’IT cœur, la stratégie digitale, la croissance commerciale et la transformation d’entreprise.",
-        note2Title: "Axes clés",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, durabilité et systèmes métiers connectés.",
-        statNum1: "21+",
-        stat1: "Années d’expérience",
-        statNum2: "APAC",
-        stat2: "Couverture régionale",
-        statNum3: "IT+OT",
-        stat3: "Vision de transformation",
-        statNum4: "LIMS",
-        stat4: "MES · Jumeau · Données",
-        expertiseTitle: "Expertises clés",
-        exp1: "Stratégie de transformation numérique",
-        exp2: "IT et plateformes d’entreprise",
-        exp3: "Intégration IT-OT",
-        exp4: "LIMS et MES",
-        exp5: "Solutions Digital Twin",
-        exp6: "Durabilité et ESG",
-        exp7: "IA, données et automatisation",
-        exp8: "Développement commercial APAC",
-        quote: "La transformation numérique ne fonctionne que lorsque les objectifs business, les systèmes IT et les opérations avancent ensemble.",
-        ctaLinkedIn: "Se connecter sur LinkedIn ↗",
-        divider1: "Ce que je fais",
-        cardTag1: "Business",
-        cardTitle1: "Croissance, GTM et développement du revenu",
-        cardBody1: "Créer des opportunités, ouvrir des comptes et piloter une croissance orientée solution sur les marchés entreprise et industriel.",
-        cardTag2: "Transformation",
-        cardTitle2: "IT, IT-OT et exécution digitale",
-        cardBody2: "Transformer la stratégie digitale en plateformes concrètes couvrant données, processus, visibilité usine et systèmes connectés.",
-        cardTag3: "Influence",
-        cardTitle3: "Leadership d’opinion à valeur commerciale",
-        cardBody3: "Contenu, positionnement et communication sectorielle qui renforcent crédibilité, confiance et échanges business.",
-        bannerTitle: "L’intelligence de fabrication numérique <em>doit porter le récit</em>",
-        bannerBody: "C’est ici que les données usine, les systèmes d’entreprise, la visibilité opérationnelle et la décision se rejoignent pour créer une vraie valeur d’exécution.",
-        metricVal1: "IT",
-        metric1: "Systèmes d’entreprise",
-        metricVal2: "OT",
-        metric2: "Données usine et procédé",
-        metricVal3: "DX",
-        metric3: "Exécution de transformation",
-        divider2: "Temps forts de carrière",
-        featureKicker: "Focus",
-        featureTitle: "Un profil construit entre business, IT d’entreprise et transformation industrielle.",
-        featureBody: "La valeur n’est pas seulement technique. C’est la capacité à relier besoin client, orientation commerciale, conception de solution et exécution.",
-        timelineTitle: "Parcours",
-        timeYear1: "APAC",
-        time1Role: "Développement commercial régional",
-        time1Comp: "Focalisé sur l’entreprise, l’industrie et la transformation",
-        timeYear2: "IT",
-        time2Role: "Positionnement technologique d’entreprise",
-        time2Comp: "Applications, intégrations, plateformes et workflows digitaux",
-        timeYear3: "OT",
-        time3Role: "Industrie 4.0 et systèmes opérationnels",
-        time3Comp: "LIMS, MES, Digital Twin, visibilité et données usine",
-        divider3: "Secteurs clés",
-        sectorIcon1: "I",
-        sector1: "Industriel",
-        sector1Desc: "Fabrication intelligente, qualité, process et visibilité opérationnelle.",
-        sectorIcon2: "E",
-        sector2: "IT d’entreprise",
-        sector2Desc: "Applications, données, workflows digitaux et intégration des systèmes métiers.",
-        sectorIcon3: "S",
-        sector3: "Durabilité",
-        sector3Desc: "Plateformes ESG, reporting, visibilité énergétique et opérations responsables.",
-        sectorIcon4: "A",
-        sector4: "Croissance APAC",
-        sector4Desc: "Développement de marché, partenariats, cadrage de solution et expansion de comptes.",
-        divider4: "Références",
-        credLabel: "Points forts",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "Transformation numérique",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "Développement APAC",
-        contactLine: "Construisons ensemble la prochaine <span>histoire de croissance digitale</span>.",
-        contactEmail: "Email",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "Vidéos",
-        contactArticles: "Articles",
-        footerText: "<strong>Prashant Kumar</strong> · Transformation numérique · IT · Intégration IT-OT · Industrie 4.0 · APAC"
-      },
-
-      de: {
-        editionLabel: "Deutsche Ausgabe",
-        topbarText: "Singapur • APAC • Digitale Transformation • IT + IT-OT • Industrie 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "Geschäftswachstum",
-        leftLine2: "Industrie 4.0 · APAC",
-        namePre: "Die offizielle Website von",
-        tagline: "Digitale Transformation · IT · IT-OT-Integration · Industrie 4.0",
-        rightLocation: "Singapur, APAC",
-        langLabel: "Sprache",
-        navHome: "Start",
-        navAbout: "Über mich",
-        navVideos: "Videos",
-        navArticles: "Artikel",
-        navContact: "Kontakt",
-        heroKicker: "Titelstory",
-        heroHeadline: "Digitales Wachstum über <em>IT, IT-OT und Smart Industry</em> aufbauen.",
-        heroDeck: "Prashant Kumar arbeitet an der Schnittstelle von Business Development, Enterprise-Technologie, Werksystemen und digitaler Transformation in APAC.",
-        note1Title: "Auf einen Blick",
-        note1Body: "Nicht nur IT-OT. Dieses Profil umfasst auch Core IT, Digitalstrategie, kommerzielles Wachstum und Unternehmenstransformation.",
-        note2Title: "Schwerpunkt",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, Nachhaltigkeit und vernetzte Geschäftssysteme.",
-        statNum1: "21+",
-        stat1: "Jahre Erfahrung",
-        statNum2: "APAC",
-        stat2: "Regionale Abdeckung",
-        statNum3: "IT+OT",
-        stat3: "Transformationsblick",
-        statNum4: "LIMS",
-        stat4: "MES · Twin · Daten",
-        expertiseTitle: "Kernkompetenzen",
-        exp1: "Strategie für digitale Transformation",
-        exp2: "IT und Enterprise-Plattformen",
-        exp3: "IT-OT-Integration",
-        exp4: "LIMS und MES",
-        exp5: "Digital-Twin-Lösungen",
-        exp6: "Nachhaltigkeit und ESG",
-        exp7: "KI, Daten und Automatisierung",
-        exp8: "Business Development in APAC",
-        quote: "Digitale Transformation funktioniert nur, wenn Geschäftsziele, IT-Systeme und Betrieb gemeinsam vorangehen.",
-        ctaLinkedIn: "Auf LinkedIn vernetzen ↗",
-        divider1: "Was ich mache",
-        cardTag1: "Business",
-        cardTitle1: "Wachstum, GTM und Umsatzentwicklung",
-        cardBody1: "Chancen aufbauen, neue Accounts öffnen und lösungsorientiertes Wachstum in Enterprise- und Industriemärkten gestalten.",
-        cardTag2: "Transformation",
-        cardTitle2: "IT, IT-OT und digitale Umsetzung",
-        cardBody2: "Digitale Strategie in umsetzbare Plattformen für Daten, Prozesse, Werksichtbarkeit und vernetzte Systeme übersetzen.",
-        cardTag3: "Einfluss",
-        cardTitle3: "Thought Leadership mit geschäftlichem Wert",
-        cardBody3: "Inhalte, Positionierung und Branchenkommunikation, die Glaubwürdigkeit, Vertrauen und Geschäftsgespräche stärken.",
-        bannerTitle: "Digitale Fertigungsintelligenz <em>sollte die Hauptrolle spielen</em>",
-        bannerBody: "Hier kommen Werksdaten, Enterprise-Systeme, operative Transparenz und Entscheidungen zusammen, um echten Umsetzungswert zu schaffen.",
-        metricVal1: "IT",
-        metric1: "Enterprise-Systeme",
-        metricVal2: "OT",
-        metric2: "Werks- und Prozessdaten",
-        metricVal3: "DX",
-        metric3: "Transformationsumsetzung",
-        divider2: "Karriere-Highlights",
-        featureKicker: "Feature",
-        featureTitle: "Ein Profil, aufgebaut über Business, Enterprise IT und industrielle Transformation.",
-        featureBody: "Der Wert liegt nicht nur in technischer Positionierung. Es ist die Fähigkeit, Kundenbedarf, kommerzielle Richtung, Lösungsdesign und Umsetzung zu verbinden.",
-        timelineTitle: "Karriereverlauf",
-        timeYear1: "APAC",
-        time1Role: "Regionales Business Development",
-        time1Comp: "Fokus auf Enterprise, Fertigung und Transformation",
-        timeYear2: "IT",
-        time2Role: "Positionierung von Enterprise-Technologie",
-        time2Comp: "Anwendungen, Integrationen, Plattformen und digitale Workflows",
-        timeYear3: "OT",
-        time3Role: "Industrie 4.0 und Betriebssysteme",
-        time3Comp: "LIMS, MES, Digital Twin, Sichtbarkeit und Werksdaten",
-        divider3: "Schlüsselsektoren",
-        sectorIcon1: "I",
-        sector1: "Industrie",
-        sector1Desc: "Smart Manufacturing, Qualität, Prozesse und operative Sichtbarkeit.",
-        sectorIcon2: "E",
-        sector2: "Enterprise IT",
-        sector2Desc: "Anwendungen, Daten, digitale Workflows und Integration von Geschäftssystemen.",
-        sectorIcon3: "S",
-        sector3: "Nachhaltigkeit",
-        sector3Desc: "ESG-Plattformen, Reporting, Energie-Transparenz und verantwortungsvolle Abläufe.",
-        sectorIcon4: "A",
-        sector4: "APAC-Wachstum",
-        sector4Desc: "Marktentwicklung, Partnerschaften, Lösungsformung und Account-Ausbau.",
-        divider4: "Qualifikationen",
-        credLabel: "Highlights",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "Digitale Transformation",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "APAC Business Development",
-        contactLine: "Lassen Sie uns die nächste <span>digitale Wachstumsgeschichte</span> aufbauen.",
-        contactEmail: "E-Mail",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "Videos",
-        contactArticles: "Artikel",
-        footerText: "<strong>Prashant Kumar</strong> · Digitale Transformation · IT · IT-OT-Integration · Industrie 4.0 · APAC"
-      },
-
-      it: {
-        editionLabel: "Edizione Italiana",
-        topbarText: "Singapore • APAC • Trasformazione digitale • IT + IT-OT • Industria 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "Crescita business",
-        leftLine2: "Industria 4.0 · APAC",
-        namePre: "Il sito ufficiale di",
-        tagline: "Trasformazione digitale · IT · Integrazione IT-OT · Industria 4.0",
-        rightLocation: "Singapore, APAC",
-        langLabel: "Lingua",
-        navHome: "Home",
-        navAbout: "Chi sono",
-        navVideos: "Video",
-        navArticles: "Articoli",
-        navContact: "Contatto",
-        heroKicker: "Storia di copertina",
-        heroHeadline: "Costruire crescita digitale tra <em>IT, IT-OT e industria intelligente</em>.",
-        heroDeck: "Prashant Kumar opera all’intersezione tra sviluppo business, tecnologia enterprise, sistemi di impianto e trasformazione digitale in APAC.",
-        note1Title: "In sintesi",
-        note1Body: "Non solo IT-OT. Questo profilo copre anche core IT, strategia digitale, crescita commerciale e trasformazione enterprise.",
-        note2Title: "Aree chiave",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, sostenibilità e sistemi business connessi.",
-        statNum1: "21+",
-        stat1: "Anni di esperienza",
-        statNum2: "APAC",
-        stat2: "Copertura regionale",
-        statNum3: "IT+OT",
-        stat3: "Lente di trasformazione",
-        statNum4: "LIMS",
-        stat4: "MES · Twin · Dati",
-        expertiseTitle: "Competenze chiave",
-        exp1: "Strategia di trasformazione digitale",
-        exp2: "IT e piattaforme enterprise",
-        exp3: "Integrazione IT-OT",
-        exp4: "LIMS e MES",
-        exp5: "Soluzioni Digital Twin",
-        exp6: "Sostenibilità ed ESG",
-        exp7: "AI, dati e automazione",
-        exp8: "Business development in APAC",
-        quote: "La trasformazione digitale funziona solo quando obiettivi di business, sistemi IT e operations si muovono insieme.",
-        ctaLinkedIn: "Connettiti su LinkedIn ↗",
-        divider1: "Cosa faccio",
-        cardTag1: "Business",
-        cardTitle1: "Crescita, GTM e sviluppo ricavi",
-        cardBody1: "Creo opportunità, apro nuovi account e guido una crescita orientata alle soluzioni nei mercati enterprise e industriali.",
-        cardTag2: "Trasformazione",
-        cardTitle2: "IT, IT-OT ed esecuzione digitale",
-        cardBody2: "Trasformo la strategia digitale in piattaforme operative che coprono dati, processi, visibilità di impianto e sistemi connessi.",
-        cardTag3: "Influenza",
-        cardTitle3: "Thought leadership con valore commerciale",
-        cardBody3: "Contenuti, posizionamento e comunicazione di settore che rafforzano credibilità, fiducia e conversazioni di business.",
-        bannerTitle: "La digital manufacturing intelligence <em>dovrebbe guidare la storia</em>",
-        bannerBody: "Qui dati di impianto, sistemi enterprise, visibilità operativa e decisioni si uniscono per creare vero valore esecutivo.",
-        metricVal1: "IT",
-        metric1: "Sistemi enterprise",
-        metricVal2: "OT",
-        metric2: "Dati di impianto e processo",
-        metricVal3: "DX",
-        metric3: "Esecuzione della trasformazione",
-        divider2: "Punti forti di carriera",
-        featureKicker: "Focus",
-        featureTitle: "Un profilo costruito tra business, enterprise IT e trasformazione industriale.",
-        featureBody: "Il valore non è solo nel posizionamento tecnico. È la capacità di collegare bisogno cliente, direzione commerciale, design della soluzione ed esecuzione.",
-        timelineTitle: "Timeline",
-        timeYear1: "APAC",
-        time1Role: "Business development regionale",
-        time1Comp: "Focus su enterprise, manufacturing e trasformazione",
-        timeYear2: "IT",
-        time2Role: "Posizionamento tecnologico enterprise",
-        time2Comp: "Applicazioni, integrazioni, piattaforme e workflow digitali",
-        timeYear3: "OT",
-        time3Role: "Industry 4.0 e sistemi operativi",
-        time3Comp: "LIMS, MES, Digital Twin, visibilità e dati di impianto",
-        divider3: "Settori chiave",
-        sectorIcon1: "I",
-        sector1: "Industriale",
-        sector1Desc: "Smart manufacturing, qualità, processo e visibilità operativa.",
-        sectorIcon2: "E",
-        sector2: "Enterprise IT",
-        sector2Desc: "Applicazioni, dati, workflow digitali e integrazione dei sistemi business.",
-        sectorIcon3: "S",
-        sector3: "Sostenibilità",
-        sector3Desc: "Piattaforme ESG, reporting, visibilità energetica e operations responsabili.",
-        sectorIcon4: "A",
-        sector4: "Crescita APAC",
-        sector4Desc: "Sviluppo mercato, partnership, definizione soluzione ed espansione account.",
-        divider4: "Credenziali",
-        credLabel: "Highlights",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "Trasformazione digitale",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "Business Development APAC",
-        contactLine: "Costruiamo la prossima <span>storia di crescita digitale</span>.",
-        contactEmail: "Email",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "Video",
-        contactArticles: "Articoli",
-        footerText: "<strong>Prashant Kumar</strong> · Trasformazione digitale · IT · Integrazione IT-OT · Industria 4.0 · APAC"
-      },
-
-      es: {
-        editionLabel: "Edición Española",
-        topbarText: "Singapur • APAC • Transformación digital • IT + IT-OT • Industria 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "Crecimiento de negocio",
-        leftLine2: "Industria 4.0 · APAC",
-        namePre: "El sitio oficial de",
-        tagline: "Transformación digital · IT · Integración IT-OT · Industria 4.0",
-        rightLocation: "Singapur, APAC",
-        langLabel: "Idioma",
-        navHome: "Inicio",
-        navAbout: "Acerca de",
-        navVideos: "Videos",
-        navArticles: "Artículos",
-        navContact: "Contacto",
-        heroKicker: "Historia de portada",
-        heroHeadline: "Construyendo crecimiento digital a través de <em>IT, IT-OT e industria inteligente</em>.",
-        heroDeck: "Prashant Kumar trabaja en la intersección entre desarrollo de negocio, tecnología empresarial, sistemas de planta y transformación digital en APAC.",
-        note1Title: "A simple vista",
-        note1Body: "No es solo IT-OT. Este perfil también cubre IT central, estrategia digital, crecimiento comercial y transformación empresarial.",
-        note2Title: "Área de enfoque",
-        note2Body: "Digital Manufacturing Intelligence, LIMS, MES, Digital Twin, sostenibilidad y sistemas empresariales conectados.",
-        statNum1: "21+",
-        stat1: "Años de experiencia",
-        statNum2: "APAC",
-        stat2: "Cobertura regional",
-        statNum3: "IT+OT",
-        stat3: "Lente de transformación",
-        statNum4: "LIMS",
-        stat4: "MES · Twin · Datos",
-        expertiseTitle: "Experiencia clave",
-        exp1: "Estrategia de transformación digital",
-        exp2: "IT y plataformas empresariales",
-        exp3: "Integración IT-OT",
-        exp4: "LIMS y MES",
-        exp5: "Soluciones Digital Twin",
-        exp6: "Sostenibilidad y ESG",
-        exp7: "IA, datos y automatización",
-        exp8: "Desarrollo de negocio en APAC",
-        quote: "La transformación digital solo funciona cuando los objetivos del negocio, los sistemas IT y las operaciones avanzan juntos.",
-        ctaLinkedIn: "Conectar en LinkedIn ↗",
-        divider1: "Lo que hago",
-        cardTag1: "Negocio",
-        cardTitle1: "Crecimiento, GTM y desarrollo de ingresos",
-        cardBody1: "Crear oportunidades, abrir cuentas y dar forma a un crecimiento basado en soluciones en mercados empresariales e industriales.",
-        cardTag2: "Transformación",
-        cardTitle2: "IT, IT-OT y ejecución digital",
-        cardBody2: "Convertir la estrategia digital en plataformas prácticas que cubren datos, procesos, visibilidad de planta y sistemas conectados.",
-        cardTag3: "Influencia",
-        cardTitle3: "Liderazgo de pensamiento con valor comercial",
-        cardBody3: "Contenido, posicionamiento y comunicación sectorial que apoyan credibilidad, confianza y conversaciones de negocio.",
-        bannerTitle: "La inteligencia de manufactura digital <em>debe liderar la historia</em>",
-        bannerBody: "Aquí es donde los datos de planta, los sistemas empresariales, la visibilidad operativa y la toma de decisiones se unen para crear valor real de ejecución.",
-        metricVal1: "IT",
-        metric1: "Sistemas empresariales",
-        metricVal2: "OT",
-        metric2: "Datos de planta y proceso",
-        metricVal3: "DX",
-        metric3: "Ejecución de transformación",
-        divider2: "Momentos clave de carrera",
-        featureKicker: "Especial",
-        featureTitle: "Un perfil construido entre negocio, IT empresarial y transformación industrial.",
-        featureBody: "El valor no está solo en el posicionamiento técnico. Está en la capacidad de conectar necesidad del cliente, dirección comercial, diseño de solución y ejecución.",
-        timelineTitle: "Trayectoria",
-        timeYear1: "APAC",
-        time1Role: "Desarrollo regional de negocio",
-        time1Comp: "Enfoque en empresa, manufactura y transformación",
-        timeYear2: "IT",
-        time2Role: "Posicionamiento de tecnología empresarial",
-        time2Comp: "Aplicaciones, integraciones, plataformas y flujos digitales",
-        timeYear3: "OT",
-        time3Role: "Industria 4.0 y sistemas operativos",
-        time3Comp: "LIMS, MES, Digital Twin, visibilidad y datos de planta",
-        divider3: "Sectores clave",
-        sectorIcon1: "I",
-        sector1: "Industrial",
-        sector1Desc: "Manufactura inteligente, calidad, proceso y visibilidad operativa.",
-        sectorIcon2: "E",
-        sector2: "IT empresarial",
-        sector2Desc: "Aplicaciones, datos, flujos digitales e integración de sistemas empresariales.",
-        sectorIcon3: "S",
-        sector3: "Sostenibilidad",
-        sector3Desc: "Plataformas ESG, reportes, visibilidad energética y operaciones responsables.",
-        sectorIcon4: "A",
-        sector4: "Crecimiento APAC",
-        sector4Desc: "Desarrollo de mercado, alianzas, diseño de soluciones y expansión de cuentas.",
-        divider4: "Credenciales",
-        credLabel: "Destacados",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "Transformación digital",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "Desarrollo APAC",
-        contactLine: "Construyamos la próxima <span>historia de crecimiento digital</span>.",
-        contactEmail: "Correo",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "Videos",
-        contactArticles: "Artículos",
-        footerText: "<strong>Prashant Kumar</strong> · Transformación digital · IT · Integración IT-OT · Industria 4.0 · APAC"
-      },
-
-      ar: {
-        editionLabel: "النسخة العربية",
-        topbarText: "سنغافورة • APAC • التحول الرقمي • IT + IT-OT • الصناعة 4.0",
-        leftStrong: "MBA · CSM · CISI",
-        leftLine1: "نمو الأعمال",
-        leftLine2: "الصناعة 4.0 · APAC",
-        namePre: "الموقع الرسمي",
-        tagline: "التحول الرقمي · IT · تكامل IT-OT · الصناعة 4.0",
-        rightLocation: "سنغافورة، APAC",
-        langLabel: "اللغة",
-        navHome: "الرئيسية",
-        navAbout: "نبذة",
-        navVideos: "فيديوهات",
-        navArticles: "مقالات",
-        navContact: "تواصل",
-        heroKicker: "قصة الغلاف",
-        heroHeadline: "بناء النمو الرقمي عبر <em>IT وIT-OT والصناعة الذكية</em>.",
-        heroDeck: "يعمل Prashant Kumar عند نقطة التقاء تطوير الأعمال وتقنيات المؤسسات وأنظمة المصانع والتحول الرقمي عبر APAC.",
-        note1Title: "نظرة سريعة",
-        note1Body: "الأمر لا يقتصر على IT-OT فقط. هذا الملف يشمل أيضًا IT الأساسي والاستراتيجية الرقمية والنمو التجاري وتحول المؤسسات.",
-        note2Title: "مجال التركيز",
-        note2Body: "الذكاء الرقمي للتصنيع وLIMS وMES وDigital Twin والاستدامة وأنظمة الأعمال المتصلة.",
-        statNum1: "+21",
-        stat1: "سنوات الخبرة",
-        statNum2: "APAC",
-        stat2: "التغطية الإقليمية",
-        statNum3: "IT+OT",
-        stat3: "منظور التحول",
-        statNum4: "LIMS",
-        stat4: "MES · توأم · بيانات",
-        expertiseTitle: "الخبرات الأساسية",
-        exp1: "استراتيجية التحول الرقمي",
-        exp2: "IT ومنصات المؤسسات",
-        exp3: "تكامل IT-OT",
-        exp4: "LIMS وMES",
-        exp5: "حلول Digital Twin",
-        exp6: "الاستدامة وESG",
-        exp7: "الذكاء الاصطناعي والبيانات والأتمتة",
-        exp8: "تطوير الأعمال عبر APAC",
-        quote: "لا ينجح التحول الرقمي إلا عندما تتحرك أهداف الأعمال وأنظمة IT والعمليات معًا.",
-        ctaLinkedIn: "تواصل عبر LinkedIn ↗",
-        divider1: "ماذا أفعل",
-        cardTag1: "الأعمال",
-        cardTitle1: "النمو وGTM وتطوير الإيرادات",
-        cardBody1: "بناء الفرص وفتح الحسابات وصياغة نمو قائم على الحلول عبر الأسواق المؤسسية والصناعية.",
-        cardTag2: "التحول",
-        cardTitle2: "IT وIT-OT والتنفيذ الرقمي",
-        cardBody2: "تحويل الاستراتيجية الرقمية إلى منصات عملية تشمل البيانات والعمليات ورؤية المصنع والأنظمة المتصلة.",
-        cardTag3: "التأثير",
-        cardTitle3: "قيادة فكرية ذات قيمة تجارية",
-        cardBody3: "محتوى وتموضع واتصال صناعي يعزز المصداقية والثقة وحوارات الأعمال.",
-        bannerTitle: "يجب أن يقود ذكاء التصنيع الرقمي <em>القصة الرئيسية</em>",
-        bannerBody: "هنا تجتمع بيانات المصنع وأنظمة المؤسسات والرؤية التشغيلية وصنع القرار لتقديم قيمة تنفيذية حقيقية.",
-        metricVal1: "IT",
-        metric1: "أنظمة المؤسسات",
-        metricVal2: "OT",
-        metric2: "بيانات المصنع والعمليات",
-        metricVal3: "DX",
-        metric3: "تنفيذ التحول",
-        divider2: "أبرز المحطات المهنية",
-        featureKicker: "ميزة",
-        featureTitle: "ملف مهني بُني عبر الأعمال وIT المؤسسي والتحول الصناعي.",
-        featureBody: "القيمة ليست فقط في التموضع التقني، بل في القدرة على ربط احتياج العميل والتوجه التجاري وتصميم الحل والتنفيذ.",
-        timelineTitle: "المسار المهني",
-        timeYear1: "APAC",
-        time1Role: "تطوير الأعمال الإقليمي",
-        time1Comp: "تركيز على المؤسسات والتصنيع والتحول",
-        timeYear2: "IT",
-        time2Role: "تموضع التكنولوجيا المؤسسية",
-        time2Comp: "التطبيقات والتكاملات والمنصات وتدفقات العمل الرقمية",
-        timeYear3: "OT",
-        time3Role: "الصناعة 4.0 وأنظمة التشغيل",
-        time3Comp: "LIMS وMES وDigital Twin والرؤية وبيانات المصنع",
-        divider3: "القطاعات الرئيسية",
-        sectorIcon1: "ص",
-        sector1: "الصناعة",
-        sector1Desc: "التصنيع الذكي والجودة والعمليات والرؤية التشغيلية.",
-        sectorIcon2: "م",
-        sector2: "IT المؤسسي",
-        sector2Desc: "التطبيقات والبيانات وتدفقات العمل الرقمية وتكامل أنظمة الأعمال.",
-        sectorIcon3: "ا",
-        sector3: "الاستدامة",
-        sector3Desc: "منصات ESG والتقارير ورؤية الطاقة والعمليات المسؤولة.",
-        sectorIcon4: "A",
-        sector4: "نمو APAC",
-        sector4Desc: "تطوير السوق والشراكات وتشكيل الحلول وتوسيع الحسابات.",
-        divider4: "المؤهلات",
-        credLabel: "أبرز النقاط",
-        pillMBA: "MBA",
-        pillCSM: "CSM",
-        pillCISI: "CISI",
-        pill1: "التحول الرقمي",
-        pill2: "IT + IT-OT",
-        pill3: "LIMS / MES / Twin",
-        pill4: "تطوير الأعمال APAC",
-        contactLine: "لنَبْنِ <span>قصة النمو الرقمي</span> القادمة.",
-        contactEmail: "البريد",
-        contactLinkedIn: "LinkedIn",
-        contactVideos: "فيديوهات",
-        contactArticles: "مقالات",
-        footerText: "<strong>Prashant Kumar</strong> · التحول الرقمي · IT · تكامل IT-OT · الصناعة 4.0 · APAC"
-      }
-    };
-
-    function applyLanguage(lang) {
-      const base = translations.en;
-      const current = translations[lang] || translations.en;
-      const t = { ...base, ...current };
-
-      Object.keys(t).forEach((key) => {
-        const el = document.getElementById(key);
-        if (el) {
-          el.innerHTML = t[key];
-        }
-      });
-
-      document.documentElement.lang = lang;
-      const isRTL = lang === 'ar';
-      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-      document.body.classList.toggle('rtl', isRTL);
-    }
-
-    function detectLanguage() {
-      const userLang = (navigator.language || 'en').toLowerCase();
-
-      if (userLang.startsWith('ja')) return 'ja';
-      if (userLang.startsWith('ko')) return 'ko';
-      if (userLang.startsWith('zh')) return 'zh';
-      if (userLang.startsWith('th')) return 'th';
-      if (userLang.startsWith('vi')) return 'vi';
-      if (userLang.startsWith('fr')) return 'fr';
-      if (userLang.startsWith('de')) return 'de';
-      if (userLang.startsWith('it')) return 'it';
-      if (userLang.startsWith('es')) return 'es';
-      if (userLang.startsWith('ar')) return 'ar';
-      return 'en';
-    }
-
-    const detected = detectLanguage();
-    langSwitch.value = detected;
-    applyLanguage(detected);
-
-    langSwitch.addEventListener('change', (e) => {
-      applyLanguage(e.target.value);
+    }, {
+      threshold: 0.12
     });
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
