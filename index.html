@@ -1,44 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Prashant Kumar | Digital Transformation Specialist</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prashant Kumar | Digital Transformation, LIMS, MES, IT-OT</title>
+  <style>
+    :root {
+      --bg: #f5f6f7;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #0f172a;
+      --accent-2: #2563eb;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .top-strip {
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 16px;
+    }
+
+    .top-strip .inner,
+    .nav .inner,
+    .hero .inner,
+    .content,
+    .footer .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .top-strip strong { margin-right: 10px; }
+    .top-strip span { color: #d1d5db; }
+
+    .nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 16px;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .menu a:hover,
+    .section-link:hover,
+    .post-card h3:hover,
+    .mini-post h4:hover {
+      color: var(--accent-2);
+    }
+
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero .inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      padding: 32px 16px;
+    }
+
+    .hero-main {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      border-radius: 18px;
+      padding: 36px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    .hero-main h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      line-height: 1.15;
+    }
+
+    .hero-main p {
+      margin: 0 0 18px;
+      max-width: 760px;
+      color: #dbeafe;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #111827;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .side-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .side-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) 340px;
+      gap: 30px;
+      padding: 34px 16px 50px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .section-link {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .post-thumb {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e3a8a;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .post-body {
+      padding: 20px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .post-card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .post-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .widget h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .mini-post {
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .mini-post:first-of-type { border-top: 0; padding-top: 0; }
+    .mini-post h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .mini-post p,
+    .widget p,
+    .widget li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      background: #f8fafc;
+    }
+
+    .footer {
+      background: #111827;
+      color: #fff;
+      margin-top: 30px;
+    }
+
+    .footer .inner {
+      padding: 28px 16px 34px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .footer p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero .inner,
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand { font-size: 24px; }
+      .hero-main { padding: 24px; min-height: auto; }
+      .hero-main h1 { font-size: 32px; }
+      .section-title h2 { font-size: 26px; }
+      .nav .inner { align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
+  <div class="top-strip">
+    <div class="inner">
+      <strong>FOCUS:</strong>
+      <span>LIMS • MES • Digital Twin • IT-OT Integration • Sustainability • Factory Transformation</span>
+    </div>
+  </div>
 
-<header>
-    <h1>Prashant Kumar</h1>
-    <p>Digital Transformation | IT-OT Integration | Industry 4.0</p>
-</header>
+  <header class="nav">
+    <div class="inner">
+      <div class="brand">
+        Dutyee
+        <small>Prashant Kumar | Digital Transformation & Industrial Solutions</small>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="videos.html">Videos</a>
+        <a href="articles.html">Articles</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="videos.html">Videos</a>
-    <a href="articles.html">Articles</a>
-    <a href="contact.html">Contact</a>
-</nav>
+  <section class="hero">
+    <div class="inner">
+      <div class="hero-main">
+        <span class="kicker">Featured Insight</span>
+        <h1>Helping manufacturers move from disconnected systems to measurable digital outcomes</h1>
+        <p>
+          I work with manufacturing, chemicals, energy, and industrial businesses across APAC to shape practical programs in LIMS, MES, Digital Twin, IT-OT data integration, sustainability reporting, and plant-level digital transformation.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="about.html">View Profile</a>
+          <a class="btn btn-secondary" href="contact.html">Contact Me</a>
+        </div>
+      </div>
 
-<section>
-    <h2>Welcome</h2>
-    <p>I help organizations drive digital transformation across manufacturing, energy, and enterprise systems with solutions like LIMS, MES, Digital Twin, and IT-OT integration.</p>
-</section>
+      <div class="hero-side">
+        <div class="side-card">
+          <h3>What I Focus On</h3>
+          <p>Solution consulting, discovery workshops, proposal shaping, customer engagement, and practical roadmaps that connect business value with industrial technology execution.</p>
+        </div>
+        <div class="side-card">
+          <h3>Industries</h3>
+          <p>Manufacturing, energy, chemicals, life sciences, utilities, industrial operations, and enterprise transformation programs across Southeast Asia and APAC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-    <h2>Key Expertise</h2>
-    <ul>
-        <li>LIMS & Laboratory Automation</li>
-        <li>Manufacturing Execution Systems (MES)</li>
-        <li>Digital Twin Solutions</li>
-        <li>IT-OT Integration</li>
-        <li>Sustainability & ESG Platforms</li>
-    </ul>
-</section>
+  <main class="content">
+    <section>
+      <div class="section-title">
+        <h2>Latest</h2>
+        <a class="section-link" href="articles.html">View all insights</a>
+      </div>
 
-<footer>
-    <p>© 2026 Prashant Kumar</p>
-</footer>
+      <div class="posts-grid">
+        <article class="post-card">
+          <div class="post-thumb">Digital Twin & Factory Intelligence</div>
+          <div class="post-body">
+            <div class="meta">Industrial Transformation</div>
+            <h3><a href="articles.html">How Digital Twin helps factories move from monitoring to decision support</a></h3>
+            <p>From equipment visibility to what-if analysis and predictive actions, digital twins can turn fragmented plant data into operational value.</p>
+          </div>
+        </article>
 
+        <article class="post-card">
+          <div class="post-thumb">LIMS & Laboratory Automation</div>
+          <div class="post-body">
+            <div class="meta">Lab Operations</div>
+            <h3><a href="articles.html">Where LIMS creates the fastest value in industrial and quality-driven environments</a></h3>
+            <p>Sample lifecycle control, workflow automation, traceability, and cleaner reporting are often the first wins in a modern LIMS rollout.</p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-thumb">MES & Execution Visibility</div>
+          <div class="post-body">
+            <div class="meta">Manufacturing Systems</div>
+            <h3><a href="articles.html">Why MES projects succeed when operations, quality, and IT are aligned early</a></h3>
+            <p>MES works best when it is treated as an operating model change, not just a software installation.</p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-thumb">ESG, Energy & Compliance</div>
+          <div class="post-body">
+            <div class="meta">Sustainability</div>
+            <h3><a href="articles.html">Building practical ESG and energy reporting with real plant and enterprise data</a></h3>
+            <p>Reliable reporting starts with connected data, process discipline, and a design that operations teams can actually maintain.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>About Me</h3>
+        <p>I’m Prashant Kumar, focused on business development and digital transformation across APAC with experience in IT-OT integration, smart factory solutions, and industrial consulting.</p>
+      </div>
+
+      <div class="widget">
+        <h3>Featured Topics</h3>
+        <div class="topics">
+          <span class="tag">LIMS</span>
+          <span class="tag">MES</span>
+          <span class="tag">Digital Twin</span>
+          <span class="tag">IT-OT</span>
+          <span class="tag">Sustainability</span>
+          <span class="tag">Cloud</span>
+          <span class="tag">Industry 4.0</span>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3>Recent Posts</h3>
+        <div class="mini-post">
+          <h4><a href="articles.html">How to structure a factory digital roadmap without overcommitting budget</a></h4>
+          <p>Strategy and execution</p>
+        </div>
+        <div class="mini-post">
+          <h4><a href="videos.html">Watch: practical digital transformation ideas for industrial teams</a></h4>
+          <p>Video highlights</p>
+        </div>
+        <div class="mini-post">
+          <h4><a href="articles.html">Why proposal quality matters in industrial solution selling</a></h4>
+          <p>Sales and solutioning</p>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3>Get in Touch</h3>
+        <p>Email: your@email.com</p>
+        <p style="margin-top:8px;">LinkedIn: linkedin.com/in/yourprofile</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="inner">
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="videos.html">Videos</a>
+        <a href="articles.html">Articles</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p>© 2026 Dutyee. Built for a strong personal brand in digital transformation, industrial consulting, and APAC business development.</p>
+    </div>
+  </footer>
 </body>
 </html>
