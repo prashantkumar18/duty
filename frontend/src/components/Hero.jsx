@@ -7,12 +7,12 @@ const PORTRAIT =
 const keywords = [
   "Digital Transformation",
   "APAC",
-  "SMART Factory",
+  "AI · OCR · Machine Vision",
   "MES · LIMS · Digital Twin",
   "WMS · QMS · EMS · APM",
-  "IT-OT Integration",
-  "AI / OCR Platforms",
-  "Industry 4.0",
+  "IT · OT Integration",
+  "Predictive Maintenance",
+  "Smart Factory",
   "Core Banking",
   "Sustainability",
 ];
@@ -64,12 +64,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 text-lg md:text-2xl leading-relaxed text-[color:var(--text-2)] max-w-2xl"
+            className="mt-8 text-base md:text-xl leading-relaxed text-[color:var(--text-2)] max-w-xl"
           >
             <span className="text-white">APAC Business Development Leader.</span>{" "}
-            Bridging <span className="text-white">OT and IT</span> for industrial
-            enterprises through MES, Digital Twin, AI-enabled platforms and
-            smart-factory solutions.
+            Bridging <span className="text-white">OT</span>
+            <span className="mx-2 md:mx-3 inline-block align-middle h-[2px] w-5 md:w-6 bg-[color:var(--accent)]" />
+            <span className="text-white">IT</span> with AI-enabled platforms for
+            industrial enterprises.
           </motion.p>
 
           <motion.div

@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { num: 21, suffix: "+", label: "Years Experience", note: "21+ Years in Enterprise & Industrial" },
-  { num: "APAC", label: "Regional Coverage", note: "Business Development Across APAC" },
-  { num: "IT+OT", label: "Transformation Lens", note: "Enterprise & Plant Convergence" },
-  { num: "LIMS", label: "MES · Twin · Data", note: "Manufacturing Intelligence Core" },
+  { num: 21, suffix: "+", label: "Years Experience", note: "Across enterprise IT, banking and Industry 4.0." },
+  { num: "APAC", label: "Regional Coverage", note: "Singapore, ASEAN and beyond." },
+  { num: "IT · OT", label: "Transformation Lens", note: "Enterprise and plant convergence with AI in the loop." },
+  { num: "Factory Solutions", label: "Practice Areas", note: "LIMS · Machine Vision · MES · Digital Twin · AI." },
 ];
 
 function Counter({ value, suffix }) {
@@ -30,8 +30,16 @@ function Counter({ value, suffix }) {
     return () => cancelAnimationFrame(raf);
   }, [inView, isNumeric, value]);
 
+  // Auto-scale label-style values so long phrases (e.g. "Factory Solutions") fit.
+  let textSize = "stat-number";
+  if (!isNumeric) {
+    const len = String(value).length;
+    if (len > 12) textSize = "font-display font-medium text-3xl md:text-4xl tracking-tight leading-[1.05]";
+    else if (len > 6) textSize = "font-display font-medium text-4xl md:text-5xl tracking-tight leading-[1.05]";
+  }
+
   return (
-    <span ref={ref} className="stat-number text-white">
+    <span ref={ref} className={`${textSize} text-white block`}>
       {isNumeric ? n : value}
       {isNumeric && suffix ? <span className="text-[color:var(--accent)]">{suffix}</span> : null}
     </span>

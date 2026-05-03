@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Linkedin, Quote } from "lucide-react";
+import { MessageCircle, Linkedin, Quote } from "lucide-react";
+import ReadMore from "./ReadMore";
 
 const PORTRAIT =
   "https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/1cwi4fq2_ChatGPT%20Image%20Apr%208%2C%202026%20at%2007_59_50%20PM.png";
@@ -31,7 +32,7 @@ export default function About() {
               <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-[color:var(--accent)]">
                 Prashant Kumar
               </div>
-              <div className="font-display text-lg text-white mt-1 leading-tight">
+              <div className="font-display text-base md:text-lg text-white mt-1 leading-tight">
                 APAC Business Development Leader
               </div>
             </div>
@@ -54,39 +55,21 @@ export default function About() {
           <p className="overline mb-4">About</p>
           <h2 className="font-display text-3xl md:text-5xl leading-[1.05] text-white mb-8">
             <Quote
-              size={28}
+              size={26}
               className="inline-block text-[color:var(--accent)] -translate-y-1 mr-2"
             />
-            I help manufacturers and industrial enterprises bridge the gap
-            between <span className="italic text-[color:var(--accent)]">OT</span>{" "}
-            and <span className="italic text-[color:var(--accent)]">IT</span> —
-            turning plant-floor data into business intelligence.
+            I help industrial enterprises bridge{" "}
+            <span className="italic text-[color:var(--accent)]">OT</span>
+            <span className="mx-3 inline-block align-middle h-[2px] w-6 bg-[color:var(--accent)]" />
+            <span className="italic text-[color:var(--accent)]">IT</span>{" "}
+            with AI-enabled platforms.
           </h2>
 
-          <div className="space-y-5 text-[color:var(--text-2)] leading-relaxed text-base md:text-lg max-w-2xl">
-            <p>
-              Through MES, LIMS, Digital Twin, WMS, QMS and AI-enabled platforms
-              including OCR — I shape solutions that translate operational
-              technology into measurable enterprise outcomes.
-            </p>
-            <p>
-              Over two decades across APAC at{" "}
-              <span className="text-white">Yokogawa</span> and{" "}
-              <span className="text-white">Web Synergies</span> — leading
-              digital transformation programs spanning process manufacturing,
-              discrete manufacturing and smart-factory environments. Earlier
-              chapters in core banking, financial services and digital
-              ventures shape the commercial lens I bring to industrial
-              transformation today.
-            </p>
-            <p>
-              I'm also a recognised{" "}
-              <span className="text-white">Industry 4.0 content creator</span> —
-              sharing practical insights on smart manufacturing, digital
-              transformation and OT/IT convergence with a global community of
-              practitioners.
-            </p>
-          </div>
+          <ReadMore
+            className="max-w-2xl"
+            summary="MES · LIMS · Digital Twin · WMS · QMS · Machine Vision · OCR — turning plant-floor data into business intelligence with AI in the loop."
+            full="Two decades across APAC at Yokogawa and Web Synergies — leading digital programs spanning process manufacturing, discrete manufacturing and smart-factory environments. Earlier chapters in core banking, FSI and digital ventures shape the commercial lens I bring to industrial transformation today. Recognised Industry 4.0 content creator with a global community of practitioners."
+          />
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
@@ -97,13 +80,6 @@ export default function About() {
               data-testid="about-whatsapp"
             >
               <MessageCircle size={16} /> WhatsApp Me
-            </a>
-            <a
-              href="mailto:prashantkumar18@gmail.com"
-              className="btn-ghost"
-              data-testid="about-email"
-            >
-              <Mail size={16} /> Email
             </a>
             <a
               href="https://www.linkedin.com/in/prashant-kumar-digital/"

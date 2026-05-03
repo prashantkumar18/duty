@@ -5,32 +5,32 @@ const items = [
   {
     icon: Award,
     title: "Top 40 IT LinkedIn Influencer · Singapore",
-    desc: "Recognised among Singapore's most influential IT voices on LinkedIn for Industry 4.0 commentary.",
+    desc: "Among Singapore's most influential IT voices for Industry 4.0 + AI commentary.",
   },
   {
     icon: Sparkles,
-    title: "Industry 4.0 Thought Leader",
-    desc: "Daily content creation across smart manufacturing, IT-OT convergence and digital transformation.",
+    title: "Industry 4.0 + AI Thought Leader",
+    desc: "Daily content on smart manufacturing, IT-OT and AI deployment in real factories.",
   },
   {
     icon: Video,
     title: "Industry 4.0 Use-Case Videos",
-    desc: "Original short-form content explaining MES, Digital Twin, OCR, WMS, QMS and connected operations.",
+    desc: "Original short-form content on MES, Digital Twin, OCR, AI and connected operations.",
   },
   {
     icon: FileText,
     title: "Long-form Writing on LinkedIn",
-    desc: "Articles on enterprise IT, OT integration, ASEAN GTM and the human side of transformation.",
+    desc: "Articles on enterprise IT, OT integration, AI on the plant floor and ASEAN GTM.",
   },
   {
     icon: Target,
-    title: "ASEAN Industry 4.0 GTM Architect",
-    desc: "Defined go-to-market for Industry 4.0 solutions across Singapore, Malaysia, Thailand, Indonesia, Vietnam.",
+    title: "ASEAN Industry 4.0 + AI GTM Architect",
+    desc: "Defined go-to-market for Industry 4.0 + AI solutions across SG, MY, TH, ID, VN.",
   },
   {
     icon: Users,
     title: "Customer-First Operator",
-    desc: "Built and led customer success teams; SOPs, retention programs and engagement frameworks across APAC.",
+    desc: "Built and led customer success teams; SOPs and engagement frameworks across APAC.",
   },
 ];
 

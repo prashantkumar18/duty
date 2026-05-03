@@ -43,14 +43,7 @@ const journey = [
     company: "Trinity Capital",
     role: "Business Head · Founder Director",
     place: "India · UK · USA",
-    note: "First India SaaS marketing automation platform. Built and led a 25-person team; managed strategy across geographies.",
-  },
-  {
-    period: "2007 — 2011",
-    company: "Hawkins Group",
-    role: "Asset Manager · Real Estate Investment Fund",
-    place: "UK · India",
-    note: "Managed Indian real-estate fund portfolio for global LPs.",
+    note: "First India SaaS marketing automation platform. Built and led a 25-person team; managed strategy across geographies and led real-estate fund advisory across UK/India markets.",
   },
   {
     period: "2005 — 2007",
