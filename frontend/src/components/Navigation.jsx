@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
+  { to: "/#about", label: "About" },
   { to: "/#work", label: "What I Do" },
-  { to: "/#timeline", label: "Timeline" },
-  { to: "/#sectors", label: "Sectors" },
+  { to: "/#timeline", label: "Career" },
+  { to: "/#skills", label: "Skills" },
   { to: "/videos", label: "Videos" },
   { to: "/articles", label: "Articles" },
 ];

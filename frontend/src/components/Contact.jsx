@@ -68,7 +68,7 @@ export default function Contact() {
                   <span>
                     <span className="block text-white">WhatsApp</span>
                     <span className="block text-xs font-mono text-[color:var(--text-3)]">
-                      +65 9391 4327
+                      Direct chat · click to open
                     </span>
                   </span>
                 </span>

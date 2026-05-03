@@ -1,84 +1,141 @@
 import { motion } from "framer-motion";
 
-const items = [
+const journey = [
   {
-    tag: "APAC",
-    title: "Regional Business Development",
-    desc: "Enterprise, manufacturing and transformation focus across the Asia Pacific market — shaping partnerships and multi-country accounts.",
-    image:
-      "https://images.unsplash.com/photo-1537155986727-3c402583a35a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHxzaW5nYXBvcmUlMjBjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzc3Nzg2ODQ3fDA&ixlib=rb-4.1.0&q=85",
+    period: "2024 →",
+    company: "Yokogawa",
+    role: "DX Consultant",
+    place: "Singapore",
+    note: "SMART Industry 4.0 digital solutions across APAC — Digital Twin, AI/ML platforms, energy management, sustainability and system integration.",
+    highlight: true,
   },
   {
-    tag: "IT",
-    title: "Enterprise Technology Positioning",
-    desc: "Applications, integrations, platforms and digital workflows — the operating fabric of the modern enterprise.",
-    image:
-      "https://images.unsplash.com/photo-1744739813274-24b1f3ef2678?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBsaW5lcyUyMGx1eHVyeSUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3Nzc3ODY4NTd8MA&ixlib=rb-4.1.0&q=85",
+    period: "2023 →",
+    company: "Web Synergies",
+    role: "Director — Business Development",
+    place: "Singapore",
+    note: "Building new business and markets for industrial digital solutions. Solution-led GTM across APAC enterprise accounts.",
+    highlight: true,
   },
   {
-    tag: "OT",
-    title: "Industry 4.0 & Operations Systems",
-    desc: "LIMS, MES, Digital Twin, visibility and plant data — making industrial operations observable and decision-ready.",
-    image:
-      "https://images.unsplash.com/photo-1735494033690-c74aa2641fb9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGZhY3RvcnklMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3Nzc4Njg0N3ww&ixlib=rb-4.1.0&q=85",
+    period: "2022",
+    company: "K2 Partnering Solutions",
+    role: "Senior Account Executive (Sales & Delivery)",
+    place: "Singapore",
+    note: "IT professional services — outsourced managed services, resource contracting, reskilling and upskilling across APAC.",
+  },
+  {
+    period: "2019 — 2022",
+    company: "SelfDrvn Enterprise · CBLD · TalentGuard",
+    role: "Customer Success Director",
+    place: "APAC",
+    note: "Geo expansion across APAC. Built and led 10-person customer success team; designed CS SOPs and engagement frameworks.",
+  },
+  {
+    period: "2015 — 2019",
+    company: "Advante 360",
+    role: "Head of Technology",
+    place: "India · ASEAN",
+    note: "Stood up the digital department, marketing automation, GTM strategy and ASEAN expansion for the group.",
+  },
+  {
+    period: "2011 — 2015",
+    company: "Trinity Capital",
+    role: "Business Head · Founder Director",
+    place: "India · UK · USA",
+    note: "First India SaaS marketing automation platform. Built and led a 25-person team; managed strategy across geographies.",
+  },
+  {
+    period: "2007 — 2011",
+    company: "Hawkins Group",
+    role: "Asset Manager · Real Estate Investment Fund",
+    place: "UK · India",
+    note: "Managed Indian real-estate fund portfolio for global LPs.",
+  },
+  {
+    period: "2005 — 2007",
+    company: "Hiranandani Fund",
+    role: "Deputy Manager · Real Estate Investment Fund",
+    place: "India · UK · USA",
+    note: "Built financial valuation and projection models supporting one of India's largest real-estate fundraises on LSE.",
+  },
+  {
+    period: "2004 — 2005",
+    company: "MaxVal Technologies · ICIT",
+    role: "Investment Analyst · Research Consultant",
+    place: "India · USA",
+    note: "Outsourced US commercial real-estate advisory; published research on travel & tourism and time management.",
   },
 ];
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="relative py-24 md:py-32 border-t border-[color:var(--border)]" data-testid="timeline-section">
+    <section
+      id="timeline"
+      className="relative py-24 md:py-32 border-t border-[color:var(--border)]"
+      data-testid="timeline-section"
+    >
       <div className="container-x">
-        <div className="max-w-3xl mb-14">
-          <p className="overline mb-4">Editorial Timeline · Career Highlights</p>
-          <h2 className="font-display text-3xl md:text-5xl leading-tight text-white">
-            A profile built across business, enterprise IT and industrial transformation.
-          </h2>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div className="max-w-2xl">
+            <p className="overline mb-4">Career Chronicle</p>
+            <h2 className="font-display text-3xl md:text-5xl leading-tight text-white">
+              From financial markets to the plant floor — one continuous
+              <span className="italic text-[color:var(--accent)]"> transformation arc</span>.
+            </h2>
+          </div>
+          <div className="font-mono text-xs tracking-widest uppercase text-[color:var(--text-3)]">
+            2004 → 2026
+          </div>
         </div>
 
         <div className="relative">
-          {/* center rail */}
-          <div className="hidden md:block absolute left-[140px] top-0 bottom-0 w-px bg-[color:var(--border)]" />
+          {/* Vertical rail */}
+          <div className="absolute left-[14px] md:left-[180px] top-0 bottom-0 w-px bg-[color:var(--border)]" />
 
-          <div className="space-y-16 md:space-y-24">
-            {items.map((it, i) => (
-              <motion.div
-                key={it.tag}
-                initial={{ opacity: 0, y: 30 }}
+          <ol className="space-y-10 md:space-y-12">
+            {journey.map((j, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-10%" }}
-                transition={{ duration: 0.8, delay: i * 0.08 }}
-                className="grid md:grid-cols-[140px_1fr] gap-8 md:gap-16 items-start"
-                data-testid={`timeline-item-${i}`}
+                viewport={{ once: true, margin: "-15%" }}
+                transition={{ duration: 0.6, delay: (i % 3) * 0.06 }}
+                className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 items-start relative pl-10 md:pl-0"
+                data-testid={`timeline-row-${i}`}
               >
-                <div className="flex md:block items-center gap-4">
-                  <div className="font-display text-5xl md:text-7xl text-[color:var(--accent)] leading-none">
-                    {it.tag}
-                  </div>
-                  <div className="hidden md:block h-px w-6 bg-[color:var(--accent)] mt-4" />
+                {/* Marker */}
+                <span
+                  className={`absolute left-[8px] md:left-[174px] top-2 h-3 w-3 rotate-45 ${
+                    j.highlight
+                      ? "bg-[color:var(--accent)]"
+                      : "bg-[color:var(--bg)] border border-[color:var(--accent)]"
+                  }`}
+                />
+                {/* Period */}
+                <div className="font-mono text-sm tracking-widest uppercase text-[color:var(--accent)] pt-1">
+                  {j.period}
                 </div>
-
-                <div className="grid md:grid-cols-12 gap-8 items-center pl-4 md:pl-10 relative">
-                  <span className="hidden md:block absolute -left-[9px] top-4 h-4 w-4 border border-[color:var(--accent)] rotate-45 bg-[color:var(--bg)]" />
-                  <div className="md:col-span-6">
-                    <h3 className="font-display text-2xl md:text-4xl text-white leading-tight mb-4">
-                      {it.title}
+                {/* Body */}
+                <div className="border-l border-[color:var(--border)] pl-6 md:pl-8 group">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+                    <h3 className="font-display text-xl md:text-2xl text-white leading-tight">
+                      {j.company}
                     </h3>
-                    <p className="text-[color:var(--text-2)] leading-relaxed">{it.desc}</p>
+                    <span className="text-xs font-mono tracking-widest uppercase text-[color:var(--text-3)]">
+                      · {j.place}
+                    </span>
                   </div>
-                  <div className="md:col-span-6">
-                    <div className="relative overflow-hidden border border-[color:var(--border)] aspect-[4/3]">
-                      <img
-                        src={it.image}
-                        alt={it.title}
-                        className="w-full h-full object-cover img-mono transition-all duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                    </div>
+                  <div className="text-sm md:text-base text-[color:var(--text-2)] mb-3">
+                    {j.role}
                   </div>
+                  <p className="text-sm text-[color:var(--text-2)] leading-relaxed max-w-2xl">
+                    {j.note}
+                  </p>
                 </div>
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

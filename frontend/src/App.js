@@ -4,10 +4,12 @@ import Home from "./pages/Home";
 import Videos from "./pages/Videos";
 import Articles from "./pages/Articles";
 import CursorDot from "./components/CursorDot";
+import ScrollProgress from "./components/ScrollProgress";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollProgress />
       <CursorDot />
       <Routes>
         <Route path="/" element={<Home />} />

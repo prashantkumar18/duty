@@ -1,11 +1,14 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import About from "../components/About";
 import Stats from "../components/Stats";
 import Pillars from "../components/Pillars";
+import Achievements from "../components/Achievements";
 import Timeline from "../components/Timeline";
 import Sectors from "../components/Sectors";
-import Credentials from "../components/Credentials";
+import Skills from "../components/Credentials";
+import Education from "../components/Education";
 import Contact from "../components/Contact";
 
 export default function Home() {
@@ -14,11 +17,14 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <About />
         <Stats />
         <Pillars />
+        <Achievements />
         <Timeline />
         <Sectors />
-        <Credentials />
+        <Skills />
+        <Education />
         <Contact />
       </main>
       <Footer />
