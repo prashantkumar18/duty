@@ -46,8 +46,8 @@ export default function Education() {
             21 yrs · still learning
           </span>
           <img
-            src="https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/1cwi4fq2_ChatGPT%20Image%20Apr%208%2C%202026%20at%2007_59_50%20PM.png"
-            alt="Prashant Kumar — executive headshot"
+            src="https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/if7n0yux_IMG_9179.JPG"
+            alt="Prashant Kumar — portrait"
             className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-[color:var(--border)]"
             data-testid="education-portrait"
           />

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 const PORTRAIT =
-  "https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/d5l834xk_F4263EE4-8D3D-433E-90C2-A5CB93F9841E.jpeg";
+  "https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/wfn49l0v_ChatGPT%20Image%20May%203%2C%202026%20at%2002_43_13%20PM.png";
 
 const keywords = [
   "Digital Transformation",

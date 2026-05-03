@@ -55,6 +55,18 @@ const series = [
     lesson:
       "I asked one question — 'who owns the outcome?' Silence. It wasn't a technology problem; it was an ownership problem. We paused, mapped the value chain, simplified the architecture. The factory stopped managing vendors and started managing outcomes.",
   },
+  {
+    no: "147",
+    badge: "Episode",
+    title: "From the Series — Episode 147",
+    subtitle: "APAC · Industry 4.0",
+    tags: ["Shop Floor", "Decisions", "Digital Transformation"],
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7413861019569291264/",
+    excerpt:
+      "Another short story from the field — a continuing exploration of what really happens when IT, OT and operations teams sit in the same room and try to move forward together.",
+    lesson:
+      "Watch the full story on LinkedIn — original short-form content from real APAC factory conversations.",
+  },
 ];
 
 const upcoming = [
@@ -121,7 +133,7 @@ export default function Videos() {
               Recent Episodes
             </h2>
             <span className="font-mono text-xs text-[color:var(--text-3)] tracking-widest uppercase">
-              #148 — #150
+              #147 — #150
             </span>
           </div>
 
