@@ -59,8 +59,8 @@ export default function Stats() {
         >
           <p className="overline mb-4">At a Glance</p>
           <h2 className="font-display text-3xl md:text-5xl leading-tight text-white">
-            Not only IT-OT. This profile spans core IT, digital strategy,
-            commercial growth and enterprise transformation.
+            Not only AI Powered IT Solutions. This profile spans core IT,
+            digital strategy, commercial growth and enterprise transformation.
           </h2>
         </motion.div>
 
