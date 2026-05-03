@@ -3,67 +3,85 @@
 ## Problem Statement
 > http://www.dutyee.com make this interactive
 
-Rebuild Prashant Kumar's professional profile (Digital Transformation Leader, 21+ yrs, APAC) as an immersive, interactive portfolio — preserving the executive tone while dramatically elevating presentation, motion, and engagement.
+Reimagined as an immersive, editorial-grade interactive portfolio for Prashant Kumar — APAC Business Development Leader bridging OT and IT for industrial enterprises.
 
-## User Choices (verbatim)
-- Scope: all three (recreate + add sections + full reimagination)
-- Interactivity: all three (subtle + rich + immersive)
-- Visual theme: designer's pick
-- Contact: working form + WhatsApp CTA
-- Videos & Articles subpages: yes
-- WhatsApp number: **+65 93914327**
-- Email: **prashantkumar18@gmail.com**
+## Source Materials
+- Live site: dutyee.com
+- LinkedIn About paragraph (provided by user)
+- Resume DOCX (full work history, skills, education, certifications)
+- Portrait: red-background suit photo
+- WhatsApp: +65 93914327 (deep-link only — **never displayed as text**)
+- Email: prashantkumar18@gmail.com
+- LinkedIn: /in/prashant-kumar-digital
 
 ## Architecture
 - **Frontend**: React 19 + React Router 7 + Framer Motion + Tailwind
 - **Backend**: FastAPI + Motor (MongoDB)
-- **Design**: Cinematic Swiss / High-Contrast Executive — dark (#050505) with amber accent (#F59E0B); Clash Display + Outfit + JetBrains Mono fonts; noise overlay; custom cursor; grid background
+- **Design**: Cinematic Swiss / High-Contrast Executive — dark (#050505) with amber accent (#F59E0B); Clash Display + Outfit + JetBrains Mono fonts
 - **Routes**: `/`, `/videos`, `/articles`
-- **API**: `GET /api/`, `POST|GET /api/contact`, legacy `/api/status`
+- **API**: `GET /api/`, `POST/GET /api/contact`
+
+## Page Structure (Home)
+1. Hero — large title, red-bg portrait card, marquee, scroll progress
+2. About — portrait + LinkedIn About copy + WhatsApp/Email/LinkedIn CTAs
+3. Stats — 4 animated counters (21+, APAC, IT+OT, LIMS)
+4. What I Do — 4 pillars (IT/OT, Solution Selling, AI Platforms, BD) + intro + content metrics strip (no $/%)
+5. Achievements — 6 cards (Top 40 LinkedIn Influencer, Industry 4.0 Thought Leader, etc.)
+6. Career Chronicle — 9 real roles 2004→2026 (Yokogawa → Web Synergies → … → ICFAI)
+7. Sectors — bento I/E/S/A
+8. Skills — 4 groups (Industry 4.0/OT, Enterprise IT, Banking/FSI, Commercial/GTM) + operating style
+9. Education — 4 degrees + 4 certifications
+10. Contact — form + WhatsApp CTA (no number text) + Email + LinkedIn
+
+## Interactive Layer
+- Scroll progress bar (top, amber)
+- Custom cursor dot (expands on interactives)
+- Grain/noise overlay
+- Framer-motion scroll-triggered reveals throughout
+- Radial-glow tile hover effect
+- Animated counters (intersection observer)
+- Floating credential pills
+- Marquee keyword strip
+- Sticky glass nav with mobile menu
 
 ## User Personas
-1. Enterprise prospect / APAC client evaluating Prashant's IT-OT capability
-2. Conference organizer / podcast host discovering via LinkedIn
-3. Partner / recruiter browsing credentials + thought leadership
-
-## Core Requirements (static)
-- Immersive hero with animated typography + marquee
-- Animated stat counters (21+, APAC, IT+OT, LIMS)
-- 3 pillar cards (Business / Transformation / Influence) with reveal + radial hover glow
-- Editorial career timeline (APAC / IT / OT)
-- Bento sectors grid (I / E / S / A)
-- Credentials pill cloud (floating)
-- Contact section: WhatsApp CTA, Email CTA, LinkedIn + form
-- Videos and Articles subpages with consistent visual language
-- Glass sticky nav, mobile menu, footer
-- Fully dark theme, readable, no dark-on-dark issues
+1. APAC enterprise client evaluating Industry 4.0 / IT-OT capability
+2. Recruiter / partner exploring credentials + thought leadership
+3. Conference / podcast organizer discovering via LinkedIn
 
 ## Implemented (Jan 2026)
-- ✅ Full dark immersive design system (/app/frontend/src/index.css)
-- ✅ Home page with Hero, Stats, Pillars, Timeline, Sectors, Credentials, Contact, Footer
-- ✅ Videos page (6 placeholder videos, grid)
-- ✅ Articles page (6 placeholder articles, editorial list)
-- ✅ Backend `POST/GET /api/contact` with Pydantic validation (EmailStr)
-- ✅ Custom cursor dot, grain overlay, scroll-triggered reveals (framer-motion)
-- ✅ Radial hover glow on tiles; marquee; floating credential pills
-- ✅ Mobile responsive nav with toggle
-- ✅ data-testid on all interactive elements
-- ✅ Testing agent: 100% backend (9/9) and 100% frontend flows pass
+### Iteration 1
+- Initial dark immersive design system, Hero + Stats + Pillars + Timeline + Sectors + Credentials + Contact
+- Backend `POST/GET /api/contact`
+- Videos & Articles placeholder pages
+- 100% test pass
 
-## Backlog / Future (P0/P1/P2)
-- **P1**: Real email delivery via SendGrid/Resend (currently DB-only storage)
-- **P1**: Populate Videos page with real YouTube embeds
-- **P1**: Populate Articles page with real article content + detail routes (`/articles/:slug`)
-- **P2**: Lenis momentum scrolling (currently CSS smooth scroll)
-- **P2**: Admin dashboard `/admin/messages` to view contact submissions
-- **P2**: Contact rate limiting / captcha
-- **P2**: WebGL/Three.js hero element (currently image + grid + blobs)
-- **P2**: Newsletter subscription
-- **P2**: SEO meta tags, OpenGraph, sitemap
+### Iteration 2 (current)
+- ✅ Red-background portrait integrated into Hero (right column) and About section
+- ✅ New About section with LinkedIn copy + bottom-strip company tags (Yokogawa · Web Synergies · Singapore)
+- ✅ 4-pillar What-I-Do (IT/OT, Solution Selling, AI Platforms, Business Development) — pulled directly from LinkedIn About bullets
+- ✅ New Achievements section (6 cards, no $/% numbers)
+- ✅ Real career timeline (9 roles, 2004→2026) replacing earlier 3-step editorial timeline
+- ✅ Skills section restructured into 4 groups + operating-style strip — pulled from resume
+- ✅ Education + Certifications block (Columbia/MIT, MBA, CSM, CISI, etc.)
+- ✅ Phone number text removed everywhere; WhatsApp CTA still functional via wa.me deep-link
+- ✅ Videos page restyled around Industry 4.0 use-cases (MES, Digital Twin, AI/OCR, IT-OT, EMS, GTM, etc.) with cards linking to LinkedIn
+- ✅ ScrollProgress component
+- ✅ 100% backend (9/9) + 100% frontend tests pass
+
+## Backlog / Future
+- **P1**: Embed actual LinkedIn videos once specific URLs are shared (currently outbound links)
+- **P1**: Real article content with `/articles/:slug` detail routes
+- **P1**: Real email delivery (SendGrid/Resend) — currently DB-only
+- **P2**: Admin view for contact submissions
+- **P2**: WebGL/Three.js hero element
+- **P2**: Lenis momentum scrolling
+- **P2**: Newsletter opt-in
+- **P2**: SEO meta + OpenGraph + sitemap
 
 ## Files of Reference
-- `/app/backend/server.py` — contact endpoints
-- `/app/frontend/src/App.js` — router
+- `/app/backend/server.py`
+- `/app/frontend/src/App.js`
 - `/app/frontend/src/pages/{Home,Videos,Articles}.jsx`
-- `/app/frontend/src/components/{Navigation,Hero,Stats,Pillars,Timeline,Sectors,Credentials,Contact,Footer,CursorDot}.jsx`
+- `/app/frontend/src/components/{Navigation,Hero,About,Stats,Pillars,Achievements,Timeline,Sectors,Credentials,Education,Contact,Footer,CursorDot,ScrollProgress}.jsx`
 - `/app/design_guidelines.json`

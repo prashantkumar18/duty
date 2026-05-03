@@ -14,13 +14,13 @@ const items = [
   },
   {
     icon: Video,
-    title: "200+ Industry 4.0 Use-Case Videos",
+    title: "Industry 4.0 Use-Case Videos",
     desc: "Original short-form content explaining MES, Digital Twin, OCR, WMS, QMS and connected operations.",
   },
   {
     icon: FileText,
-    title: "350+ Articles on LinkedIn",
-    desc: "Long-form writing on enterprise IT, OT integration, ASEAN GTM and the human side of transformation.",
+    title: "Long-form Writing on LinkedIn",
+    desc: "Articles on enterprise IT, OT integration, ASEAN GTM and the human side of transformation.",
   },
   {
     icon: Target,

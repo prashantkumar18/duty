@@ -68,10 +68,10 @@ const pillars = [
 ];
 
 const metrics = [
-  { k: "60%+", v: "Lead-to-sales conversion in Industrial Automation" },
-  { k: "95%", v: "Customer retention across APAC portfolio" },
+  { k: "21+", v: "Years across enterprise IT, banking and Industry 4.0" },
+  { k: "APAC", v: "Operating reach across Singapore, ASEAN and beyond" },
   { k: "Top 40", v: "IT LinkedIn Influencer · Singapore" },
-  { k: "550+", v: "Videos & Articles on Industry 4.0" },
+  { k: "Industry 4.0", v: "Recognised content creator · OT/IT convergence" },
 ];
 
 export default function Pillars() {
@@ -183,8 +183,9 @@ export default function Pillars() {
           <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p className="text-sm md:text-base text-[color:var(--text-2)] max-w-2xl leading-relaxed">
               Recognised <span className="text-white">Industry 4.0 content creator</span> —
-              with 200+ videos and 350+ articles sharing practical insights on
-              smart manufacturing, digital transformation and OT/IT convergence.
+              sharing practical insights on smart manufacturing, digital
+              transformation and OT/IT convergence with a global community of
+              practitioners.
             </p>
             <a
               href="#contact"
