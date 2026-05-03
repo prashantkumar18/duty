@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Languages, ArrowUpRight } from "lucide-react";
 
+const CASUAL_PORTRAIT =
+  "https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/8uelr7jx_IMG_6250.jpeg";
+
 const phrases = [
   { jp: "改善", romaji: "Kaizen", en: "Continuous improvement" },
   { jp: "現場", romaji: "Genba", en: "The actual place — the shop floor" },
@@ -38,7 +41,13 @@ export default function Japanese() {
           transition={{ duration: 0.8 }}
           className="md:col-span-5"
         >
-          <div className="inline-flex items-center gap-2 border border-[color:var(--border)] px-3 py-1.5 text-[10px] font-mono tracking-widest uppercase text-[color:var(--text-2)] mb-6">
+          <div className="inline-flex items-center gap-3 border border-[color:var(--border)] pl-1 pr-3 py-1 text-[10px] font-mono tracking-widest uppercase text-[color:var(--text-2)] mb-6">
+            <img
+              src={CASUAL_PORTRAIT}
+              alt="Prashant — casual portrait"
+              className="h-7 w-7 rounded-full object-cover border border-[color:var(--border)]"
+              data-testid="japanese-portrait"
+            />
             <Languages size={12} className="text-[color:var(--accent)]" />{" "}
             Currently Learning
           </div>

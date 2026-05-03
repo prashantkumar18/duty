@@ -6,8 +6,16 @@ export default function Footer() {
     <footer className="border-t border-[color:var(--border)] py-14" data-testid="site-footer">
       <div className="container-x grid md:grid-cols-12 gap-8 items-start">
         <div className="md:col-span-5">
-          <Link to="/" className="font-display text-2xl">
-            Prashant<span className="text-[color:var(--accent)]">.</span>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/iafckcu5_IMG_5897.jpeg"
+              alt="Prashant Kumar"
+              className="h-10 w-10 rounded-full object-cover border border-[color:var(--border)]"
+              data-testid="footer-portrait"
+            />
+            <span className="font-display text-2xl">
+              Prashant<span className="text-[color:var(--accent)]">.</span>
+            </span>
           </Link>
           <p className="text-sm text-[color:var(--text-2)] mt-4 max-w-sm">
             Building digital growth across IT, IT-OT and smart industry.

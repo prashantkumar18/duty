@@ -102,9 +102,17 @@ export default function Pillars() {
               Yokogawa and Web Synergies — I've led digital transformation
               programs that consistently deliver measurable outcomes.
             </p>
-            <div className="mt-6 inline-flex items-center gap-3 px-3 py-2 border border-[color:var(--border)] text-xs font-mono text-[color:var(--text-2)]">
-              <BadgeCheck size={14} className="text-[color:var(--accent)]" />
-              Yokogawa · Web Synergies · APAC · 21+ years
+            <div className="mt-6 flex items-center gap-4">
+              <img
+                src="https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/gdfn9gq1_IMG_9196.png"
+                alt="Industry 4.0 badge"
+                className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover shrink-0 border border-[color:var(--border)]"
+                data-testid="pillars-industry40-badge"
+              />
+              <div className="inline-flex items-center gap-3 px-3 py-2 border border-[color:var(--border)] text-xs font-mono text-[color:var(--text-2)]">
+                <BadgeCheck size={14} className="text-[color:var(--accent)]" />
+                Yokogawa · Web Synergies · APAC · 21+ years
+              </div>
             </div>
           </div>
         </div>

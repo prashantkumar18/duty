@@ -38,6 +38,22 @@ export default function Education() {
       className="relative py-24 md:py-32 border-t border-[color:var(--border)]"
       data-testid="education-section"
     >
+      {/* Distinguished portrait — top right */}
+      <div className="container-x mb-10 flex items-center justify-between gap-6">
+        <p className="overline">Continuing Education</p>
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-[10px] tracking-widest uppercase text-[color:var(--text-3)] hidden md:inline">
+            21 yrs · still learning
+          </span>
+          <img
+            src="https://customer-assets.emergentagent.com/job_duty-tracker-60/artifacts/1cwi4fq2_ChatGPT%20Image%20Apr%208%2C%202026%20at%2007_59_50%20PM.png"
+            alt="Prashant Kumar — executive headshot"
+            className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-[color:var(--border)]"
+            data-testid="education-portrait"
+          />
+        </div>
+      </div>
+
       <div className="container-x grid md:grid-cols-12 gap-10 md:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
