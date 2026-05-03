@@ -5,9 +5,11 @@ import About from "../components/About";
 import Stats from "../components/Stats";
 import Pillars from "../components/Pillars";
 import Achievements from "../components/Achievements";
+import Speaking from "../components/Speaking";
 import Timeline from "../components/Timeline";
 import Sectors from "../components/Sectors";
 import Skills from "../components/Credentials";
+import Japanese from "../components/Japanese";
 import Education from "../components/Education";
 import Contact from "../components/Contact";
 
@@ -21,9 +23,11 @@ export default function Home() {
         <Stats />
         <Pillars />
         <Achievements />
+        <Speaking />
         <Timeline />
         <Sectors />
         <Skills />
+        <Japanese />
         <Education />
         <Contact />
       </main>
