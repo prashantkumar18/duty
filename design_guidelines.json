@@ -1,0 +1,101 @@
+{
+  "theme": "dark",
+  "archetype": "Cinematic Swiss / High-Contrast Executive",
+  "design_vision": "A bold, immersive, portfolio-style experience. Think 'Vercel-meets-editorial-magazine'—stark structural contrast mixed with refined, sophisticated typography and industrial-scale presence. Deep shadows, subtle noise textures, architectural grids, and premium amber/copper accents to signify 'Smart Factory' and 'IT-OT' convergence without looking like a generic tech template.",
+  "colors": {
+    "background": "#050505",
+    "surface": "#0D0D10",
+    "surface_elevated": "#18181B",
+    "border": "#27272A",
+    "border_hover": "#3F3F46",
+    "text_primary": "#FAFAFA",
+    "text_secondary": "#A1A1AA",
+    "text_muted": "#71717A",
+    "accent_primary": "#F59E0B",
+    "accent_secondary": "#D97706",
+    "accent_glow": "rgba(245, 158, 11, 0.15)",
+    "error": "#EF4444",
+    "success": "#10B981"
+  },
+  "typography": {
+    "font_heading": "'Clash Display', sans-serif",
+    "font_body": "'Outfit', sans-serif",
+    "font_mono": "'JetBrains Mono', monospace",
+    "scale": {
+      "h1": "text-5xl md:text-6xl+ lg:text-7xl tracking-tighter leading-none font-medium",
+      "h2": "text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight",
+      "h3": "text-2xl md:text-3xl tracking-tight",
+      "body": "text-base md:text-lg leading-relaxed text-secondary",
+      "overline": "text-xs md:text-sm tracking-[0.2em] uppercase text-muted font-semibold",
+      "quote": "text-xl md:text-2xl font-light italic text-primary border-l-2 border-accent_primary pl-4"
+    },
+    "notes": "Do NOT use Inter, Space Grotesk, or Roboto. Import 'Clash Display' via Fontshare or a standard CDN, and 'Outfit' via Google Fonts. Use tight letter-spacing for headings and loose line-height for body to achieve the editorial feel."
+  },
+  "spacing_and_layout": {
+    "generous_padding": true,
+    "section_spacing": "py-24 md:py-32 lg:py-48",
+    "grid_system": "Use CSS Grid (grid-cols-1 md:grid-cols-12) for asymmetrical bento layouts. Never center everything. Maintain visual tension through left-aligned or strategically offset content.",
+    "container_max": "max-w-[1440px] mx-auto px-6 md:px-12",
+    "border_radius": "rounded-none or rounded-sm (max 4px). Keep it sharp and executive, not soft or bubbly."
+  },
+  "motion_and_interactions": {
+    "global": "Implement smooth momentum scrolling (Lenis). Apply subtle noise overlay globally (pointer-events-none, fixed, opacity-20).",
+    "reveal": "Use Framer Motion for scroll-triggered staggered reveals: { initial: { y: 20, opacity: 0, filter: 'blur(4px)' }, animate: { y: 0, opacity: 1, filter: 'blur(0px)' }, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }",
+    "hover_states": "Interactive elements should have distinct micro-interactions. Pillar cards reveal deeper context on hover, borders light up with accent color.",
+    "parallax": "Apply subtle parallax to background images and large typographic elements.",
+    "cursor": "Implement a custom subtle cursor (e.g., small dot that expands on interactive elements)."
+  },
+  "components": {
+    "hero": "Immersive 100vh section. Dark, abstract, optionally uses TSParticles for a subtle floating node effect (representing IT-OT/Network). Huge animated typography: 'Prashant Kumar' dropping in. Overline: 'Digital Transformation Leader'.",
+    "stat_counters": "Large numeric counters (21+, etc.) using intersection observer to count up. Numbers in 'Clash Display', accent colored. Labels in small uppercase.",
+    "pillar_cards": "3-column grid. Sharp borders. Background shifts slightly lighter on hover. Contains 'Business', 'Transformation', and 'Influence'. Reveal deeper text on hover.",
+    "editorial_timeline": "Vertical layout where years stick to the left, and career progression (APAC, IT, OT) flows on the right. Large typography, high contrast.",
+    "sectors_bento_grid": "Asymmetrical grid (e.g., tetris mode). Cells for Industrial, Enterprise IT, Sustainability, APAC Growth. Mix images, solid dark backgrounds, and stark text. Use 'grid-cols-1 md:grid-cols-4' with varied span sizes.",
+    "credentials_cloud": "Floating pill-shaped tags for MBA, CSM, CISI, Digital Twin, LIMS, MES. Apply subtle endless marquee or floating animation. Pills have 1px solid border, transparent background, text-primary.",
+    "contact_form": "Sleek, heavily customized dark inputs (Shadcn customized). Sharp edges, 1px border. Side-by-side layout with large CTA buttons for WhatsApp (+65 93914327) and Email (prashantkumar18@gmail.com). Include a simple 'Send Message' form.",
+    "navigation": "Sticky/magnetic top header with glassmorphism (backdrop-blur-xl, bg-[#050505]/60, border-b border-[#27272A]). Logo on left, links and CTA on right.",
+    "pages": "Ensure subpages (Videos, Articles) share the same root layout, header, footer, and styling logic, containing placeholder grid content."
+  },
+  "media": {
+    "background_texture": "CSS noise or grain texture applied globally.",
+    "hero_visual_concept": "Abstract digital data network or luxury architectural lines to symbolize structural transformation.",
+    "images": [
+      {
+        "category": "hero_background",
+        "url": "https://images.pexels.com/photos/30547584/pexels-photo-30547584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Abstract futuristic cyber landscape with digital matrix. Apply heavy dark overlay (bg-black/80) so text pops.",
+        "usage": "Hero section background"
+      },
+      {
+        "category": "timeline_apac",
+        "url": "https://images.unsplash.com/photo-1537155986727-3c402583a35a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHxzaW5nYXBvcmUlMjBjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzc3Nzg2ODQ3fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Marina Bay Sands Singapore at night. Deep, rich.",
+        "usage": "Editorial timeline image for 'APAC Regional Coverage' step."
+      },
+      {
+        "category": "sectors_smart_factory",
+        "url": "https://images.unsplash.com/photo-1735494033690-c74aa2641fb9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGZhY3RvcnklMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3Nzc4Njg0N3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Man working on machine in a factory. Convert to grayscale via CSS for dark editorial feel.",
+        "usage": "Key Sectors Grid background for 'Industrial/Smart Manufacturing'."
+      },
+      {
+        "category": "sectors_enterprise",
+        "url": "https://images.unsplash.com/photo-1744739813274-24b1f3ef2678?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBsaW5lcyUyMGx1eHVyeSUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3Nzc3ODY4NTd8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Gold lines creating a cool, angular abstract design.",
+        "usage": "Key Sectors Grid background for 'Enterprise IT'."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install and setup required font: Clash Display (from Fontshare or local font) and Outfit (from Google Fonts).",
+    "Install 'framer-motion' for scroll-triggered animations and reveals.",
+    "Install '@studio-freight/react-lenis' for smooth momentum scrolling.",
+    "Do NOT use placeholders like via.placeholder.com. ONLY use the Unsplash/Pexels URLs provided in this JSON.",
+    "Implement routing for '/' (Home), '/videos' (Videos), and '/articles' (Articles) using React Router.",
+    "Ensure 'data-testid' attributes are attached to all interactive elements per the design system rules.",
+    "Ensure no purple or violet gradients are used anywhere.",
+    "Hero MUST be visually immersive, text readable over the background image using a heavy gradient overlay or backdrop blur.",
+    "Use Lucide-React or Phosphor icons for contact links and functional UI elements.",
+    "For the 3D effect, you may use TSParticles or a subtle CSS-based parallax noise background to keep it lightweight but premium."
+  ]
+}
